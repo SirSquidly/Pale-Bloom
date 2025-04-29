@@ -1,0 +1,50 @@
+{
+	"ambient.dream":
+	{
+		"category": "ambient",
+		"subtitle": "subtitle.creaturesfromdarkness.nightmare.warn",
+		"sounds": [ "creaturesfromdarkness:ambient/dream/dream1", "creaturesfromdarkness:ambient/dream/dream2", "creaturesfromdarkness:ambient/dream/dream3", "creaturesfromdarkness:ambient/dream/dream4"]
+	},
+	"entity.nightmare.ambient":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.nightmare.ambient",
+		"sounds": [ "creaturesfromdarkness:entity/nightmare/ambient1", "creaturesfromdarkness:entity/nightmare/ambient2", "creaturesfromdarkness:entity/nightmare/ambient3"]
+	},
+	"entity.nightmare.death":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.nightmare.death",
+		"sounds": [ "creaturesfromdarkness:entity/nightmare/death1"]
+	},
+	"entity.nightmare.hurt":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.nightmare.hurt",
+		"sounds": [ "creaturesfromdarkness:entity/shadow/hurt1"]
+	},
+	"entity.nightmare.step":
+    {
+    	"category": "hostile",
+    	"subtitle": "subtitle.creaturesfromdarkness.nightmare.step",
+    	"sounds": [ "creaturesfromdarkness:entity/nightmare/step1", "creaturesfromdarkness:entity/nightmare/step2", "creaturesfromdarkness:entity/nightmare/step3"]
+    },
+	"entity.nightmare.warn":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.nightmare.warn",
+		"sounds": [ "creaturesfromdarkness:entity/nightmare/warn1"]
+	},
+	"entity.shadow.death":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.shadow.death",
+		"sounds": [ "creaturesfromdarkness:entity/shadow/death"]
+	},
+	"entity.shadow.hurt":
+	{
+		"category": "hostile",
+		"subtitle": "subtitle.creaturesfromdarkness.shadow.hurt",
+		"sounds": [ "creaturesfromdarkness:entity/shadow/hurt1"]
+	}
+}   

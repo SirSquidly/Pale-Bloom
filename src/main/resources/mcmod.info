@@ -1,0 +1,17 @@
+[
+  {
+    "modid": "creaturesfromdarkness",
+    "name": "Creatures From Darkness",
+    "description": "Adds 2 rare mobs that add a touch of horror",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "modpage",
+    "authorList": [
+      "Sir Squidly"
+    ],
+    "credits": "The_Computerizer for their very nice Build template",
+    "logoFile": "modlogo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
