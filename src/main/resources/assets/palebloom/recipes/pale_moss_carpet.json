@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": { "item": "palebloom:pale_moss_block" }
+  },
+  "result": {
+    "item": "palebloom:pale_moss_carpet",
+    "count": 3
+  }
+}

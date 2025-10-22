@@ -1,0 +1,4 @@
+{
+    "parent": "block/fence_side",
+    "textures": { "texture": "palebloom:blocks/pale_oak_planks" }
+}

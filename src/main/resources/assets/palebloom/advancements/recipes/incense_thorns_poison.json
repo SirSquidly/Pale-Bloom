@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:incense_thorns_poison" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:incense_thorns_poison" }
+    },
+    "has_incense_thorns": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:incense_thorns" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_incense_thorns"
+    ]
+  ]
+}

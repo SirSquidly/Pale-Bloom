@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:birch_planks_from_peeping_birch" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:birch_planks_from_peeping_birch" }
+    },
+    "has_peeping_birch_wood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:peeping_birch_log" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_peeping_birch_wood"
+    ]
+  ]
+}

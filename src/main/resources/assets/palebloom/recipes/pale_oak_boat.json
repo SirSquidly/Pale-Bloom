@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "p p",
+    "ppp"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_planks" }
+  },
+  "result": {
+    "item": "palebloom:pale_oak_boat"
+  }
+}

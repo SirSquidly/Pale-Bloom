@@ -1,0 +1,6 @@
+{
+  "type": "pale_moss_cloak_grafting",
+  "scion_ingredient": { "item": "palebloom:sucker_roots" },
+  "binding_ingredient": { "item": "palebloom:pale_oak_sap" },
+  "scion_effect": "sucker_roots"
+}

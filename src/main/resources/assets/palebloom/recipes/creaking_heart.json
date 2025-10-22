@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "p",
+    "r",
+    "p"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_log" },
+    "r": { "item": "palebloom:resin_block" }
+  },
+  "result": {
+    "item": "palebloom:creaking_heart"
+  }
+}

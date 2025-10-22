@@ -1,0 +1,355 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "awake=false,axis=x,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=false,axis=y,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            }
+        },
+        "awake=false,axis=z,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=none,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=x,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=true,axis=y,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            }
+        },
+        "awake=true,axis=z,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=none,sap_level=0":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=x,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=false,axis=y,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            }
+        },
+        "awake=false,axis=z,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=none,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=x,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=true,axis=y,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            }
+        },
+        "awake=true,axis=z,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=none,sap_level=1":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=x,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=false,axis=y,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            }
+        },
+        "awake=false,axis=z,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=none,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=x,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=true,axis=y,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            }
+        },
+        "awake=true,axis=z,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=none,sap_level=2":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=x,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=false,axis=y,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            }
+        },
+        "awake=false,axis=z,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=none,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=x,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=true,axis=y,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            }
+        },
+        "awake=true,axis=z,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=none,sap_level=3":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=x,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=false,axis=y,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            }
+        },
+        "awake=false,axis=z,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=false,axis=none,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=x,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_side"
+            },
+            "x": 90, "y": 90
+        },
+        "awake=true,axis=y,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_side"
+            }
+        },
+        "awake=true,axis=z,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_top",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_side"
+            },
+            "x": 90
+        },
+        "awake=true,axis=none,sap_level=4":
+        {
+            "model": "minecraft:cube_column",
+            "textures": {
+                "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_side",
+                "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_awake_sap4_side"
+            },
+            "x": 90
+        }
+    }
+}

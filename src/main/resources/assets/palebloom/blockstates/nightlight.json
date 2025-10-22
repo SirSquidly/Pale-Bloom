@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0,awake=true": { "model": "palebloom:nightlight/nightlight_0" },
+        "age=1,awake=true": { "model": "palebloom:nightlight/nightlight_1" },
+        "age=2,awake=true": { "model": "palebloom:nightlight/nightlight_2" },
+        "age=3,awake=true": { "model": "palebloom:nightlight/nightlight_3" },
+        "age=0,awake=false": { "model": "palebloom:nightlight/nightlight_closed" },
+        "age=1,awake=false": { "model": "palebloom:nightlight/nightlight_closed" },
+        "age=2,awake=false": { "model": "palebloom:nightlight/nightlight_closed" },
+        "age=3,awake=false": { "model": "palebloom:nightlight/nightlight_closed" }
+    }
+}

@@ -1,0 +1,117 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "awake=false,half=lower,stage=0":
+        { "model": "palebloom:reaping_willow_sapling_0" },
+        "awake=false,half=upper,stage=0":
+        { "model": "palebloom:reaping_willow_sapling_0" },
+        "awake=true,half=lower,stage=0":
+        {
+            "model": "minecraft:tinted_cross",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_0_awake" }
+        },
+        "awake=true,half=upper,stage=0":
+        {
+            "model": "minecraft:tinted_cross",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_0_awake" }
+        },
+        "awake=false,half=lower,stage=1":
+        { "model": "palebloom:reaping_willow_sapling_0" },
+        "awake=false,half=upper,stage=1":
+        { "model": "palebloom:reaping_willow_sapling_0" },
+        "awake=true,half=lower,stage=1":
+        {
+            "model": "minecraft:tinted_cross",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_0_awake" }
+        },
+        "awake=true,half=upper,stage=1":
+        {
+            "model": "minecraft:tinted_cross",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_0_awake" }
+        },
+        "awake=false,half=lower,stage=2":
+        { "model": "palebloom:reaping_willow_sapling_1" },
+        "awake=false,half=upper,stage=2":
+        { "model": "palebloom:reaping_willow_sapling_1" },
+        "awake=true,half=lower,stage=2":
+        {
+            "model": "palebloom:reaping_willow_sapling_1",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_1_awake" }
+        },
+        "awake=true,half=upper,stage=2":
+        {
+            "model": "palebloom:reaping_willow_sapling_1",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_1_awake" }
+        },
+        "awake=false,half=lower,stage=3":
+        { "model": "palebloom:reaping_willow_sapling_1" },
+        "awake=false,half=upper,stage=3":
+        { "model": "palebloom:reaping_willow_sapling_1" },
+        "awake=true,half=lower,stage=3":
+        {
+            "model": "palebloom:reaping_willow_sapling_1",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_1_awake" }
+        },
+        "awake=true,half=upper,stage=3":
+        {
+            "model": "palebloom:reaping_willow_sapling_1",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_1_awake" }
+        },
+        "awake=false,half=lower,stage=4":
+        { "model": "palebloom:reaping_willow_sapling_2_lower" },
+        "awake=false,half=upper,stage=4":
+        { "model": "palebloom:reaping_willow_sapling_2_upper" },
+        "awake=true,half=lower,stage=4":
+        {
+            "model": "palebloom:reaping_willow_sapling_2_lower",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_2_lower_awake" }
+        },
+        "awake=true,half=upper,stage=4":
+        {
+            "model": "palebloom:reaping_willow_sapling_2_upper",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_2_upper_awake" }
+        },
+        "awake=false,half=lower,stage=5":
+        { "model": "palebloom:reaping_willow_sapling_2_lower" },
+        "awake=false,half=upper,stage=5":
+        { "model": "palebloom:reaping_willow_sapling_2_upper" },
+        "awake=true,half=lower,stage=5":
+        {
+            "model": "palebloom:reaping_willow_sapling_2_lower",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_2_lower_awake" }
+        },
+        "awake=true,half=upper,stage=5":
+        {
+            "model": "palebloom:reaping_willow_sapling_2_upper",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_2_upper_awake" }
+        },
+        "awake=false,half=lower,stage=6":
+        { "model": "palebloom:reaping_willow_sapling_3_lower" },
+        "awake=false,half=upper,stage=6":
+        { "model": "palebloom:reaping_willow_sapling_3_upper" },
+        "awake=true,half=lower,stage=6":
+        {
+            "model": "palebloom:reaping_willow_sapling_3_lower",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_3_lower_awake" }
+        },
+        "awake=true,half=upper,stage=6":
+        {
+            "model": "palebloom:reaping_willow_sapling_3_upper",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_3_upper_awake" }
+        },
+        "awake=false,half=lower,stage=7":
+        { "model": "palebloom:reaping_willow_sapling_3_lower" },
+        "awake=false,half=upper,stage=7":
+        { "model": "palebloom:reaping_willow_sapling_3_upper" },
+        "awake=true,half=lower,stage=7":
+        {
+            "model": "palebloom:reaping_willow_sapling_3_lower",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_3_lower_awake" }
+        },
+        "awake=true,half=upper,stage=7":
+        {
+            "model": "palebloom:reaping_willow_sapling_3_upper",
+            "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_3_upper_awake" }
+        }
+    }
+}

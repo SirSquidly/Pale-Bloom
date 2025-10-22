@@ -1,0 +1,20 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " p ",
+    "eee",
+    " a "
+  ],
+  "key": {
+    "a": { "item": "palebloom:amber_valve" },
+    "e": { "item": "palebloom:eyeblossom_open" },
+    "p": { "item": "palebloom:pale_carved_pumpkin" }
+  },
+  "result": {
+    "item": "palebloom:creaking_lantern"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:creaking_heart" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:creaking_heart" }
+    },
+    "has_resin_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:resin_block" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_resin_block"
+    ]
+  ]
+}

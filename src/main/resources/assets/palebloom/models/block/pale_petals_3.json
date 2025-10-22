@@ -1,0 +1,59 @@
+{
+	"textures": {
+		"stem": "palebloom:blocks/pale_petals_stems",
+		"petals": "palebloom:blocks/pale_petals",
+		"particle": "palebloom:blocks/pale_petals"
+	},
+	"elements": [
+		{
+			"name": "petals",
+			"from": [8, 2, 8],
+			"to": [16, 2, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+			"faces": {
+				"up": {"uv": [8, 8, 16, 16], "texture": "#petals"},
+				"down": {"uv": [8, 16, 16, 8], "texture": "#petals"}
+			}
+		},
+		{
+			"name": "stemA1",
+			"from": [11, 0, 13.5],
+			"to": [12, 2, 13.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [11.5, 0, 13.5]},
+			"faces": {
+				"north": {"uv": [9, 13, 10, 15], "texture": "#stem"},
+				"south": {"uv": [9, 13, 10, 15], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemA2",
+			"from": [11.5, 0, 13],
+			"to": [11.5, 2, 14],
+			"rotation": {"angle": 45, "axis": "y", "origin": [11.5, 0, 13.5]},
+			"faces": {
+				"east": {"uv": [9, 13, 10, 15], "texture": "#stem"},
+				"west": {"uv": [9, 13, 10, 15], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemB1",
+			"from": [14, 0, 9.5],
+			"to": [15, 2, 9.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [14.5, 0, 9.5]},
+			"faces": {
+				"north": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"south": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemB2",
+			"from": [14.5, 0, 9],
+			"to": [14.5, 2, 10],
+			"rotation": {"angle": 45, "axis": "y", "origin": [14.5, 0, 9.5]},
+			"faces": {
+				"east": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"west": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		}
+	]
+}

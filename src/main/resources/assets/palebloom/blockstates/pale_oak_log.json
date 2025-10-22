@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "axis=y": { "model": "palebloom:pale_oak_log" },
+        "axis=z": { "model": "palebloom:pale_oak_log", "x": 90 },
+        "axis=x": { "model": "palebloom:pale_oak_log", "x": 90, "y": 90 },
+        "axis=none": { "model": "palebloom:pale_oak_bark_block" }
+    }
+}

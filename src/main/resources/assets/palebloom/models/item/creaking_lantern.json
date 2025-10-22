@@ -1,0 +1,9 @@
+{
+    "parent": "palebloom:block/creaking_lantern",
+    "overrides": [
+        {
+            "predicate": { "night": 1 },
+            "model": "palebloom:item/creaking_lantern_awake"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+	"conditions":
+	[
+		{ "type": "minecraft:item_exists", "item": "nb:soul_torch" }
+	],
+	"type": "forge:ore_shaped",
+	"pattern":
+	[
+		"p",
+		"t"
+	],
+	"key":
+	{
+		"p": { "item": "palebloom:pale_carved_pumpkin" },
+		"t": { "item": "nb:soul_torch" }
+	},
+	"result":
+	{
+		"item": "palebloom:pale_soul_jack_o_lantern"
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "palebloom:pale_carved_pumpkin" },
+        "facing=south": { "model": "palebloom:pale_carved_pumpkin", "y": 180 },
+        "facing=west":  { "model": "palebloom:pale_carved_pumpkin", "y": 270 },
+        "facing=east":  { "model": "palebloom:pale_carved_pumpkin", "y": 90 }
+    }
+}

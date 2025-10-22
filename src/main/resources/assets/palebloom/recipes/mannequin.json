@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "r",
+    "m"
+  ],
+  "key": {
+    "r": { "item": "palebloom:resin_block" },
+    "m": { "item": "palebloom:mannequin", "data": 1 }
+  },
+  "result": {
+    "item": "palebloom:mannequin",
+    "data": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "palebloom:pale_oak_door",
+      "palebloom:pale_oak_fence",
+      "palebloom:pale_oak_fence_gate",
+      "palebloom:pale_oak_slab",
+      "palebloom:pale_oak_stairs",
+      "palebloom:pale_oak_trapdoor"
+    ]
+  },
+  "criteria": {
+    "has_pale_oak_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "palebloom:pale_oak_planks"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pale_oak_planks"
+    ]
+  ]
+}

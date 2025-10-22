@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "layers=1": { "model": "palebloom:sucker_roots_layer1" },
+        "layers=2":  { "model": "palebloom:sucker_roots_layer2" }
+    }
+}

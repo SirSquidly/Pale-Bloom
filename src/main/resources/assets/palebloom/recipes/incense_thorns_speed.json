@@ -1,0 +1,6 @@
+{
+  "type": "incense_effect",
+  "ingredient": { "item": "palebloom:nightlight_bulb" },
+  "result": { "item": "palebloom:incense_thorns" },
+  "potion": "minecraft:speed"
+}

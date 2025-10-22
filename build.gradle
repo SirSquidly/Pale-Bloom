@@ -93,6 +93,9 @@ repositories {
         name = 'SpongePowered'
         url = uri('https://repo.spongepowered.org/maven')
     }
+
+    /* GeckoLib */
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     /**
      * Jitpack is a maven that allows you to import dependencies directly from GitHub. It is used in the Shadow plugin
      * example for the cloning library. Feel free to remove it.
@@ -126,17 +129,20 @@ dependencies {
     //Minecraft
     minecraft("net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}")
 
-    //Shaded `shade`
-    //shade("io.github.kostaskougios:cloning:${project.cloning_version}")
+    /* JEI stuff. */
+    //implementation(fg.deobf('mezz.jei:jei_${project.minecraft_version}:${project.jei_version}'))
 
     //Implemented `implementation`
     implementation("io.github.kostaskougios:cloning:${project.cloning_version}")
+
+    /* GeckoLib requirement, for those animation tools. */
+    implementation (fg.deobf('software.bernie.geckolib:geckolib-forge-1.12.2:3.0.31'))
 
     //Compile Only `compileOnly`
 
     //Runtime Only `runtimeOnly`
     runtimeOnly(fg.deobf("curse.maven:caliper-266824:${project.caliper_version}"))
-    runtimeOnly(fg.deobf("curse.maven:had-enough-items-557549:${project.hei_version}"))
+    implementation (fg.deobf("curse.maven:had-enough-items-557549:${project.hei_version}"))
 }
 
 

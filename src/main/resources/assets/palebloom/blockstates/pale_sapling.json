@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0,type=pale_oak": { "model": "palebloom:pale_oak_sapling" },
+    "stage=1,type=pale_oak": { "model": "palebloom:pale_oak_sapling" },
+    "stage=0,type=blooming_pale_oak": { "model": "palebloom:blooming_pale_oak_sapling" },
+    "stage=1,type=blooming_pale_oak": { "model": "palebloom:blooming_pale_oak_sapling" },
+    "stage=0,type=peeping_birch": { "model": "palebloom:peeping_birch_sapling" },
+    "stage=1,type=peeping_birch": { "model": "palebloom:peeping_birch_sapling" }
+  }
+}

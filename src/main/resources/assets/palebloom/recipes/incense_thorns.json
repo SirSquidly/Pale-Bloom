@@ -1,0 +1,20 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "brb",
+    "bbb",
+    " a "
+  ],
+  "key": {
+    "r": { "item": "palebloom:resin_block" },
+    "b": { "item": "palebloom:bramble" },
+    "a": { "item": "palebloom:amber_valve" }
+  },
+  "result": {
+    "item": "palebloom:incense_thorns"
+  }
+}

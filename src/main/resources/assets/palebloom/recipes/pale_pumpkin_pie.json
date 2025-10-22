@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    { "item": "palebloom:pale_carved_pumpkin" },
+    { "item": "palebloom:nightlight_bulb" },
+    { "item": "minecraft:egg" }
+  ],
+  "result":
+  {
+    "item": "palebloom:pale_pumpkin_pie"
+  }
+}

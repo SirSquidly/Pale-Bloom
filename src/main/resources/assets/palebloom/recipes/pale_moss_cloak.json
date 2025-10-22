@@ -1,0 +1,19 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:pale_creeper_husk" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "psp",
+    "ppp",
+    "pp "
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_creeper_husk" },
+    "s": { "item": "palebloom:pale_oak_sap" }
+  },
+  "result": {
+    "item": "palebloom:pale_moss_cloak"
+  }
+}

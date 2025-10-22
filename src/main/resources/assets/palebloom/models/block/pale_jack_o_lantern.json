@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "palebloom:blocks/pale_pumpkin_top",
+        "front": "palebloom:blocks/pale_jack_o_lantern",
+        "side": "palebloom:blocks/pale_pumpkin_side"
+    }
+}

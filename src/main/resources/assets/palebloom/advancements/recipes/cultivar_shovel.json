@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:cultivar_shovel" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:cultivar_shovel" }
+    },
+    "has_live_root": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:live_root" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_live_root"
+    ]
+  ]
+}

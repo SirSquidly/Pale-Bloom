@@ -1,8 +1,8 @@
 [
   {
-    "modid": "creaturesfromdarkness",
-    "name": "Creatures From Darkness",
-    "description": "Adds 2 rare mobs that add a touch of horror",
+    "modid": "palebloom",
+    "name": "Pale Bloom",
+    "description": "A full backport and expansion of the Pale Garden for Minecraft. Bring new life to the Pale Garden, for the garden shall grow.",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "modpage",
@@ -10,7 +10,7 @@
       "Sir Squidly"
     ],
     "credits": "The_Computerizer for their very nice Build template",
-    "logoFile": "modlogo.png",
+    "logoFile": "assets/palebloom/textures/gui/pale_bloom_logo.png",
     "screenshots": [],
     "dependencies": []
   }

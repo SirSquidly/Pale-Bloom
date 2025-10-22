@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "half=bottom": { "model": "palebloom:resin_bricks" },
+        "half=top": { "model": "palebloom:resin_bricks" }
+    }
+}

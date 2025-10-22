@@ -1,0 +1,79 @@
+{
+	"textures": {
+		"stem": "palebloom:blocks/pale_petals_stems",
+		"petals": "palebloom:blocks/pale_petals",
+		"particle": "palebloom:blocks/pale_petals"
+	},
+	"elements": [
+		{
+			"name": "petals",
+			"from": [0, 2, 0],
+			"to": [8, 2, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 8, 8], "texture": "#petals"},
+				"down": {"uv": [0, 8, 8, 0], "texture": "#petals"}
+			}
+		},
+		{
+			"name": "stemA1",
+			"from": [2, 0, 6.5],
+			"to": [3, 2, 6.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [2.5, 0, 6.5]},
+			"faces": {
+				"north": {"uv": [9, 13, 10, 15], "texture": "#stem"},
+				"south": {"uv": [9, 13, 10, 15], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemA2",
+			"from": [2.5, 0, 6],
+			"to": [2.5, 2, 7],
+			"rotation": {"angle": 45, "axis": "y", "origin": [2.5, 0, 6.5]},
+			"faces": {
+				"east": {"uv": [9, 13, 10, 15], "texture": "#stem"},
+				"west": {"uv": [9, 13, 10, 15], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemB1",
+			"from": [6.5, 0, 5],
+			"to": [6.5, 2, 6],
+			"rotation": {"angle": 45, "axis": "y", "origin": [6.5, 0, 5.5]},
+			"faces": {
+				"east": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"west": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemB2",
+			"from": [6, 0, 5.5],
+			"to": [7, 2, 5.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [6.5, 0, 5.5]},
+			"faces": {
+				"north": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"south": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemC1",
+			"from": [2.5, 0, 1],
+			"to": [2.5, 2, 2],
+			"rotation": {"angle": 45, "axis": "y", "origin": [2.5, 0, 1.5]},
+			"faces": {
+				"east": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"west": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"name": "stemC2",
+			"from": [2, 0, 1.5],
+			"to": [3, 2, 1.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [2.5, 0, 1.5]},
+			"faces": {
+				"north": {"uv": [5, 14, 6, 16], "texture": "#stem"},
+				"south": {"uv": [5, 14, 6, 16], "texture": "#stem"}
+			}
+		}
+	]
+}

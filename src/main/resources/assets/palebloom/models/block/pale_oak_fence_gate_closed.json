@@ -1,0 +1,4 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": { "texture": "palebloom:blocks/pale_oak_planks" }
+}

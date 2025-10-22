@@ -1,0 +1,20 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "ese",
+    "ese",
+    "eae"
+  ],
+  "key": {
+    "a": { "item": "palebloom:amber_valve" },
+    "e": { "item": "palebloom:eyeblossom_open" },
+    "s": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "palebloom:pollenhead"
+  }
+}

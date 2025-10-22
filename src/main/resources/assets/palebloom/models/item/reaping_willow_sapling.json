@@ -1,0 +1,4 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": { "layer0": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_0" }
+}

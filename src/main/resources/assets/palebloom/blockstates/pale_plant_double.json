@@ -1,0 +1,65 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "awake=false,half=upper,type=eyeblossom_bush":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/eyeblossom_bush_upper" }
+    },
+    "awake=false,half=lower,type=eyeblossom_bush":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/eyeblossom_bush_lower" }
+    },
+    "awake=true,half=upper,type=eyeblossom_bush":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/eyeblossom_bush_awake_upper" }
+    },
+    "awake=true,half=lower,type=eyeblossom_bush":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/eyeblossom_bush_awake_lower" }
+    },
+    "awake=false,half=upper,type=stiffpod":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/stiffpod_upper" }
+    },
+    "awake=false,half=lower,type=stiffpod":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/stiffpod_lower" }
+    },
+    "awake=true,half=upper,type=stiffpod":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/stiffpod_awake_upper" }
+    },
+    "awake=true,half=lower,type=stiffpod":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/stiffpod_awake_lower" }
+    },
+    "awake=false,half=upper,type=epiales":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/pallid_upper" }
+    },
+    "awake=false,half=lower,type=epiales":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/pallid_lower" }
+    },
+    "awake=true,half=upper,type=epiales":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/pallid_awake_upper" }
+    },
+    "awake=true,half=lower,type=epiales":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/pallid_awake_lower" }
+    }
+  }
+}

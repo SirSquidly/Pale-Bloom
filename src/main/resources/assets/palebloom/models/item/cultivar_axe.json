@@ -1,0 +1,10 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": { "layer0": "palebloom:items/pale_axe" },
+    "overrides": [
+        {
+            "predicate": { "awake": 1 },
+            "model": "palebloom:item/cultivar_axe_awake"
+        }
+    ]
+}

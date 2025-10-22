@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    { "item": "palebloom:eyeblossom_open" }
+  ],
+  "result":
+  {
+    "item": "minecraft:dye",
+    "data": 14
+  }
+}

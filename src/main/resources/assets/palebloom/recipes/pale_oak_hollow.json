@@ -1,0 +1,19 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "p",
+    "r",
+    "p"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_log" },
+    "r": { "item": "palebloom:amber_valve" }
+  },
+  "result": {
+    "item": "palebloom:pale_oak_hollow"
+  }
+}

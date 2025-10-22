@@ -1,0 +1,21 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "pap",
+    "lsl",
+    "pap"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_sap" },
+    "a": { "item": "palebloom:amber_valve" },
+    "l": { "item": "palebloom:pale_oak_log" },
+    "s": { "item": "palebloom:pale_sapling", "data": 1 }
+  },
+  "result": {
+    "item": "palebloom:reaping_willow_sapling"
+  }
+}

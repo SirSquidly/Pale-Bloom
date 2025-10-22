@@ -1,0 +1,4 @@
+{
+  "parent": "block/trapdoor_open",
+  "textures": { "texture": "palebloom:blocks/pale_oak_trapdoor" }
+}

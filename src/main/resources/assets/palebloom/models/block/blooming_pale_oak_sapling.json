@@ -1,0 +1,4 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": { "cross": "palebloom:blocks/blooming_pale_oak_sapling" }
+}

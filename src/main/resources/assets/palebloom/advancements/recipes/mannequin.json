@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:mannequin" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:mannequin" }
+    },
+    "has_mannequin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:mannequin" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mannequin"
+    ]
+  ]
+}

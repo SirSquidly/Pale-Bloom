@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures": 
+    {
+        "end": "palebloom:blocks/creaking_heart_dormant_top",
+        "side": "palebloom:blocks/creaking_heart_dormant_side"
+    }
+}

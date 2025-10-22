@@ -1,0 +1,35 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "half=upper,lucidity_state=dormant":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_dormant_upper" }
+    },
+    "half=lower,lucidity_state=dormant":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_dormant_lower" }
+    },
+    "half=upper,lucidity_state=lucid":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_lucid_upper" }
+    },
+    "half=lower,lucidity_state=lucid":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_lucid_lower" }
+    },
+    "half=upper,lucidity_state=awake":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_awake_upper" }
+    },
+    "half=lower,lucidity_state=awake":
+    {
+      "model": "minecraft:tinted_cross",
+      "textures": { "cross": "palebloom:blocks/seedhead_awake_lower" }
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+	"block.creaking_heart.ambient":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.creaking_heart.ambient",
+		"sounds": [ "palebloom:block/creaking_heart/ambient1", "palebloom:block/creaking_heart/ambient2", "palebloom:block/creaking_heart/ambient3", "palebloom:block/creaking_heart/ambient4" ]
+	},
+	"block.creaking_heart.break":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.break",
+		"sounds": [ "palebloom:block/creaking_heart/break1" ]
+	},
+	"block.creaking_heart.fall":
+	{
+		"category": "block",
+		"sounds": [ "palebloom:block/creaking_heart/fall1" ]
+	},
+	"block.creaking_heart.hit":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.hit",
+		"sounds": [ "palebloom:block/creaking_heart/hit1", "palebloom:block/creaking_heart/hit2", "palebloom:block/creaking_heart/hit3", "palebloom:block/creaking_heart/hit4", "palebloom:block/creaking_heart/hit5" ]
+	},
+	"block.creaking_heart.place":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.place",
+		"sounds": [ "palebloom:block/creaking_heart/place1", "palebloom:block/creaking_heart/place2", "palebloom:block/creaking_heart/place3", "palebloom:block/creaking_heart/place4" ]
+	},
+	"block.creaking_heart.spawn":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.creaking_heart.spawn",
+		"sounds": [ "palebloom:block/creaking_heart/spawnmob" ]
+	},
+	"block.creaking_heart.step":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:block/creaking_heart/step1", "palebloom:block/creaking_heart/step2", "palebloom:block/creaking_heart/step3", "palebloom:block/creaking_heart/step4", "palebloom:block/creaking_heart/step5", "palebloom:block/creaking_heart/step6" ]
+	},
+	"block.creaking_heart.trail":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.creaking_heart.trail",
+		"sounds": [ "palebloom:block/creaking_heart/trail1", "palebloom:block/creaking_heart/trail2", "palebloom:block/creaking_heart/trail3", "palebloom:block/creaking_heart/trail4", "palebloom:block/creaking_heart/trail5", "palebloom:block/creaking_heart/trail6", "palebloom:block/creaking_heart/trail7" ]
+	},
+	"block.eyeblossom.ambient":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.eyeblossom.ambient",
+		"sounds": [ "palebloom:block/eyeblossom/ambient1", "palebloom:block/eyeblossom/ambient2", "palebloom:block/eyeblossom/ambient3", "palebloom:block/eyeblossom/ambient4", "palebloom:block/eyeblossom/ambient5", "palebloom:block/eyeblossom/ambient6" ]
+	},
+	"block.eyeblossom.close":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.eyeblossom.close",
+		"sounds": [ "palebloom:block/eyeblossom/close1", "palebloom:block/eyeblossom/close2", "palebloom:block/eyeblossom/close3" ]
+	},
+	"block.eyeblossom.close_long":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.eyeblossom.close",
+		"sounds": [ "palebloom:block/eyeblossom/close_long" ]
+	},
+	"block.eyeblossom.open":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.eyeblossom.open",
+		"sounds": [ "palebloom:block/eyeblossom/open1", "palebloom:block/eyeblossom/open2", "palebloom:block/eyeblossom/open3", "palebloom:block/eyeblossom/open4" ]
+	},
+	"block.eyeblossom.open_long":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.eyeblossom.open",
+		"sounds": [ "palebloom:block/eyeblossom/open_long" ]
+	},
+	"block.moss.break":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.break",
+		"sounds": [ "palebloom:block/moss/break1", "palebloom:block/moss/break2", "palebloom:block/moss/break3", "palebloom:block/moss/break4", "palebloom:block/moss/break5" ]
+	},
+	"block.moss.fall":
+	{
+		"category": "block",
+		"sounds": [ "palebloom:block/moss/step1", "palebloom:block/moss/step2", "palebloom:block/moss/step3", "palebloom:block/moss/step4", "palebloom:block/moss/step5", "palebloom:block/moss/step6" ]
+	},
+	"block.moss.hit":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.hit",
+		"sounds": [ "palebloom:block/moss/step1", "palebloom:block/moss/step2", "palebloom:block/moss/step3", "palebloom:block/moss/step4", "palebloom:block/moss/step5", "palebloom:block/moss/step6" ]
+	},
+	"block.moss.place":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.place",
+		"sounds": [ "palebloom:block/moss/break1", "palebloom:block/moss/break2", "palebloom:block/moss/break3", "palebloom:block/moss/break4", "palebloom:block/moss/break5" ]
+	},
+	"block.moss.step":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:block/moss/step1", "palebloom:block/moss/step2", "palebloom:block/moss/step3", "palebloom:block/moss/step4", "palebloom:block/moss/step5", "palebloom:block/moss/step6" ]
+	},
+	"block.nightlight.close":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.nightlight.close",
+		"sounds": [ "palebloom:block/nightlight/close1", "palebloom:block/nightlight/close2", "palebloom:block/nightlight/close3"  ]
+	},
+	"block.nightlight.open":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.nightlight.open",
+		"sounds": [ "palebloom:block/nightlight/open1", "palebloom:block/nightlight/open2", "palebloom:block/nightlight/open3"  ]
+	},
+	"block.pale_hanging_moss.ambient":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pale_hanging_moss.ambient",
+		"sounds": [ "palebloom:block/pale_hanging_moss/ambient1", "palebloom:block/pale_hanging_moss/ambient2", "palebloom:block/pale_hanging_moss/ambient3", "palebloom:block/pale_hanging_moss/ambient4", "palebloom:block/pale_hanging_moss/ambient5", "palebloom:block/pale_hanging_moss/ambient6", "palebloom:block/pale_hanging_moss/ambient7", "palebloom:block/pale_hanging_moss/ambient8", "palebloom:block/pale_hanging_moss/ambient9", "palebloom:block/pale_hanging_moss/ambient10", "palebloom:block/pale_hanging_moss/ambient11", "palebloom:block/pale_hanging_moss/ambient12", "palebloom:block/pale_hanging_moss/ambient13", "palebloom:block/pale_hanging_moss/ambient14", "palebloom:block/pale_hanging_moss/ambient15" ]
+	},
+	"block.plant.resin_draw":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.plant.resin_draw",
+		"sounds": [ "palebloom:block/plant/resin_draw1", "palebloom:block/plant/resin_draw2", "palebloom:block/plant/resin_draw3", "palebloom:block/plant/resin_draw4", "palebloom:block/plant/resin_draw5", "palebloom:block/plant/resin_draw6", "palebloom:block/plant/resin_draw7", "palebloom:block/plant/resin_draw8" ]
+	},
+	"block.pollenhead.ambient":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pollenhead.ambient",
+		"sounds": [ "palebloom:block/pollenhead/ambient1", "palebloom:block/pollenhead/ambient2", "palebloom:block/pollenhead/ambient3", "palebloom:block/pollenhead/ambient4", "palebloom:block/pollenhead/ambient5" ]
+	},
+	"block.pollenhead.awake":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pollenhead.awake",
+		"sounds": [ "palebloom:block/pollenhead/awake1", "palebloom:block/pollenhead/awake2", "palebloom:block/pollenhead/awake3" ]
+	},
+	"block.pollenhead.close":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pollenhead.close",
+		"sounds": [ "palebloom:block/pollenhead/close1", "palebloom:block/pollenhead/close2" ]
+	},
+	"block.pollenhead.close_lucid":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pollenhead.close",
+		"sounds": [ "palebloom:block/pollenhead/close_lucid1" ]
+	},
+	"block.pollenhead.open":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.pollenhead.open",
+		"sounds": [ "palebloom:block/pollenhead/open1", "palebloom:block/pollenhead/open2", "palebloom:block/pollenhead/open3" ]
+	},
+	"block.resin.break":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.break",
+		"sounds": [ "palebloom:block/resin/break1", "palebloom:block/resin/break2", "palebloom:block/resin/break3", "palebloom:block/resin/break4", "palebloom:block/resin/break5" ]
+	},
+	"block.resin.fall":
+	{
+		"category": "block",
+		"sounds": [ "palebloom:block/resin/fall1" ]
+	},
+	"block.resin.hit":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.hit",
+		"sounds": [ "palebloom:block/resin/step1", "palebloom:block/resin/step2", "palebloom:block/resin/step3", "palebloom:block/resin/step4", "palebloom:block/resin/step5" ]
+	},
+	"block.resin.place":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.place",
+		"sounds": [ "palebloom:block/resin/place1", "palebloom:block/resin/place2", "palebloom:block/resin/place3", "palebloom:block/resin/place4" ]
+	},
+	"block.resin.step":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:block/resin/step1", "palebloom:block/resin/step2", "palebloom:block/resin/step3", "palebloom:block/resin/step4", "palebloom:block/resin/step5" ]
+	},
+	"block.resin_brick.break":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.break",
+		"sounds": [ "palebloom:block/resin_brick/break1" ]
+	},
+	"block.resin_brick.fall":
+	{
+		"category": "block",
+		"sounds": [ "palebloom:block/resin_brick/fall1" ]
+	},
+	"block.resin_brick.hit":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.hit",
+		"sounds": [ "palebloom:block/resin_brick/hit1", "palebloom:block/resin_brick/hit2", "palebloom:block/resin_brick/hit3", "palebloom:block/resin_brick/hit4", "palebloom:block/resin_brick/hit5" ]
+	},
+	"block.resin_brick.place":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.place",
+		"sounds": [ "palebloom:block/resin_brick/place1", "palebloom:block/resin_brick/place2", "palebloom:block/resin_brick/place3", "palebloom:block/resin_brick/place4", "palebloom:block/resin_brick/place5" ]
+	},
+	"block.resin_brick.step":
+	{
+		"category": "block",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:block/resin_brick/step1", "palebloom:block/resin_brick/step2", "palebloom:block/resin_brick/step3", "palebloom:block/resin_brick/step4", "palebloom:block/resin_brick/step5" ]
+	},
+	"block.resin_bulb.deflate":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.resin_bulb.deflate",
+		"sounds": [ "palebloom:block/resin_bulb/deflate1", "palebloom:block/resin_bulb/deflate2" ]
+	},
+	"block.resin_bulb.inflate":
+	{
+		"category": "block",
+		"subtitle": "subtitles.palebloom.block.resin_bulb.inflate",
+		"sounds": [ "palebloom:block/resin_bulb/inflate1", "palebloom:block/resin_bulb/inflate2" ]
+	},
+	"entity.creaking.ambient":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.ambient",
+		"sounds": [ "palebloom:entity/creaking/ambient1", "palebloom:entity/creaking/ambient2", "palebloom:entity/creaking/ambient3", "palebloom:entity/creaking/ambient4", "palebloom:entity/creaking/ambient5", "palebloom:entity/creaking/ambient6" ]
+	},
+	"entity.creaking.attack":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.attack",
+		"sounds": [ "palebloom:entity/creaking/attack1", "palebloom:entity/creaking/attack2", "palebloom:entity/creaking/attack3", "palebloom:entity/creaking/attack4" ]
+	},
+	"entity.creaking.death":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.death",
+		"sounds": [ "palebloom:entity/creaking/death1" ]
+	},
+	"entity.creaking.freeze":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.freeze",
+		"sounds": [ "palebloom:entity/creaking/freeze1", "palebloom:entity/creaking/freeze2", "palebloom:entity/creaking/freeze3", "palebloom:entity/creaking/freeze4" ]
+	},
+	"entity.creaking.notarget":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.notarget",
+		"sounds": [ "palebloom:entity/creaking/notarget1" ]
+	},
+	"entity.creaking.spawn":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.spawn",
+		"sounds": [ "palebloom:entity/creaking/spawn1" ]
+	},
+	"entity.creaking.step":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:entity/creaking/step1", "palebloom:entity/creaking/step2", "palebloom:entity/creaking/step3", "palebloom:entity/creaking/step4", "palebloom:entity/creaking/step5" ]
+	},
+	"entity.creaking.sway":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.sway",
+		"sounds": [ "palebloom:entity/creaking/sway1", "palebloom:entity/creaking/sway2", "palebloom:entity/creaking/sway3", "palebloom:entity/creaking/sway4" ]
+	},
+	"entity.creaking.target":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.target",
+		"sounds": [ "palebloom:entity/creaking/target1" ]
+	},
+	"entity.creaking.twitch":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.twitch",
+		"sounds": [ "palebloom:entity/creaking/twitch1" ]
+	},
+	"entity.creaking.unfreeze":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.creaking.unfreeze",
+		"sounds": [ "palebloom:entity/creaking/unfreeze1", "palebloom:entity/creaking/unfreeze2", "palebloom:entity/creaking/unfreeze3" ]
+	},
+	"entity.hydraweed_jaw.death":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.hydraweed_jaw.death",
+		"sounds": [ "palebloom:entity/hydraweed_jaw/death1", "palebloom:entity/hydraweed_jaw/death2" ]
+	},
+	"entity.hydraweed_jaw.hurt":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.hydraweed_jaw.hurt",
+		"sounds": [ "palebloom:entity/hydraweed_jaw/hurt1", "palebloom:entity/hydraweed_jaw/hurt2", "palebloom:entity/hydraweed_jaw/hurt3", "palebloom:entity/hydraweed_jaw/hurt4" ]
+	},
+	"entity.mannequin.break":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.mannequin.break",
+		"sounds": [ "palebloom:entity/mannequin/break1", "palebloom:entity/mannequin/break2", "palebloom:entity/mannequin/break3" ]
+	},
+	"entity.mannequin.place":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.mannequin.place",
+		"sounds": [ "palebloom:entity/mannequin/place1", "palebloom:entity/mannequin/place2", "palebloom:entity/mannequin/place3", "palebloom:entity/mannequin/place4" ]
+	},
+	"entity.mannequin.sway":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.mannequin.sway",
+		"sounds": [ "palebloom:entity/mannequin/sway1", "palebloom:entity/mannequin/sway2", "palebloom:entity/mannequin/sway3", "palebloom:entity/mannequin/sway4" ]
+	},
+	"entity.reaping_willow.angry":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.reaping_willow.angry",
+		"sounds": [ "palebloom:entity/reaping_willow/anger1", "palebloom:entity/reaping_willow/anger2", "palebloom:entity/reaping_willow/anger3" ]
+	},
+	"entity.reaping_willow.death":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.reaping_willow.death",
+		"sounds": [ "palebloom:entity/reaping_willow/death1" ]
+	},
+	"entity.reaping_willow.hurt":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.reaping_willow.hurt",
+		"sounds": [ "palebloom:entity/reaping_willow/hurt1" ]
+	},
+	"entity.reaping_willow.step":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.block.generic.footsteps",
+		"sounds": [ "palebloom:entity/reaping_willow/step1", "palebloom:entity/reaping_willow/step2", "palebloom:entity/reaping_willow/step3", "palebloom:entity/reaping_willow/step4", "palebloom:entity/reaping_willow/step5" ]
+	},
+	"entity.reaping_willow.target":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.reaping_willow.target",
+		"sounds": [ "palebloom:entity/reaping_willow/target1" ]
+	},
+	"event.garden.call":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.event.garden.call",
+		"sounds": [ "palebloom:event/garden/call1", "palebloom:event/garden/call2" ]
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "nightlight_glass",
+  "pattern": [
+    "bn",
+    "nb"
+  ],
+  "key": {
+    "n": { "item": "palebloom:nightlight_bulb" },
+    "b": { "item": "minecraft:blaze_powder" }
+  },
+  "result":
+  {
+    "item": "minecraft:glass"
+  }
+}

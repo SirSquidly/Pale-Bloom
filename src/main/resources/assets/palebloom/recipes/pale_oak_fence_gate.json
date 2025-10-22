@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "sps",
+    "sps"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_planks" },
+    "s": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "palebloom:pale_oak_fence_gate"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " r ",
+    "rar",
+    "prp"
+  ],
+  "key": {
+    "a": { "item": "palebloom:amber_valve" },
+    "r": { "item": "palebloom:resin_clump" },
+    "p": { "item": "palebloom:pale_moss_block" }
+  },
+  "result": {
+    "item": "palebloom:resin_bulb",
+    "data": 0
+  }
+}

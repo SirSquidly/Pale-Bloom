@@ -1,0 +1,21 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " p ",
+    " p ",
+    "sas"
+  ],
+  "key": {
+    "a": { "item": "palebloom:amber_valve" },
+    "s": { "item": "palebloom:pale_plant_double", "data": 1 },
+    "p": { "item": "palebloom:pale_hanging_moss" }
+  },
+  "result": {
+    "item": "palebloom:nightlight",
+    "count": 3
+  }
+}

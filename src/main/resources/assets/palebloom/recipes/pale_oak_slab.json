@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": { "item": "palebloom:pale_oak_planks" }
+  },
+  "result": {
+    "item": "palebloom:pale_oak_slab",
+    "data": 0,
+    "count": 6
+  }
+}

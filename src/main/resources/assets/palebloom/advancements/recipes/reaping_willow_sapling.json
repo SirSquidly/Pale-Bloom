@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:reaping_willow_sapling" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:reaping_willow_sapling" }
+    },
+    "has_amber_valve": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:amber_valve" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_amber_valve"
+    ]
+  ]
+}

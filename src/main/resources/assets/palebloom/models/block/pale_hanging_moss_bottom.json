@@ -1,0 +1,4 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": { "cross": "palebloom:blocks/pale_hanging_moss_bottom" }
+}

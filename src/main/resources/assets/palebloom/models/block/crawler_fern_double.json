@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "palebloom:blocks/toxigaze_bush_lower"
+  }
+}

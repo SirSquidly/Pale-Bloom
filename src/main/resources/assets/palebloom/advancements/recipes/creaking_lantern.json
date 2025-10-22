@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:creaking_lantern" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:creaking_lantern" }
+    },
+    "has_amber_valve": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:amber_valve" } ] }
+    },
+    "has_pale_carved_pumpkin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:pale_carved_pumpkin" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_amber_valve",
+      "has_pale_carved_pumpkin"
+    ]
+  ]
+}

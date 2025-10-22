@@ -1,0 +1,17 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:peeping_birch_log" }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    { "item": "palebloom:peeping_birch_log" }
+  ],
+  "result":
+  {
+    "item": "minecraft:planks",
+    "data": 2,
+    "count": 4
+  }
+}

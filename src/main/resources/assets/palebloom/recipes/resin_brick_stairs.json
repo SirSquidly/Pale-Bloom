@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": { "item": "palebloom:resin_bricks" }
+  },
+  "result": {
+    "item": "palebloom:resin_brick_stairs",
+    "count": 4
+  }
+}

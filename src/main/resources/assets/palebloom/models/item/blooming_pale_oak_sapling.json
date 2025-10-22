@@ -1,0 +1,4 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": { "layer0": "palebloom:blocks/blooming_pale_oak_sapling" }
+}

@@ -1,0 +1,39 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"0": "palebloom:blocks/resin_bulb/resin_bulb_inner",
+		"1": "palebloom:blocks/resin_bulb/resin_bulb_1_top",
+		"2": "palebloom:blocks/resin_bulb/resin_bulb_1_side",
+		"particle": "palebloom:blocks/resin_bulb/resin_bulb_inner"
+	},
+	"elements": [
+		{
+			"name": "outer",
+			"from": [3, 0, 3],
+			"to": [13, 8, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+			"faces": {
+				"north": {"uv": [3, 8, 13, 16], "texture": "#2"},
+				"east": {"uv": [3, 8, 13, 16], "texture": "#2"},
+				"south": {"uv": [3, 8, 13, 16], "texture": "#2"},
+				"west": {"uv": [3, 8, 13, 16], "texture": "#2"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#1"}
+			}
+		},
+		{
+			"name": "inner",
+			"from": [4, 1, 4],
+			"to": [12, 7, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5, 0, 3]},
+			"faces": {
+				"north": {"uv": [4, 5, 12, 11], "texture": "#0"},
+				"east": {"uv": [4, 5, 12, 11], "texture": "#0"},
+				"south": {"uv": [4, 5, 12, 11], "texture": "#0"},
+				"west": {"uv": [4, 5, 12, 11], "texture": "#0"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#0"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "pap",
+    "psp"
+  ],
+  "key": {
+    "a": { "item": "palebloom:amber_valve" },
+    "p": { "item": "palebloom:pale_oak_planks" },
+    "s": { "item": "minecraft:armor_stand" }
+  },
+  "result": {
+    "item": "palebloom:mannequin",
+    "data": 1
+  }
+}

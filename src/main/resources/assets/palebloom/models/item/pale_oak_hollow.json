@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_column",
+    "textures":
+    {
+        "end": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_top",
+        "side": "palebloom:blocks/pale_oak_hollow/pale_oak_hollow_dormant_side"
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "parent": "block/cube_all",
+    "textures":
+    { "all": "palebloom:blocks/sucker_root_nodule" }
+}

@@ -1,0 +1,22 @@
+{
+    "variants": {
+        "axis=y,heart_state=uprooted,natural=false": { "model": "palebloom:creaking_heart_uprooted" },
+        "axis=y,heart_state=dormant,natural=false":  { "model": "palebloom:creaking_heart_dormant" },
+        "axis=y,heart_state=awake,natural=false": { "model": "palebloom:creaking_heart_awake" },
+        "axis=x,heart_state=uprooted,natural=false": { "model": "palebloom:creaking_heart_uprooted", "x": 90, "y": 90 },
+        "axis=x,heart_state=dormant,natural=false":  { "model": "palebloom:creaking_heart_dormant", "x": 90, "y": 90 },
+        "axis=x,heart_state=awake,natural=false": { "model": "palebloom:creaking_heart_awake", "x": 90, "y": 90 },
+        "axis=z,heart_state=uprooted,natural=false": { "model": "palebloom:creaking_heart_uprooted", "x": 90 },
+        "axis=z,heart_state=dormant,natural=false":  { "model": "palebloom:creaking_heart_dormant", "x": 90 },
+        "axis=z,heart_state=awake,natural=false": { "model": "palebloom:creaking_heart_awake", "x": 90 },
+        "axis=y,heart_state=uprooted,natural=true": { "model": "palebloom:creaking_heart_uprooted" },
+        "axis=y,heart_state=dormant,natural=true":  { "model": "palebloom:creaking_heart_dormant" },
+        "axis=y,heart_state=awake,natural=true": { "model": "palebloom:creaking_heart_awake" },
+        "axis=x,heart_state=uprooted,natural=true": { "model": "palebloom:creaking_heart_uprooted", "x": 90, "y": 90 },
+        "axis=x,heart_state=dormant,natural=true":  { "model": "palebloom:creaking_heart_dormant", "x": 90, "y": 90 },
+        "axis=x,heart_state=awake,natural=true": { "model": "palebloom:creaking_heart_awake", "x": 90, "y": 90 },
+        "axis=z,heart_state=uprooted,natural=true": { "model": "palebloom:creaking_heart_uprooted", "x": 90 },
+        "axis=z,heart_state=dormant,natural=true":  { "model": "palebloom:creaking_heart_dormant", "x": 90 },
+        "axis=z,heart_state=awake,natural=true": { "model": "palebloom:creaking_heart_awake", "x": 90 }
+    }
+}

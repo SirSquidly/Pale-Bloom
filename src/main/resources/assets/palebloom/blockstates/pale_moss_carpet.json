@@ -1,0 +1,31 @@
+{
+  "multipart": [
+    {   "when": { "bottom": "true" },
+      "apply": { "model": "palebloom:pale_moss_carpet" }
+    },
+    {   "when": { "north": "short" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side","uvlock": true }
+    },
+    {   "when": { "east": "short" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side", "y": 90, "uvlock": true }
+    },
+    {   "when": { "south": "short" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side", "y": 180, "uvlock": true }
+    },
+    {   "when": { "west": "short" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side", "y": 270, "uvlock": true }
+    },
+    {   "when": { "north": "tall" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side_tall","uvlock": true }
+    },
+    {   "when": { "east": "tall" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side_tall", "y": 90, "uvlock": true }
+    },
+    {   "when": { "south": "tall" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side_tall", "y": 180, "uvlock": true }
+    },
+    {   "when": { "west": "tall" },
+      "apply": { "model": "palebloom:pale_moss_carpet_side_tall", "y": 270, "uvlock": true }
+    }
+  ]
+}

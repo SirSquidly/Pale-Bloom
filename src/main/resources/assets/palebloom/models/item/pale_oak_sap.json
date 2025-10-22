@@ -1,0 +1,5 @@
+{
+    "parent": "item/generated",
+    "textures":
+    { "layer0": "palebloom:items/pale_oak_sap" }
+}

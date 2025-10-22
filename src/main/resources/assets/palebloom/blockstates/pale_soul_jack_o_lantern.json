@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "palebloom:pale_soul_jack_o_lantern" },
+        "facing=south": { "model": "palebloom:pale_soul_jack_o_lantern", "y": 180 },
+        "facing=west":  { "model": "palebloom:pale_soul_jack_o_lantern", "y": 270 },
+        "facing=east":  { "model": "palebloom:pale_soul_jack_o_lantern", "y": 90 }
+    }
+}

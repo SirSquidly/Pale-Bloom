@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "level=0": { "model": "palebloom:resin_bulb_0" },
+        "level=1": { "model": "palebloom:resin_bulb_1" },
+        "level=2": { "model": "palebloom:resin_bulb_2" },
+        "level=3": { "model": "palebloom:resin_bulb_3" }
+    }
+}

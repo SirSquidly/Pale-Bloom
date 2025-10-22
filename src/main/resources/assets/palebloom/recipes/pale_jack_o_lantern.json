@@ -1,0 +1,17 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern":
+	[
+		"p",
+		"t"
+	],
+	"key":
+	{
+		"p": { "item": "palebloom:pale_carved_pumpkin" },
+		"t": { "item": "minecraft:torch" }
+	},
+	"result":
+	{
+		"item": "palebloom:pale_jack_o_lantern"
+	}
+}

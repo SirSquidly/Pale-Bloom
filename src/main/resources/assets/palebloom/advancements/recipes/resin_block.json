@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:resin_block" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:resin_block" }
+    },
+    "has_resin_clump": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:resin_clump", "count": { "min": 9 } } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_resin_clump"
+    ]
+  ]
+}

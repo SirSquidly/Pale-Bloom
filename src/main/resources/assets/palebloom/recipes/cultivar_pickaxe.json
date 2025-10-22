@@ -1,0 +1,21 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "rar",
+    "pwp",
+    "rar"
+  ],
+  "key": {
+    "r": { "item": "palebloom:pale_oak_sap" },
+    "a": { "item": "palebloom:amber_valve" },
+    "p": { "item": "palebloom:live_root" },
+    "w": { "item": "minecraft:wooden_pickaxe" }
+  },
+  "result": {
+    "item": "palebloom:cultivar_pickaxe"
+  }
+}

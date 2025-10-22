@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": 
+    {
+        "top": "palebloom:blocks/hydraweed_body/hydraweed_body_top",
+        "side": "palebloom:blocks/hydraweed_body/hydraweed_body_uprooted_side",
+        "bottom": "palebloom:blocks/hydraweed_body/hydraweed_body_uprooted_bottom"
+    }
+}

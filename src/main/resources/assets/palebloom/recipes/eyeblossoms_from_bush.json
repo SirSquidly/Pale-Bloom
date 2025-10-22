@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    { "item": "palebloom:pale_plant_double", "data": 0 }
+  ],
+  "result":
+  {
+    "item": "palebloom:eyeblossom_closed",
+    "count": 3
+  }
+}

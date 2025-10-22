@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "half=bottom": { "model": "palebloom:pale_oak_planks" },
+        "half=top": { "model": "palebloom:pale_oak_planks" }
+    }
+}

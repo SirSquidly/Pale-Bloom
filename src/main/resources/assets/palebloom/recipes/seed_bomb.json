@@ -1,0 +1,21 @@
+{
+  "conditions":
+  [
+    { "type": "minecraft:item_exists", "item": "palebloom:pale_creeper_husk" }
+  ],
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "gpg",
+    "drd",
+    "pgp"
+  ],
+  "key": {
+    "g": { "item": "minecraft:gunpowder" },
+    "p": { "item": "palebloom:pale_creeper_husk" },
+    "d": { "type": "forge:ore_dict", "ore": "dirt" },
+    "r": { "item": "palebloom:resin_block" }
+  },
+  "result": {
+    "item": "palebloom:seed_bomb"
+  }
+}

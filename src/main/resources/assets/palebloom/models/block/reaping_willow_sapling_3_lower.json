@@ -1,0 +1,4 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": { "cross": "palebloom:blocks/reaping_willow_sapling/reaping_willow_sapling_3_lower" }
+}

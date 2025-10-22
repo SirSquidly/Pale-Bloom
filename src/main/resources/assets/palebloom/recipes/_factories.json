@@ -1,0 +1,6 @@
+{
+  "recipes": {
+    "incense_effect": "com.sirsquidly.palebloom.util.IncenseThornsNBTRecipe$Factory",
+    "pale_moss_cloak_grafting": "com.sirsquidly.palebloom.util.PaleMossCloakGraftingRecipe$Factory"
+  }
+}

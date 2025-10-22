@@ -1,0 +1,13 @@
+{
+    "forge_marker": 1,
+    "variants": {
+        "awake=false,facing=north": { "model": "palebloom:creaking_lantern" },
+        "awake=false,facing=south": { "model": "palebloom:creaking_lantern", "y": 180 },
+        "awake=false,facing=west":  { "model": "palebloom:creaking_lantern", "y": 270 },
+        "awake=false,facing=east":  { "model": "palebloom:creaking_lantern", "y": 90 },
+        "awake=true,facing=north": { "model": "palebloom:creaking_lantern_awake" },
+        "awake=true,facing=south": { "model": "palebloom:creaking_lantern_awake", "y": 180 },
+        "awake=true,facing=west":  { "model": "palebloom:creaking_lantern_awake", "y": 270 },
+        "awake=true,facing=east":  { "model": "palebloom:creaking_lantern_awake", "y": 90 }
+    }
+}

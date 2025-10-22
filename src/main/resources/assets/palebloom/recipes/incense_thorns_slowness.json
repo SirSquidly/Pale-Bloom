@@ -1,0 +1,6 @@
+{
+  "type": "incense_effect",
+  "ingredient": { "item": "palebloom:pale_plant_double", "data": 1 },
+  "result": { "item": "palebloom:incense_thorns" },
+  "potion": "minecraft:slowness"
+}

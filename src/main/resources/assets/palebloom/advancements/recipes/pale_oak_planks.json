@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [ "palebloom:pale_oak_planks" ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": { "recipe": "palebloom:pale_oak_planks" }
+    },
+    "has_pale_oak_wood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "item": "palebloom:pale_oak_log" } ] }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pale_oak_wood"
+    ]
+  ]
+}

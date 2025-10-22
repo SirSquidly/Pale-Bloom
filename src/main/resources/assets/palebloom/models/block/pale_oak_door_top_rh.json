@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "palebloom:blocks/pale_oak_door_bottom",
+        "top": "palebloom:blocks/pale_oak_door_top"
+    }
+}

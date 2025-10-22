@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "pp",
+    "pp",
+    "pp"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_planks" }
+  },
+  "result": {
+    "item": "palebloom:pale_oak_door",
+    "count": 3
+  }
+}

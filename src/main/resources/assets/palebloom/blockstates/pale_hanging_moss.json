@@ -1,0 +1,7 @@
+{
+    "variants":
+    {
+        "bottom=false": { "model": "palebloom:pale_hanging_moss" },
+        "bottom=true": { "model": "palebloom:pale_hanging_moss_bottom"}
+    }
+}

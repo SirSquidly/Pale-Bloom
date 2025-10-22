@@ -1,0 +1,5 @@
+{
+    "parent": "block/wall_inventory",
+    "textures":
+    { "wall": "palebloom:blocks/resin_bricks" }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": { "item": "palebloom:resin_clump" }
+  },
+  "result": {
+    "item": "palebloom:resin_block"
+  }
+}
