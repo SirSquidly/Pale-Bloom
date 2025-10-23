@@ -3,7 +3,6 @@ package com.sirsquidly.palebloom.world.biome;
 import com.sirsquidly.palebloom.Config;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.world.feature.*;
-import net.minecraft.block.BlockBush;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -31,6 +30,10 @@ public class BiomePaleGarden extends BiomeForest
     private static final double configDarkOakHeartChance = Config.paleGarden.treeGen.paleOakTree.creakingHeartChance;
     private static final double configPaleOakDyingChance = Config.paleGarden.treeGen.paleOakTree.dyingTreeChance;
     private static final double configDarkOakNautralHeartChance = Config.paleGarden.treeGen.paleOakTree.naturalCreakingHeartChance;
+    private static final int configBrambleChance = Config.paleGarden.understoryGen.brambleChance;
+    private static final int configDoublePalePlantChance = Config.paleGarden.understoryGen.doublePalePlantChance;
+    private static final int configEyeblossomPatchChance = Config.paleGarden.understoryGen.eyeblossomChance;
+    private static final int configShrubChance = Config.paleGarden.understoryGen.shrubChance;
 
     protected static final GeneratorPaleOakTree PALE_OAK_TREE = new GeneratorPaleOakTree((float) (configDarkOakHeartChance * 0.01F), (float) (configDarkOakNautralHeartChance * 0.01F), (float) (configPaleOakDyingChance * 0.01F));
     protected static final WorldGenCanopyTree DARK_OAK_TREE = new WorldGenCanopyTree(false);
@@ -59,39 +62,52 @@ public class BiomePaleGarden extends BiomeForest
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {
-            for (int j1 = 0; j1 < this.eyeblossomPerChunk; ++j1)
+            if (configEyeblossomPatchChance != 0)
             {
-                if (rand.nextInt(8) != 0) continue;
-                int j = rand.nextInt(16) + 8;
-                int k = rand.nextInt(16) + 8;
-                this.eyeblossomGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                for (int j1 = 0; j1 < this.eyeblossomPerChunk; ++j1)
+                {
+                    if (rand.nextInt(configEyeblossomPatchChance) != 0) continue;
+                    int j = rand.nextInt(16) + 8;
+                    int k = rand.nextInt(16) + 8;
+                    this.eyeblossomGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                }
             }
 
-            for (int l1 = 0; l1 < this.bramblePerChunk; ++l1)
+            if (configBrambleChance != 0)
             {
-                if (rand.nextInt(8) != 0) continue;
-                int j = rand.nextInt(16) + 8;
-                int k = rand.nextInt(16) + 8;
-                this.brambleGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                for (int l1 = 0; l1 < this.bramblePerChunk; ++l1)
+                {
+                    if (rand.nextInt(configBrambleChance) != 0) continue;
+                    int j = rand.nextInt(16) + 8;
+                    int k = rand.nextInt(16) + 8;
+                    this.brambleGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                }
             }
 
-            for (int l1 = 0; l1 < this.doublePalePerChunk; ++l1)
+            if (configDoublePalePlantChance != 0)
             {
-                if (rand.nextInt(8) != 0) continue;
-                this.doublePaleGen.setPalePlantType(worldIn.rand.nextInt(3));
-                int j = rand.nextInt(16) + 8;
-                int k = rand.nextInt(16) + 8;
-                this.doublePaleGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                for (int l1 = 0; l1 < this.doublePalePerChunk; ++l1)
+                {
+                    if (rand.nextInt(configDoublePalePlantChance) != 0) continue;
+                    this.doublePaleGen.setPalePlantType(worldIn.rand.nextInt(3));
+                    int j = rand.nextInt(16) + 8;
+                    int k = rand.nextInt(16) + 8;
+                    this.doublePaleGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                }
             }
 
-            for (int k1 = 0; k1 < this.paleShrubPerChunk; ++k1)
+            if (configShrubChance != 0)
             {
-                //if (rand.nextInt(12) != 0) continue;
-                int j = rand.nextInt(16) + 8;
-                int k = rand.nextInt(16) + 8;
-                this.paleShrubGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                for (int k1 = 0; k1 < this.paleShrubPerChunk; ++k1)
+                {
+                    if (rand.nextInt(configShrubChance) != 0) continue;
+                    int j = rand.nextInt(16) + 8;
+                    int k = rand.nextInt(16) + 8;
+                    this.paleShrubGen.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(pos.add(j, 0, k)));
+                }
             }
         }
+
 
         /* Adds Pale Moss Patches. These include the additional Tall Grass, Double Grass, and Pale Moss Carpets. */
         for (int i = 0; i < mossPerChunk; ++i)

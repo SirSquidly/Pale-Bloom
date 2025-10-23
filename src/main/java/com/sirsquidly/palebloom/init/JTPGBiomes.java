@@ -21,7 +21,7 @@ public class JTPGBiomes
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event)
     {
-        registerBiome(PALE_GARDEN, "pale_garden", 1000, BiomeManager.BiomeType.WARM, BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.FOREST);
+        if(Config.paleGarden.enablePaleGarden) registerBiome(PALE_GARDEN, "pale_garden", 0, BiomeManager.BiomeType.WARM, BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.FOREST);
     }
 
     private static void registerBiome(Biome biome, String name, int biomeWeight, BiomeManager.BiomeType biomeType, BiomeDictionary.Type... types)

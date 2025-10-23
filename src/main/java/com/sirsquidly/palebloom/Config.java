@@ -29,10 +29,14 @@ public class Config
     public static class configPaleGarden
     {
         @net.minecraftforge.common.config.Config.RequiresMcRestart
-        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.creakingHeart.naturalAmberValveDrop")
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.enablePaleGarden")
+        @net.minecraftforge.common.config.Config.Comment("Enables the Pale Garden biome.")
+        public boolean enablePaleGarden = true;
+
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.subbiomeOfDarkOak")
         @net.minecraftforge.common.config.Config.Comment("Adds the Pale Garden as a sub-biome of the vanilla Dark Forest/Roofed Forest.")
         public boolean subbiomeOfDarkOak = true;
-
 
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen")
         @net.minecraftforge.common.config.Config.Comment("All config related to Trees in the Pale Garden")
@@ -46,7 +50,7 @@ public class Config
             public int darkOakChance = 20;
 
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen.paleOakTree")
-            @net.minecraftforge.common.config.Config.Comment("All config related to Trees in the Pale Garden")
+            @net.minecraftforge.common.config.Config.Comment("All config related to Trees")
             public configTreeGen.configPaleOakTree paleOakTree = new configTreeGen.configPaleOakTree();
 
             public static class configPaleOakTree
@@ -71,9 +75,32 @@ public class Config
             }
         }
 
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen")
+        @net.minecraftforge.common.config.Config.Comment("All config for plants below the tree canopy")
+        public configUnderstoryGen understoryGen = new configUnderstoryGen();
 
+        public static class configUnderstoryGen
+        {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.eyeblossomChance")
+            @net.minecraftforge.common.config.Config.Comment("The chance for an Eyeblossom Patch to generate per chunk. 1 / this number. 0 disables this.")
+            public int eyeblossomChance = 8;
 
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.brambleChance")
+            @net.minecraftforge.common.config.Config.Comment("The chance for a Bramble Patch to generate per chunk. 1 / this number. 0 disables this.")
+            public int brambleChance = 8;
 
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.doublePalePlantChance")
+            @net.minecraftforge.common.config.Config.Comment("The chance for a single Double Pale Plant generate per chunk. 1 / this number. 0 disables this.")
+            public int doublePalePlantChance = 8;
+
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.shrubChance")
+            @net.minecraftforge.common.config.Config.Comment("The chance for a Pale Shrub to generate per chunk. 1 / this number. 0 disables this.")
+            public int shrubChance = 4;
+        }
 
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.fog")
         @net.minecraftforge.common.config.Config.Comment("Config related to Entities")
@@ -81,15 +108,15 @@ public class Config
 
         public static class configFog
         {
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.config.paleGarden.fog.enableFog")
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.fog.enableFog")
             @net.minecraftforge.common.config.Config.Comment("Enables the custom Heavy Fog.")
             public boolean enableFog = true;
 
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.config.paleGarden.fog.creativeIgnoresFog")
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.fog.creativeIgnoresFog")
             @net.minecraftforge.common.config.Config.Comment("Makes Fog not render for players in Creative Mode.")
             public boolean creativeIgnoresFog = true;
 
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.config.paleGarden.fog.fogFarDistance")
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.fog.fogFarDistance")
             @net.minecraftforge.common.config.Config.Comment("The furthest, or 'end' point, of the Fog. Nothing past this is visible.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
             public double fogFarDistance = 40.0D;
