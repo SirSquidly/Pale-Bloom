@@ -9,7 +9,6 @@ import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -69,22 +68,6 @@ public class WorldPaleGarden
 
         world.spawnEntity(paleCreeper);
         entity.setDead();
-    }
-
-    public boolean hasNearbyMoonbrew(World world, BlockPos pos)
-    {
-        final int radius = 12;
-        BlockPos.MutableBlockPos check = new BlockPos.MutableBlockPos();
-
-        for (BlockPos checkPos : BlockPos.getAllInBoxMutable( pos.add(-radius, -radius, -radius), pos.add(radius, radius, radius)))
-        {
-            if (!world.isBlockLoaded(checkPos)) continue;
-
-            TileEntity te = world.getTileEntity(checkPos);
-            //if (te instanceof TileEntityMoonbrew && ((TileEntityMoonbrew) te).isActive()) { return true; }
-        }
-
-        return false;
     }
 
     public static void preformGardenCallEffects(World worldIn, EntityLivingBase attacker, EntityLivingBase target)

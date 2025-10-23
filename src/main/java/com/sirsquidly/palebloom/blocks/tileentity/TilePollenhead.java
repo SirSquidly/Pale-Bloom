@@ -5,7 +5,6 @@ import com.sirsquidly.palebloom.blocks.BlockDoublePalePlant;
 import com.sirsquidly.palebloom.blocks.BlockPalePetals;
 import com.sirsquidly.palebloom.blocks.BlockPollenhead;
 import com.sirsquidly.palebloom.blocks.IGardenState;
-import com.sirsquidly.palebloom.entity.EntityPaleCreeper;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;

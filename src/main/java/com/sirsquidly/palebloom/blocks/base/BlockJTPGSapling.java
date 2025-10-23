@@ -4,7 +4,6 @@ import com.sirsquidly.palebloom.Config;
 import com.sirsquidly.palebloom.world.feature.GeneratorBloomingPaleOakTree;
 import com.sirsquidly.palebloom.world.feature.GeneratorPaleOakTree;
 import com.sirsquidly.palebloom.world.feature.GeneratorPeepingBirch;
-import com.sirsquidly.palebloom.world.feature.WorldGenPaleBush;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyEnum;

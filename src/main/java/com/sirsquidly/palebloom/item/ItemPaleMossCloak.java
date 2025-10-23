@@ -1,7 +1,5 @@
 package com.sirsquidly.palebloom.item;
 
-import com.google.common.collect.Multimap;
-import com.sirsquidly.palebloom.blocks.tileentity.TileResinBulb;
 import com.sirsquidly.palebloom.client.model.armor.ModelPalePoncho;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.model.ModelBiped;
@@ -9,7 +7,6 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -17,8 +14,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.TextFormatting;

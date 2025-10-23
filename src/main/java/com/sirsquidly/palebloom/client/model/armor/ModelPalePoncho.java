@@ -1,6 +1,5 @@
 package com.sirsquidly.palebloom.client.model.armor;
 
-import com.sirsquidly.palebloom.entity.EntityMannequin;
 import com.sirsquidly.palebloom.item.ItemPaleMossCloak;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;

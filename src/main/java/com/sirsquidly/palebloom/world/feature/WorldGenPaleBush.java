@@ -1,6 +1,5 @@
 package com.sirsquidly.palebloom.world.feature;
 
-import com.sirsquidly.palebloom.blocks.BlockDoublePalePlant;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockLeaves;

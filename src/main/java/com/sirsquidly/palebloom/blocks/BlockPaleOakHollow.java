@@ -5,7 +5,6 @@ import com.sirsquidly.palebloom.blocks.tileentity.TilePaleOakHollow;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.world.WorldPaleGarden;
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.PropertyBool;

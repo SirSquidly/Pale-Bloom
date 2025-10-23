@@ -1,7 +1,6 @@
 package com.sirsquidly.palebloom.blocks;
 
 import com.google.common.collect.Lists;
-import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.world.WorldPaleGarden;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -11,7 +10,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;

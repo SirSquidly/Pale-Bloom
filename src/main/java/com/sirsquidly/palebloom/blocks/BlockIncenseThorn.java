@@ -1,10 +1,7 @@
 package com.sirsquidly.palebloom.blocks;
 
-import com.sirsquidly.palebloom.blocks.base.BlockJTPGDoublePlant;
 import com.sirsquidly.palebloom.blocks.tileentity.TileIncenseThorn;
-import com.sirsquidly.palebloom.blocks.tileentity.TileResinBulb;
 import com.sirsquidly.palebloom.init.JTPGSounds;
-import com.sirsquidly.palebloom.paleBloom;
 import com.sirsquidly.palebloom.world.WorldPaleGarden;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.ITileEntityProvider;
@@ -19,15 +16,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.Random;
