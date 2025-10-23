@@ -8,6 +8,7 @@ import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.world.WorldPaleGarden;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
@@ -19,6 +20,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -163,6 +165,18 @@ public class BlockCreakingHeart extends BlockRotatedPillar implements ITileEntit
                 worldIn.spawnEntity(new EntityXPOrb(worldIn, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, j));
             }
         }
+    }
+
+    public boolean hasComparatorInputOverride(IBlockState state)
+    {
+        return true;
+    }
+
+    public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos)
+    {
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+        if (tileentity instanceof TileCreakingHeart) return ((TileCreakingHeart) tileentity).getComparatorOutput();
+        return 0;
     }
 
     @Nullable

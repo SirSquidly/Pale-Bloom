@@ -37,6 +37,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
 
     @Nullable
     private UUID creakingUUID;
+    private int comparatorOutput = 0;
 
     private static final boolean enableCreaking = Config.entity.creaking.enableCreaking;
     private static final boolean naturalResinClumps = Config.block.creakingHeart.naturalResinClumps;
@@ -52,6 +53,17 @@ public class TileCreakingHeart extends TileEntity implements ITickable
             spawnTrailParticles(3);
         }
 
+        /* Unlike vanilla, don't try recalculating the cpmparator output every single tick! */
+        if (world.getTotalWorldTime() % 5L == 0L && !world.isRemote)
+        {
+            int comparatorSignal = this.getCreaking() != null ? (int) (15 - Math.floor(this.getCreakingDistance() / 32 * 15)) : 0;
+            if (comparatorSignal != this.getComparatorOutput())
+            {
+                this.setComparatorOutput(comparatorSignal);
+                world.updateComparatorOutputLevel(pos, world.getBlockState(pos).getBlock());
+            }
+        }
+
         if(world.getTotalWorldTime() % 20L == 0L)
         {
             IBlockState state = world.getBlockState(pos);
@@ -59,7 +71,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
 
             if (state.getValue(BlockCreakingHeart.HEART_STATE) != newState && (newState != BlockCreakingHeart.EnumHeartState.UPROOTED || getCreakingUUID() == null))
             {
-                world.setBlockState(pos, state.withProperty(BlockCreakingHeart.HEART_STATE, newState));
+                world.setBlockState(pos, state.withProperty(BlockCreakingHeart.HEART_STATE, newState), 2);
 
                 if (newState == BlockCreakingHeart.EnumHeartState.UPROOTED) return;
             }
@@ -137,7 +149,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
             return;
         }
 
-        if (pos.getDistance(creaking.getPosition().getX(), creaking.getPosition().getY(), creaking.getPosition().getZ()) >= 32.0F) { creaking.preformTwitchingDeath(1); }
+        if (getCreakingDistance() >= 34.0F) { creaking.preformTwitchingDeath(1); }
 
         if (!isNightIn && !creaking.hasCustomName())
         { creaking.preformTwitchingDeath(1); }
@@ -243,6 +255,11 @@ public class TileCreakingHeart extends TileEntity implements ITickable
     public UUID getCreakingUUID() { return creakingUUID; }
     public void setCreakingUUID(UUID uuidIn) { creakingUUID = uuidIn; }
 
+    public double getCreakingDistance() { return pos.getDistance(getCreaking().getPosition().getX(), getCreaking().getPosition().getY(), getCreaking().getPosition().getZ()); }
+
+    public int getComparatorOutput() { return comparatorOutput; }
+    public void setComparatorOutput(int outputIn) { comparatorOutput = outputIn; }
+
     /** Returns if this Heart is Natural. Based on checking the actual block class. */
     public boolean getNatural()
     { return world.getBlockState(pos).getValue(BlockCreakingHeart.NATURAL); }
@@ -265,6 +282,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
     {
         super.writeToNBT(compound);
         if (getCreakingUUID() != null) compound.setUniqueId("SpawnedCreaking", creakingUUID);
+        compound.setInteger("ComparatorOutput", getComparatorOutput());
         return compound;
     }
 
@@ -273,5 +291,6 @@ public class TileCreakingHeart extends TileEntity implements ITickable
     {
         super.readFromNBT(compound);
         if (compound.hasUniqueId("SpawnedCreaking")) setCreakingUUID(compound.getUniqueId("SpawnedCreaking"));
+        setComparatorOutput(compound.getInteger("ComparatorOutput"));
     }
 }
