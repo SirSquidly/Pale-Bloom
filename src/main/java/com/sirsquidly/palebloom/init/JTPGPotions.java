@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.init;
 
 import com.sirsquidly.palebloom.paleBloom;
-import com.sirsquidly.palebloom.potion.PotionAmberEyes;
+import com.sirsquidly.palebloom.common.potion.PotionAmberEyes;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;

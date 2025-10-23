@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.render;
 
-import com.sirsquidly.palebloom.entity.EntityPaleCreeper;
+import com.sirsquidly.palebloom.common.entity.EntityPaleCreeper;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.model.ModelCreeper;
 import net.minecraft.client.renderer.GlStateManager;

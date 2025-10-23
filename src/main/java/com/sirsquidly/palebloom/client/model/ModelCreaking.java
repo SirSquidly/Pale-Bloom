@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.model;
 
-import com.sirsquidly.palebloom.entity.EntityCreaking;
+import com.sirsquidly.palebloom.common.entity.EntityCreaking;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;

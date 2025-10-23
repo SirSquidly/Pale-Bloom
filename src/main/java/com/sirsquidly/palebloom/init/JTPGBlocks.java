@@ -1,13 +1,13 @@
 package com.sirsquidly.palebloom.init;
 
 import com.google.common.collect.Maps;
-import com.sirsquidly.palebloom.Config;
-import com.sirsquidly.palebloom.blocks.*;
-import com.sirsquidly.palebloom.blocks.base.*;
-import com.sirsquidly.palebloom.item.ItemBlockMetaAware;
-import com.sirsquidly.palebloom.item.ItemBlockStacking;
-import com.sirsquidly.palebloom.item.ItemIncenseBush;
-import com.sirsquidly.palebloom.item.ItemPalePumpkin;
+import com.sirsquidly.palebloom.common.blocks.*;
+import com.sirsquidly.palebloom.common.blocks.base.*;
+import com.sirsquidly.palebloom.config.Config;
+import com.sirsquidly.palebloom.common.item.itemblock.ItemBlockMetaAware;
+import com.sirsquidly.palebloom.common.item.itemblock.ItemBlockStacking;
+import com.sirsquidly.palebloom.common.item.itemblock.ItemIncenseBush;
+import com.sirsquidly.palebloom.common.item.itemblock.ItemPalePumpkin;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;

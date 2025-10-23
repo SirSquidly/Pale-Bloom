@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client;
 
-import com.sirsquidly.palebloom.CommonProxy;
+import com.sirsquidly.palebloom.common.CommonProxy;
 import com.sirsquidly.palebloom.client.particle.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;

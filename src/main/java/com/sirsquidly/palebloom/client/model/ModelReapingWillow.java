@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.model;
 
-import com.sirsquidly.palebloom.entity.EntityReapingWillow;
+import com.sirsquidly.palebloom.common.entity.EntityReapingWillow;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;

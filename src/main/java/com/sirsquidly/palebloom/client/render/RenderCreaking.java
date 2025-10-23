@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.client.render;
 
 import com.sirsquidly.palebloom.client.model.ModelCreaking;
-import com.sirsquidly.palebloom.entity.EntityCreaking;
+import com.sirsquidly.palebloom.common.entity.EntityCreaking;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;

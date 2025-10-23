@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.client.render;
 
 import com.sirsquidly.palebloom.client.model.ModelSnapweedJaw;
-import com.sirsquidly.palebloom.entity.EntityHydraweedJaw;
+import com.sirsquidly.palebloom.common.entity.EntityHydraweedJaw;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;

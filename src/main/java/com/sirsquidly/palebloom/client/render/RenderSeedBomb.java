@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.render;
 
-import com.sirsquidly.palebloom.entity.item.EntitySeedBomb;
+import com.sirsquidly.palebloom.common.entity.item.EntitySeedBomb;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

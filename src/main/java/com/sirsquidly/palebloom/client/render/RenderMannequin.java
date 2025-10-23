@@ -2,7 +2,7 @@ package com.sirsquidly.palebloom.client.render;
 
 import com.sirsquidly.palebloom.client.model.ModelMannequin;
 import com.sirsquidly.palebloom.client.model.ModelMannequinArmor;
-import com.sirsquidly.palebloom.entity.EntityMannequin;
+import com.sirsquidly.palebloom.common.entity.EntityMannequin;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.GlStateManager;

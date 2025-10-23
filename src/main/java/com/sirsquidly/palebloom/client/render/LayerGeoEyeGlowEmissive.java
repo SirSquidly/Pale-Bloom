@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.render;
 
-import com.sirsquidly.palebloom.entity.IEyeGlow;
+import com.sirsquidly.palebloom.common.entity.IEyeGlow;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;

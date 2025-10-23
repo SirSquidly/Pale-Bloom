@@ -5,6 +5,7 @@ import com.sirsquidly.palebloom.init.JTPGBiomes;
 import com.sirsquidly.palebloom.network.JTPGPacketFogCapability;
 import com.sirsquidly.palebloom.network.JTPGPacketHandler;
 import com.sirsquidly.palebloom.util.JTPGCapabilityUtils;
+import com.sirsquidly.palebloom.config.Config;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

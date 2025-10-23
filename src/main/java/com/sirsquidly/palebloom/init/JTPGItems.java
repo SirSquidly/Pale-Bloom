@@ -1,7 +1,9 @@
 package com.sirsquidly.palebloom.init;
 
-import com.sirsquidly.palebloom.Config;
-import com.sirsquidly.palebloom.item.*;
+import com.sirsquidly.palebloom.common.item.*;
+import com.sirsquidly.palebloom.common.item.cultivartools.*;
+import com.sirsquidly.palebloom.common.item.itemblock.ItemResinClump;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -62,23 +64,25 @@ public class JTPGItems
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
-        itemReadyForRegister(RESIN_BRICK, "resin_brick");
+        if (Config.item.enableResinBrick) itemReadyForRegister(RESIN_BRICK, "resin_brick");
         itemReadyForRegister(RESIN_CLUMP, "resin_clump");
 
         if (Config.item.enableAmberValve) itemReadyForRegister(AMBER_VALVE, "amber_valve");
-        itemReadyForRegister(LIVE_ROOT, "live_root");
-        itemReadyForRegister(CULTIVAR_AXE, "cultivar_axe");
-        itemReadyForRegister(CULTIVAR_HOE, "cultivar_hoe");
-        itemReadyForRegister(CULTIVAR_SHOVEL, "cultivar_shovel");
-        itemReadyForRegister(CULTIVAR_PICKAXE, "cultivar_pickaxe");
-        itemReadyForRegister(CULTIVAR_SWORD, "cultivar_sword");
-        itemReadyForRegister(MANNEQUIN, "mannequin", false);
+        if (Config.item.enableLiveRoot) itemReadyForRegister(LIVE_ROOT, "live_root");
+
+        if (Config.item.gardengraftedTools.cultivarAxe.enableCultivarAxe) itemReadyForRegister(CULTIVAR_AXE, "cultivar_axe");
+        if (Config.item.gardengraftedTools.cultivarHoe.enableCultivarHoe) itemReadyForRegister(CULTIVAR_HOE, "cultivar_hoe");
+        if (Config.item.gardengraftedTools.cultivarShovel.enableCultivarShovel) itemReadyForRegister(CULTIVAR_SHOVEL, "cultivar_shovel");
+        if (Config.item.gardengraftedTools.cultivarPickaxe.enableCultivarPickaxe) itemReadyForRegister(CULTIVAR_PICKAXE, "cultivar_pickaxe");
+        if (Config.item.gardengraftedTools.cultivarSword.enableCultivarSword) itemReadyForRegister(CULTIVAR_SWORD, "cultivar_sword");
+
+        if (Config.entity.mannequin.enableMannequin) itemReadyForRegister(MANNEQUIN, "mannequin", false);
         if (Config.item.foods.enableNightligtBulb) itemReadyForRegister(NIGHTLIGHT_BULB, "nightlight_bulb");
-        itemReadyForRegister(PALE_OAK_BOAT, "pale_oak_boat");
-        itemReadyForRegister(PALE_OAK_SAP, "pale_oak_sap");
+        if (Config.item.enablePaleOakBoat) itemReadyForRegister(PALE_OAK_BOAT, "pale_oak_boat");
+        if (Config.item.enablePaleOakSap) itemReadyForRegister(PALE_OAK_SAP, "pale_oak_sap");
         if (Config.item.enablePaleCreeperHusk) itemReadyForRegister(PALE_CREEPER_HUSK, "pale_creeper_husk");
         if (Config.item.paleMossCloak.enablePaleMossCloak) itemReadyForRegister(PALE_MOSS_CLOAK, "pale_moss_cloak");
-        itemReadyForRegister(PALE_PAINTING, "pale_painting");
+        if (Config.item.enableEeriePainting) itemReadyForRegister(PALE_PAINTING, "pale_painting");
         if (Config.item.foods.enablePalePumpkinPie) itemReadyForRegister(PALE_PUMPKIN_PIE, "pale_pumpkin_pie");
 
         PALE_MOSS_MAT.repairMaterial = new ItemStack(JTPGItems.PALE_CREEPER_HUSK, 1);
@@ -89,7 +93,7 @@ public class JTPGItems
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
-        GameRegistry.addSmelting(JTPGItems.RESIN_CLUMP, new ItemStack(JTPGItems.RESIN_BRICK, 1), 0.1F);
+        if (Config.item.enableResinBrick) GameRegistry.addSmelting(JTPGItems.RESIN_CLUMP, new ItemStack(JTPGItems.RESIN_BRICK, 1), 0.1F);
         GameRegistry.addSmelting(JTPGBlocks.PALE_OAK_LOG, new ItemStack(Items.COAL, 1, 1), 0.15F);
         GameRegistry.addSmelting(JTPGBlocks.PEEPING_BIRCH_LOG, new ItemStack(Items.COAL, 1, 1), 0.15F);
 
@@ -108,7 +112,7 @@ public class JTPGItems
         OreDictionary.registerOre("treeLeaves", JTPGBlocks.PALE_OAK_LEAVES);
 
         OreDictionary.registerOre("logWood", JTPGBlocks.PEEPING_BIRCH_LOG);
-        OreDictionary.registerOre("paper", JTPGItems.PALE_CREEPER_HUSK);
+        if (Config.item.enablePaleCreeperHusk) OreDictionary.registerOre("paper", JTPGItems.PALE_CREEPER_HUSK);
     }
 
     /** If blocks don't specify the 'addToTab' boolean, assume true.*/
@@ -132,6 +136,8 @@ public class JTPGItems
     public static void onModelRegister(ModelRegistryEvent event)
     {
         for (Item items : itemModelList) paleBloom.proxy.registerItemRenderer(items, 0, "inventory");
+
+        if (!Config.entity.mannequin.enableMannequin) return;
 
         for (int i = 0; i <= 1; i++)
         { ModelLoader.setCustomModelResourceLocation(JTPGItems.MANNEQUIN, i, new ModelResourceLocation(new ResourceLocation(paleBloom.MOD_ID, "mannequin_" + i), "inventory")); }

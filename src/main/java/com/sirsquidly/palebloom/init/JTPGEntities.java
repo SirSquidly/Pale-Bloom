@@ -1,9 +1,13 @@
 package com.sirsquidly.palebloom.init;
 
-import com.sirsquidly.palebloom.blocks.tileentity.*;
+import com.sirsquidly.palebloom.common.blocks.tileentity.*;
+import com.sirsquidly.palebloom.common.entity.*;
+import com.sirsquidly.palebloom.common.entity.item.EntityPaleBoat;
+import com.sirsquidly.palebloom.common.entity.item.EntityPalePainting;
+import com.sirsquidly.palebloom.common.entity.item.EntitySeedBomb;
+import com.sirsquidly.palebloom.common.entity.item.EntityThorn;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.client.render.*;
-import com.sirsquidly.palebloom.entity.*;
-import com.sirsquidly.palebloom.entity.item.*;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -18,14 +22,14 @@ public class JTPGEntities
 
     public static void registerEntities()
     {
-        registerEntity("creaking", EntityCreaking.class, ++id, 60, 6250335, 16545810);
-        registerEntity("reaping_willow", EntityReapingWillow.class, ++id, 60, 14210259, 16545810);
-        registerEntity("pale_creeper", EntityPaleCreeper.class, ++id, 81, 9212553, 1776152);
-        registerEntity("pale_painting", EntityPalePainting.class, ++id, 81);
-        registerEntity("mannequin", EntityMannequin.class, ++id, 60);
+        if (Config.entity.creaking.enableCreaking) registerEntity("creaking", EntityCreaking.class, ++id, 60, 6250335, 16545810);
+        if (Config.entity.reapingWillow.enableReapingWillow) registerEntity("reaping_willow", EntityReapingWillow.class, ++id, 60, 14210259, 16545810);
+        if (Config.entity.paleCreeper.enablePaleCreeper) registerEntity("pale_creeper", EntityPaleCreeper.class, ++id, 81, 9212553, 1776152);
+        if (Config.item.enableEeriePainting) registerEntity("pale_painting", EntityPalePainting.class, ++id, 81);
+        if (Config.entity.mannequin.enableMannequin) registerEntity("mannequin", EntityMannequin.class, ++id, 60);
         registerEntity("hydraweed_jaw", EntityHydraweedJaw.class, ++id, 81, 6250335, 1776152);
 
-        registerEntity("pale_oak_boat", EntityPaleBoat.class, ++id, 60);
+        if (Config.item.enablePaleOakBoat) registerEntity("pale_oak_boat", EntityPaleBoat.class, ++id, 60);
         registerEntity("thorn", EntityThorn.class, ++id, 60);
         registerEntity("seed_bomb", EntitySeedBomb.class, ++id, 80);
     }
@@ -51,13 +55,13 @@ public class JTPGEntities
     @SideOnly(Side.CLIENT)
     public static void RegisterRenderers()
     {
-        RenderingRegistry.registerEntityRenderingHandler(EntityCreaking.class, RenderCreaking::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityMannequin.class, RenderMannequin::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityPaleCreeper.class, RenderPaleCreeper::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityPalePainting.class, RenderPalePainting::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityReapingWillow.class, RenderReapingWillow::new);
+        if (Config.entity.creaking.enableCreaking) RenderingRegistry.registerEntityRenderingHandler(EntityCreaking.class, RenderCreaking::new);
+        if (Config.entity.mannequin.enableMannequin) RenderingRegistry.registerEntityRenderingHandler(EntityMannequin.class, RenderMannequin::new);
+        if (Config.entity.paleCreeper.enablePaleCreeper) RenderingRegistry.registerEntityRenderingHandler(EntityPaleCreeper.class, RenderPaleCreeper::new);
+        if (Config.item.enableEeriePainting) RenderingRegistry.registerEntityRenderingHandler(EntityPalePainting.class, RenderPalePainting::new);
+        if (Config.entity.reapingWillow.enableReapingWillow) RenderingRegistry.registerEntityRenderingHandler(EntityReapingWillow.class, RenderReapingWillow::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityHydraweedJaw.class, RenderSnapweedJaw::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityPaleBoat.class, RenderPaleOakBoat::new);
+        if (Config.item.enablePaleOakBoat) RenderingRegistry.registerEntityRenderingHandler(EntityPaleBoat.class, RenderPaleOakBoat::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityThorn.class, RenderThorn::new);
         RenderingRegistry.registerEntityRenderingHandler(EntitySeedBomb.class, RenderSeedBomb::new);
     }

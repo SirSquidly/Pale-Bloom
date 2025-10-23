@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.client.model;
 
-import com.sirsquidly.palebloom.entity.EntityMannequin;
+import com.sirsquidly.palebloom.common.entity.EntityMannequin;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

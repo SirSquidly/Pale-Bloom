@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.init;
 
-import com.sirsquidly.palebloom.Config;
-import com.sirsquidly.palebloom.world.biome.BiomePaleGarden;
+import com.sirsquidly.palebloom.config.Config;
+import com.sirsquidly.palebloom.common.world.biome.BiomePaleGarden;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;

@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.compat;
 
-import com.sirsquidly.palebloom.ConfigParser;
+import com.sirsquidly.palebloom.config.ConfigParser;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.util.IncenseThornsNBTRecipe;
 import com.sirsquidly.palebloom.util.PaleMossCloakGraftingRecipe;
