@@ -1,8 +1,8 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
 import com.sirsquidly.palebloom.common.blocks.BlockSuckerRoots;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
@@ -39,12 +39,10 @@ public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
     /** A stored list of Leaf Positions, to later have Vines randomly applied to them. */
     private final List<BlockPos> storedLogPositions = new ArrayList<>();
 
-    private static final boolean enableCreakingHeart = Config.block.creakingHeart.enableCreakingHeart;
-
     public GeneratorBloomingPaleOakTree(float placeCreakingHeartChanceIn, float creakingHeartNaturalChanceIn)
     {
         super(false);
-        placeCreakingHeartChance = enableCreakingHeart ? placeCreakingHeartChanceIn : 0.0F;
+        placeCreakingHeartChance = ConfigCache.crkHrt_enabled ? placeCreakingHeartChanceIn : 0.0F;
         creakingHeartNaturalChance = creakingHeartNaturalChanceIn;
     }
 

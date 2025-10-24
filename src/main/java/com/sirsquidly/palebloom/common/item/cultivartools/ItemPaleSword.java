@@ -1,7 +1,6 @@
 package com.sirsquidly.palebloom.common.item.cultivartools;
 
 import com.google.common.collect.Multimap;
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.paleBloom;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
@@ -51,7 +50,7 @@ public class ItemPaleSword extends ItemSword
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.cultSwrdAwakeBulbHealing && stack.getItemDamage() > 0)
+        if (ConfigCache.clvSwd_awakeBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -67,7 +66,7 @@ public class ItemPaleSword extends ItemSword
             if (isNight)
             {
                 multimap.removeAll(SharedMonsterAttributes.ATTACK_DAMAGE.getName());
-                multimap.put( SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Night sword damage", ConfigCache.cultSwrdAwakeDamage - 1.0D, 0));
+                multimap.put( SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Night sword damage", ConfigCache.clvSwd_awakeDamage - 1.0D, 0));
             }
         }
 
@@ -77,14 +76,14 @@ public class ItemPaleSword extends ItemSword
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if (attacker.world.isRemote) return false;
-        if (!ConfigCache.cultSwrdAwakeTransfer || !this.isNight) return super.hitEntity(stack, target, attacker);
+        if (!ConfigCache.clvSwd_awakeTransfer || !this.isNight) return super.hitEntity(stack, target, attacker);
 
         if (attacker.isPotionActive(MobEffects.POISON) || attacker.isPotionActive(MobEffects.WITHER))
         {
             if (attacker instanceof EntityPlayer)
             {
                 if (((EntityPlayer)attacker).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.hitEntity(stack, target, attacker);
-                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.cultSwrdAwakeTransferCooldown);
+                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.clvSwd_awakeTransferCooldown);
             }
 
             if (attacker.isPotionActive(MobEffects.POISON))
@@ -141,9 +140,9 @@ public class ItemPaleSword extends ItemSword
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_damage", ConfigCache.cultSwrdAwakeDamage - 5));
-            if (ConfigCache.cultSwrdAwakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.cultSwrdAwakeTransfer) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_sword.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_damage", ConfigCache.clvSwd_awakeDamage - 5));
+            if (ConfigCache.clvSwd_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (ConfigCache.clvSwd_awakeTransfer) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_sword.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

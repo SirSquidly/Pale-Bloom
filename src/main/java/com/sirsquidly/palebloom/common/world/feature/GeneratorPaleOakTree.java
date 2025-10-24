@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyBool;
@@ -36,15 +36,13 @@ public class GeneratorPaleOakTree extends WorldGenAbstractTree
     /** A stored list of Log Positions, to later have a Creaking Heart placed randomly within them. */
     private final List<BlockPos> storedLogPositions = new ArrayList<>();
 
-    private static final boolean enableCreakingHeart = Config.block.creakingHeart.enableCreakingHeart;
-
     public GeneratorPaleOakTree(float placeCreakingHeartChanceIn, float creakingHeartNaturalChanceIn)
     { this(placeCreakingHeartChanceIn, creakingHeartNaturalChanceIn, 0F); }
 
     public GeneratorPaleOakTree(float placeCreakingHeartChanceIn, float creakingHeartNaturalChanceIn, float dyingChanceIn)
     {
         super(false);
-        placeCreakingHeartChance = enableCreakingHeart ? placeCreakingHeartChanceIn : 0.0F;
+        placeCreakingHeartChance = ConfigCache.crkHrt_enabled ? placeCreakingHeartChanceIn : 0.0F;
         creakingHeartNaturalChance = creakingHeartNaturalChanceIn;
         dyingTreeChance = dyingChanceIn;
     }

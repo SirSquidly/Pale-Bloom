@@ -44,7 +44,7 @@ public class ItemPaleShovel extends ItemSpade
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.cultShvlAwakeBulbHealing && stack.getItemDamage() > 0)
+        if (ConfigCache.ctvSvl_awakeBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -54,7 +54,7 @@ public class ItemPaleShovel extends ItemSpade
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (this.isNight) return base * ConfigCache.cultShvlAwakeMiningSpeed;
+        if (this.isNight) return base * ConfigCache.ctvSvl_awakeMiningSpeed;
         return base;
     }
 
@@ -62,7 +62,7 @@ public class ItemPaleShovel extends ItemSpade
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.cultShvlAwakeHarvestLevel;
+        if (isNight) return base + ConfigCache.ctvSvl_awakeHarvestLevel;
         return base;
     }
 
@@ -85,10 +85,10 @@ public class ItemPaleShovel extends ItemSpade
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.cultShvlAwakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.cultShvlAwakeMiningSpeed));
-            if (ConfigCache.cultShvlAwakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.cultShvlAwakeThornStroke) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_shovel.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvSvl_awakeHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvSvl_awakeMiningSpeed));
+            if (ConfigCache.ctvSvl_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (ConfigCache.ctvSvl_awakeThornStroke) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_shovel.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

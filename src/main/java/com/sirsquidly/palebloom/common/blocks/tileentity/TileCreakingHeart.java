@@ -2,8 +2,8 @@ package com.sirsquidly.palebloom.common.blocks.tileentity;
 
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
 import com.sirsquidly.palebloom.common.blocks.BlockResinClump;
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.entity.EntityCreaking;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
@@ -39,10 +39,6 @@ public class TileCreakingHeart extends TileEntity implements ITickable
     private UUID creakingUUID;
     private int comparatorOutput = 0;
 
-    private static final boolean enableCreaking = Config.entity.creaking.enableCreaking;
-    private static final boolean naturalResinClumps = Config.block.creakingHeart.naturalResinClumps;
-    private static final boolean unnaturalResinClumps = Config.block.creakingHeart.unnaturalResinClumps;
-
     @Override
     public void update()
     {
@@ -77,7 +73,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
             }
 
             /* If the Creaking isn't enabled, no need to do spawning or checks. */
-            if (world.isRemote || !enableCreaking) return;
+            if (world.isRemote || !ConfigCache.crk_enabled) return;
 
             if (getCreakingUUID() == null)
             {
@@ -167,7 +163,7 @@ public class TileCreakingHeart extends TileEntity implements ITickable
                 lastCreakingHurtTime = ticksExisted + resinPlacementCooldown;
 
                 /* Check the config booleans to see if Resin can be placed, based on the Natural value. */
-                if ((getNatural() && !naturalResinClumps) || (!getNatural() && !unnaturalResinClumps)) return;
+                if ((getNatural() && !ConfigCache.crkHrt_genResinNatural) || (!getNatural() && !ConfigCache.crkHrt_genResinUnnatural)) return;
                 tryPlaceResin(world, pos, world.rand);
             }
         }

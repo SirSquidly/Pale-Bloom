@@ -4,6 +4,7 @@ import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorBloomingPaleOakTree;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorPaleOakTree;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorPeepingBirch;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyEnum;
@@ -28,11 +29,6 @@ public class BlockJTPGSapling extends BlockBush implements IGrowable
     public static final PropertyEnum<BlockJTPGSapling.EnumType> TYPE = PropertyEnum.create("type", BlockJTPGSapling.EnumType.class);
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
-
-    private static final double paleBloomCreakingHeartChance = Config.block.saplings.bloomingPaleOakSapling.creakingHeartChance;
-    private static final double paleBloomNaturalCreakingHeartChance = Config.block.saplings.bloomingPaleOakSapling.naturalCreakingHeartChance;
-    private static final double paleOakCreakingHeartChance = Config.block.saplings.paleOakSapling.creakingHeartChance;
-    private static final double paleOakNaturalCreakingHeartChance = Config.block.saplings.paleOakSapling.naturalCreakingHeartChance;
 
     public BlockJTPGSapling()
     {
@@ -71,7 +67,7 @@ public class BlockJTPGSapling extends BlockBush implements IGrowable
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-        WorldGenerator worldgenerator = new GeneratorPaleOakTree((float) (paleOakCreakingHeartChance * 0.01F), (float) (paleOakNaturalCreakingHeartChance * 0.01F));
+        WorldGenerator worldgenerator = new GeneratorPaleOakTree((float) (ConfigCache.paleOakCreakingHeartChance * 0.01F), (float) (ConfigCache.paleOakNaturalCreakingHeartChance * 0.01F));
 
         int i = 0;
         int j = 0;
@@ -101,7 +97,7 @@ public class BlockJTPGSapling extends BlockBush implements IGrowable
                     {
                         if (this.isTwoByTwoOfType(worldIn, pos, i, j, EnumType.BLOOMING_PALE_OAK))
                         {
-                            worldgenerator = new GeneratorBloomingPaleOakTree((float) (paleBloomCreakingHeartChance * 0.01F), (float) (paleBloomNaturalCreakingHeartChance * 0.01F));
+                            worldgenerator = new GeneratorBloomingPaleOakTree((float) (ConfigCache.paleBloomCreakingHeartChance * 0.01F), (float) (ConfigCache.paleBloomNaturalCreakingHeartChance * 0.01F));
                             flag = true;
                             break;
                         }

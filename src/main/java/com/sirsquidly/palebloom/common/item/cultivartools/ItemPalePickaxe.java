@@ -53,7 +53,7 @@ public class ItemPalePickaxe extends ItemPickaxe
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.cultPickAwakeBulbHealing && stack.getItemDamage() > 0)
+        if (ConfigCache.ctvPik_awakeBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -63,7 +63,7 @@ public class ItemPalePickaxe extends ItemPickaxe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (this.isNight) return base * ConfigCache.cultPickAwakeMiningSpeed;
+        if (this.isNight) return base * ConfigCache.ctvPik_awakeMiningSpeed;
         return base;
     }
 
@@ -71,21 +71,21 @@ public class ItemPalePickaxe extends ItemPickaxe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.cultPickAwakeHarvestLevel;
+        if (isNight) return base + ConfigCache.ctvPik_awakeHarvestLevel;
         return base;
     }
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if (attacker.world.isRemote) return false;
-        if (!ConfigCache.cultPickAwakeResinBlood || !this.isNight) return super.hitEntity(stack, target, attacker);
+        if (!ConfigCache.ctvPik_awakeResinBlood || !this.isNight) return super.hitEntity(stack, target, attacker);
 
         if (target.getHealth() <= 0)
         {
             if (attacker instanceof EntityPlayer)
             {
                 if (((EntityPlayer)attacker).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.hitEntity(stack, target, attacker);
-                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.cultPickAwakeResinBloodCooldown);
+                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvPik_awakeResinBloodCooldown);
             }
 
             tryPlaceResin(target.world, target.getPosition(), target.getRNG());
@@ -150,10 +150,10 @@ public class ItemPalePickaxe extends ItemPickaxe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.cultPickAwakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.cultPickAwakeMiningSpeed));
-            if (ConfigCache.cultPickAwakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.cultPickAwakeResinBlood) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_pickaxe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvPik_awakeHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvPik_awakeMiningSpeed));
+            if (ConfigCache.ctvPik_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (ConfigCache.ctvPik_awakeResinBlood) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_pickaxe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

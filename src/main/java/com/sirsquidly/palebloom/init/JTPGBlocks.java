@@ -104,7 +104,7 @@ public class JTPGBlocks
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
-        if (Config.block.creakingHeart.enableCreakingHeart) blockReadyForRegister(CREAKING_HEART, "creaking_heart");
+        if (Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart) blockReadyForRegister(CREAKING_HEART, "creaking_heart");
 
         blockReadyForRegister(EYEBLOSSOM_CLOSED, "eyeblossom_closed");
         blockReadyForRegister(EYEBLOSSOM_OPEN, "eyeblossom_open");
@@ -140,19 +140,19 @@ public class JTPGBlocks
         blockReadyForRegister(BLOOMING_PALE_OAK_LEAVES, "blooming_pale_oak_leaves");
         blockReadyForRegister(CREAKING_LANTERN, "creaking_lantern");
         blockReadyForRegister(HYDRAWEED_BODY, "hydraweed_body");
-        if (Config.block.incenseThorns.enableIncenseThorns) blockReadyForRegister(INCENSE_THORNS, "incense_thorns");
+        if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) blockReadyForRegister(INCENSE_THORNS, "incense_thorns");
         blockReadyForRegister(PALE_DOUBLE_PLANT, "pale_plant_double");
         blockReadyForRegister(NIGHTLIGHT, "nightlight");
         blockReadyForRegister(PALE_PETALS, "pale_petals");
-        if (Config.block.paleOakHollow.enablePaleOakHollow) blockReadyForRegister(PALE_OAK_HOLLOW, "pale_oak_hollow");
+        if (Config.block.awakenedFloraBlocks.paleOakHollow.enablePaleOakHollow) blockReadyForRegister(PALE_OAK_HOLLOW, "pale_oak_hollow");
         blockReadyForRegister(PALE_PUMPKIN, "pale_pumpkin");
         blockReadyForRegister(PALE_CARVED_PUMPKIN, "pale_carved_pumpkin");
         blockReadyForRegister(PALE_JACK_O_LANTERN, "pale_jack_o_lantern");
         blockReadyForRegister(PALE_SOUL_JACK_O_LANTERN, "pale_soul_jack_o_lantern");
         blockReadyForRegister(PEEPING_BIRCH_LOG, "peeping_birch_log");
-        if (Config.block.pollenhead.enablePollenhead) blockReadyForRegister(POLLENHEAD, "pollenhead");
+        if (Config.block.awakenedFloraBlocks.pollenhead.enablePollenhead) blockReadyForRegister(POLLENHEAD, "pollenhead");
         blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
-        if (Config.block.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
+        if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
         blockReadyForRegister(SEED_BOMB, "seed_bomb");
         blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
         blockReadyForRegister(SUCKER_ROOT_NODULE, "sucker_root_nodule");

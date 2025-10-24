@@ -49,7 +49,7 @@ public class ItemPaleHoe extends ItemHoe
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.cultHoeAwakeBulbHealing && stack.getItemDamage() > 0)
+        if (ConfigCache.ctvHoe_awakeBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -59,7 +59,7 @@ public class ItemPaleHoe extends ItemHoe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (isNight) return base * ConfigCache.cultHoeAwakeMiningSpeed;
+        if (isNight) return base * ConfigCache.ctvHoe_awakeMiningSpeed;
         return base;
     }
 
@@ -67,19 +67,19 @@ public class ItemPaleHoe extends ItemHoe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.cultHoeAwakeHarvestLevel;
+        if (isNight) return base + ConfigCache.ctvHoe_awakeHarvestLevel;
         return base;
     }
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if (attacker.world.isRemote) return false;
-        if (!ConfigCache.cultHoeAwakeGardenCall || !this.isNight) return super.hitEntity(stack, target, attacker);
+        if (!ConfigCache.ctvHoe_awakeGardenCall || !this.isNight) return super.hitEntity(stack, target, attacker);
 
         if (attacker instanceof EntityPlayer)
         {
             if (((EntityPlayer)attacker).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.hitEntity(stack, target, attacker);
-            ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.cultHoeAwakeGardenCallCooldown);
+            ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvHoe_awakeGardenCallCooldown);
         }
 
         int aidDistance = 64;
@@ -109,10 +109,10 @@ public class ItemPaleHoe extends ItemHoe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.cultHoeAwakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.cultHoeAwakeMiningSpeed));
-            if (ConfigCache.cultHoeAwakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.cultHoeAwakeGardenCall) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_hoe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvHoe_awakeHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvHoe_awakeMiningSpeed));
+            if (ConfigCache.ctvHoe_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (ConfigCache.ctvHoe_awakeGardenCall) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_hoe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

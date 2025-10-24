@@ -199,12 +199,36 @@ subtitles.palebloom.entity.reaping_willow.target=Reaping Willow watches
 
 subtitles.palebloom.event.garden.call=Garden calls
 
+
+
 config.palebloom.title=Pale Bloom
+
 config.palebloom.block=Block Config
-config.palebloom.block.eyeblossomFullbright=Eyeblossoms render fullbright
+config.palebloom.block.treeBlocks=Tree Block Config
+config.palebloom.block.floraBlocks=Flora Block Config
+config.palebloom.block.floraBlocks.eyeblossomFullbright=Eyeblossoms render Fullbright
+config.palebloom.block.floraBlocks.palePumpkin=Pale Pumpkin Config
+config.palebloom.block.floraBlocks.palePumpkin.enablePalePumpkin=Enable Pale Pumpkin
+config.palebloom.block.awakenedFloraBlocks=Awakened Flora Block Config
+config.palebloom.block.awakenedFloraBlocks.creakingHeart=Creaking Heart Config
+config.palebloom.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart=Enable Creaking Heart
+config.palebloom.block.awakenedFloraBlocks.creakingHeart.alertReapingWillows=Alert Reaping Willows
+config.palebloom.block.awakenedFloraBlocks.creakingHeart.unnaturalResinClumps=Unnatural Hearts place Resin
+config.palebloom.block.awakenedFloraBlocks.creakingHeart.naturalResinClumps=Natural Hearts place Resin
+config.palebloom.block.awakenedFloraBlocks.creakingHeart.naturalAmberValveDrop=Drop Amber Valve
+config.palebloom.block.awakenedFloraBlocks.incenseThorns=Incense Thorns Config
+config.palebloom.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns=Enable Incense Thorns
+config.palebloom.block.awakenedFloraBlocks.paleOakHollow=Pale Oak Hollow Config
+config.palebloom.block.awakenedFloraBlocks.paleOakHollow.enablePaleOakHollow=Enable Pale Oak Hollow
+config.palebloom.block.awakenedFloraBlocks.paleOakHollow.resinToSapQuantity=Resin to Sap Quantity
+config.palebloom.block.awakenedFloraBlocks.pollenhead=Pollenhead Config
+config.palebloom.block.awakenedFloraBlocks.pollenhead.enablePollenhead=Enable Pollenhead
+config.palebloom.block.awakenedFloraBlocks.pollenhead.pollenheadHybridizeList=Pollenhead Hybridize List
+config.palebloom.block.awakenedFloraBlocks.resinBulb=Resin Bulb Config
+config.palebloom.block.awakenedFloraBlocks.resinBulb.enableResinBulb=Enable Resin Bulb
+config.palebloom.block.awakenedFloraBlocks.resinBulb.resinBulbCollectList=Resin Bulb Collect List
+config.palebloom.block.awakenedFloraBlocks.resinBulb.activeCreakingHeartResinAmount=Active Creaking Heart Resin draw
 config.palebloom.block.paleMossReplacable=Pale Moss Replaceable
-config.palebloom.block.pollenheadHybridizeList=Pollenhead Conversions
-config.palebloom.block.resinBulbCollectList=Resin Bulb Collects from List
 
 config.palebloom.paleGarden=Pale Garden Config
 config.palebloom.paleGarden.enablePaleGarden=Enable Pale Garden
@@ -241,7 +265,6 @@ config.palebloom.entity.pale_creeper.paleCreeperReplacementChance=Creeper to Pal
 config.palebloom.entity.reapingWillow=Reaping Willow Config
 config.palebloom.entity.reapingWillow.enableReapingWillow=Enable Reaping Willow
 config.palebloom.entity.reapingWillow.reapingWillowIsntApathetic=Reaping Willows defend Garden Life
-
 
 config.palebloom.item=Item Config
 config.palebloom.item.enableAmberValve=Enable Amber Valve

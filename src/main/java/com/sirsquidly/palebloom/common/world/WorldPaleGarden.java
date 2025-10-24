@@ -5,6 +5,7 @@ import com.sirsquidly.palebloom.common.blocks.tileentity.TileResinBulb;
 import com.sirsquidly.palebloom.common.entity.EntityCreaking;
 import com.sirsquidly.palebloom.common.entity.EntityPaleCreeper;
 import com.sirsquidly.palebloom.common.entity.EntityReapingWillow;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
@@ -25,7 +26,6 @@ import java.util.List;
 
 public class WorldPaleGarden
 {
-    private static final boolean enableResinBulb = Config.block.resinBulb.enableResinBulb;
     private static final boolean reapingWillowIsntApathetic = Config.entity.reapingWillow.reapingWillowIsntApathetic;
     private static final boolean configPaleCloakEnabled = Config.item.paleMossCloak.enablePaleMossCloak;
     private static final boolean reapingWillowsIgnoreCrimes = Config.item.paleMossCloak.reapingWillowsIgnoreCrimes;
@@ -139,7 +139,7 @@ public class WorldPaleGarden
     {
         BulbPullResults result = new BulbPullResults();
         /* Skip any checks if Bulbs are already disabled. */
-        if (!enableResinBulb) return result;
+        if (!ConfigCache.rsnBlb_enabled) return result;
 
         List<TileResinBulb> bulbs = getNearestBulbs(world, pos, 10);
         if (bulbs.isEmpty()) return result;

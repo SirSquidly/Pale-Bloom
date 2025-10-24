@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.common.blocks.tileentity;
 
 import com.sirsquidly.palebloom.common.blocks.BlockResinBulb;
-import com.sirsquidly.palebloom.config.Config;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.config.ConfigParser;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGItems;
@@ -39,8 +39,6 @@ public class TileResinBulb extends TileEntity implements ITickable
 
     public int bulbLevel = 0;
     public int cachedBulbLevel = 0;
-
-    private static final int activeCreakingHeartResinAmount = Config.block.resinBulb.activeCreakingHeartResinAmount;
 
     @Override
     public void update()
@@ -96,7 +94,7 @@ public class TileResinBulb extends TileEntity implements ITickable
     /** Collects a great amount of Resin if there is an active Creaking Heart nearby. */
     public void tryActiveHeartHarvest(World world, BlockPos pos)
     {
-        if (activeCreakingHeartResinAmount == 0) return;
+        if (ConfigCache.rsnBlb_creakingHeartResinReap == 0) return;
         int radius = 10;
 
         for (BlockPos checkPos : BlockPos.getAllInBoxMutable( pos.add(-radius, -radius, -radius), pos.add(radius, radius, radius)))
@@ -109,7 +107,7 @@ public class TileResinBulb extends TileEntity implements ITickable
                 /* A Creaking is REQUIRED, since it confirms the Heart is fully active */
                 if (((TileCreakingHeart) te).getCreaking() == null) continue;
 
-                this.setStoredResin(Math.min(maxResin, this.getStoredResin() + activeCreakingHeartResinAmount));
+                this.setStoredResin(Math.min(maxResin, this.getStoredResin() + ConfigCache.rsnBlb_creakingHeartResinReap));
                 this.markDirty();
 
                 world.playSound(null, pos, JTPGSounds.BLOCK_RESIN_PLACE, SoundCategory.BLOCKS, 0.25F, (world.rand.nextFloat() * 0.4F) + 0.8F);

@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.common.blocks;
 
-import com.sirsquidly.palebloom.config.Config;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
@@ -81,7 +81,7 @@ public class BlockEyeblossom extends BlockBush implements IEyeblossomListener
     /** Render texture at fullbright, if open, and the config option is true. */
     @SideOnly(Side.CLIENT)
     public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-    { return isOpen && Config.block.eyeblossomFullbright ? 15728880 : super.getPackedLightmapCoords(state, source, pos); }
+    { return isOpen && ConfigCache.eyeblm_fullbright ? 15728880 : super.getPackedLightmapCoords(state, source, pos); }
 
     public Block.EnumOffsetType getOffsetType()
     {

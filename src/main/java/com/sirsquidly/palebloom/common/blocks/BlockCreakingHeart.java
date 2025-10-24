@@ -1,8 +1,8 @@
 package com.sirsquidly.palebloom.common.blocks;
 
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.blocks.tileentity.TileCreakingHeart;
 import com.sirsquidly.palebloom.common.entity.EntityCreaking;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
@@ -39,9 +39,6 @@ public class BlockCreakingHeart extends BlockRotatedPillar implements ITileEntit
     public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class);
     public static final PropertyEnum<EnumHeartState> HEART_STATE = PropertyEnum.create("heart_state", EnumHeartState.class);
     public static final PropertyBool NATURAL = PropertyBool.create("natural");
-
-    private static final boolean naturalAmberValveDrop = Config.block.creakingHeart.naturalAmberValveDrop;
-    private static final boolean alertReapingWillows = Config.block.creakingHeart.alertReapingWillows;
 
     public BlockCreakingHeart(Material materialIn, MapColor color)
     {
@@ -151,11 +148,11 @@ public class BlockCreakingHeart extends BlockRotatedPillar implements ITileEntit
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
     {
         super.harvestBlock(worldIn, player, pos, state, te, stack);
-        if (alertReapingWillows) WorldPaleGarden.alertReapingWillow(worldIn, pos, player, 16);
+        if (ConfigCache.crkHrt_alertReapingWillows) WorldPaleGarden.alertReapingWillow(worldIn, pos, player, 16);
 
         if (state.getValue(NATURAL))
         {
-            if (naturalAmberValveDrop) spawnAsEntity(worldIn, pos, new ItemStack(JTPGItems.AMBER_VALVE));
+            if (ConfigCache.crkHrt_dropAmberValveNatural) spawnAsEntity(worldIn, pos, new ItemStack(JTPGItems.AMBER_VALVE));
 
             /* Drop 20-24 EXP. */
             int i = MathHelper.getInt(worldIn.rand, 20, 24);

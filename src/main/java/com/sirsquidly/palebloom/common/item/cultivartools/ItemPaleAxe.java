@@ -55,7 +55,7 @@ public class ItemPaleAxe extends ItemAxe
             return;
         }
 
-        if (ConfigCache.cultAxeAwakeBulbHealing && stack.getItemDamage() > 0)
+        if (ConfigCache.ctvAxe_awakeBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -65,7 +65,7 @@ public class ItemPaleAxe extends ItemAxe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (this.isNight) return base * ConfigCache.cultAxeAwakeMiningSpeed;
+        if (this.isNight) return base * ConfigCache.ctvAxe_awakeMiningSpeed;
         return base;
     }
 
@@ -73,18 +73,18 @@ public class ItemPaleAxe extends ItemAxe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.cultAxeAwakeHarvestLevel;
+        if (isNight) return base + ConfigCache.ctvAxe_awakeHarvestLevel;
         return base;
     }
 
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
     {
-        if (state.getBlock() instanceof BlockLog && !entityLiving.isSneaking() && ConfigCache.cultAxeAwakeThornBurst)
+        if (state.getBlock() instanceof BlockLog && !entityLiving.isSneaking() && ConfigCache.ctvAxe_awakeThornBurst)
         {
             if (entityLiving instanceof EntityPlayer)
             {
                 if (((EntityPlayer)entityLiving).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
-                ((EntityPlayer)entityLiving).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.cultAxeAwakeThornBurstCooldown);
+                ((EntityPlayer)entityLiving).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvAxe_awakeThornBurstCooldown);
             }
 
             worldIn.setBlockToAir(pos);
@@ -122,10 +122,10 @@ public class ItemPaleAxe extends ItemAxe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.cultAxeAwakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.cultAxeAwakeMiningSpeed));
-            if (ConfigCache.cultAxeAwakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.cultAxeAwakeThornBurst) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_axe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvAxe_awakeHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvAxe_awakeMiningSpeed));
+            if (ConfigCache.ctvAxe_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (ConfigCache.ctvAxe_awakeThornBurst) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_axe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

@@ -51,7 +51,7 @@ public class ConfigParser
 		for(String S : Config.block.paleMossReplacable)
 		{ PaleMossReplacableList.addAll(getBlockStatesFromString(S)); }
 
-		for(String S : Config.block.pollenhead.pollenheadHybridizeList)
+		for(String S : Config.block.awakenedFloraBlocks.pollenhead.pollenheadHybridizeList)
 		{
 			String[] split = S.split("=");
 
@@ -77,7 +77,7 @@ public class ConfigParser
 			}
 		}
 
-		for(String S : Config.block.resinBulb.resinBulbCollectList)
+		for(String S : Config.block.awakenedFloraBlocks.resinBulb.resinBulbCollectList)
 		{
 			String[] split = S.split("=");
 
