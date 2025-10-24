@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " m ",
+    "prp",
+    "mmm"
+  ],
+  "key": {
+    "p": { "item": "palebloom:pale_oak_log" },
+    "r": { "item": "palebloom:resin_block" },
+    "m": { "item": "palebloom:pale_moss_block" }
+  },
+  "result": {
+    "item": "palebloom:hydraweed_body"
+  }
+}

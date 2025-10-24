@@ -11,18 +11,21 @@ public class ConfigCache
     public static final double paleOakCreakingHeartChance = Config.block.treeBlocks.saplings.paleOakSapling.creakingHeartChance;
     public static final double paleOakNaturalCreakingHeartChance = Config.block.treeBlocks.saplings.paleOakSapling.naturalCreakingHeartChance;
 
-    public static final boolean eyeblm_fullbright = Config.block.floraBlocks.eyeblossomFullbright;
-
     public static final boolean crkHrt_enabled = Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart;
     public static final boolean crkHrt_genResinNatural = Config.block.awakenedFloraBlocks.creakingHeart.naturalResinClumps;
     public static final boolean crkHrt_genResinUnnatural = Config.block.awakenedFloraBlocks.creakingHeart.unnaturalResinClumps;
     public static final boolean crkHrt_dropAmberValveNatural = Config.block.awakenedFloraBlocks.creakingHeart.naturalAmberValveDrop;
     public static final boolean crkHrt_alertReapingWillows = Config.block.awakenedFloraBlocks.creakingHeart.alertReapingWillows;
-
+    public static final boolean crkLtn_creakingIgnored = Config.block.awakenedFloraBlocks.creakingLantern.creakingsIgnoreWearer;
     public static final int palOakHlw_resinSapAmount = Config.block.awakenedFloraBlocks.paleOakHollow.resinToSapQuantity;
-
     public static final boolean rsnBlb_enabled = Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb;
     public static final int rsnBlb_creakingHeartResinReap = Config.block.awakenedFloraBlocks.resinBulb.activeCreakingHeartResinAmount;
+
+    public static final boolean eyeblm_fullbright = Config.block.floraBlocks.eyeblossomFullbright;
+    public static final boolean eyeblm_enabled = Config.block.floraBlocks.enableEyeblossom;
+    public static final boolean brmbl_enabled = Config.block.floraBlocks.enableBramble;
+    public static final boolean dblPalPnt_enabled = Config.block.floraBlocks.enableDoublePalePlants;
+
 
     /** Entities */
     public static final boolean crk_enabled = Config.entity.creaking.enableCreaking;

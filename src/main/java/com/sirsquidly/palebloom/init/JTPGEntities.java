@@ -27,11 +27,11 @@ public class JTPGEntities
         if (Config.entity.paleCreeper.enablePaleCreeper) registerEntity("pale_creeper", EntityPaleCreeper.class, ++id, 81, 9212553, 1776152);
         if (Config.item.enableEeriePainting) registerEntity("pale_painting", EntityPalePainting.class, ++id, 81);
         if (Config.entity.mannequin.enableMannequin) registerEntity("mannequin", EntityMannequin.class, ++id, 60);
-        registerEntity("hydraweed_jaw", EntityHydraweedJaw.class, ++id, 81, 6250335, 1776152);
+        if (Config.block.awakenedFloraBlocks.hydraweed_body.enableHydraweedBody) registerEntity("hydraweed_jaw", EntityHydraweedJaw.class, ++id, 81, 6250335, 1776152);
 
         if (Config.item.enablePaleOakBoat) registerEntity("pale_oak_boat", EntityPaleBoat.class, ++id, 60);
         registerEntity("thorn", EntityThorn.class, ++id, 60);
-        registerEntity("seed_bomb", EntitySeedBomb.class, ++id, 80);
+        if (Config.block.enableSeedBomb) registerEntity("seed_bomb", EntitySeedBomb.class, ++id, 80);
     }
 
     public static void registerTileEntities()
@@ -60,10 +60,10 @@ public class JTPGEntities
         if (Config.entity.paleCreeper.enablePaleCreeper) RenderingRegistry.registerEntityRenderingHandler(EntityPaleCreeper.class, RenderPaleCreeper::new);
         if (Config.item.enableEeriePainting) RenderingRegistry.registerEntityRenderingHandler(EntityPalePainting.class, RenderPalePainting::new);
         if (Config.entity.reapingWillow.enableReapingWillow) RenderingRegistry.registerEntityRenderingHandler(EntityReapingWillow.class, RenderReapingWillow::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityHydraweedJaw.class, RenderSnapweedJaw::new);
+        if (Config.block.awakenedFloraBlocks.hydraweed_body.enableHydraweedBody) RenderingRegistry.registerEntityRenderingHandler(EntityHydraweedJaw.class, RenderSnapweedJaw::new);
         if (Config.item.enablePaleOakBoat) RenderingRegistry.registerEntityRenderingHandler(EntityPaleBoat.class, RenderPaleOakBoat::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityThorn.class, RenderThorn::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntitySeedBomb.class, RenderSeedBomb::new);
+        if (Config.block.enableSeedBomb) RenderingRegistry.registerEntityRenderingHandler(EntitySeedBomb.class, RenderSeedBomb::new);
     }
 
     private static void registerEntity(String name, Class<? extends Entity> entity, int id, int range, int color1, int color2)

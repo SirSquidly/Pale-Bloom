@@ -1,5 +1,6 @@
 package com.sirsquidly.palebloom.common.item.itemblock;
 
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.paleBloom;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
@@ -82,7 +83,7 @@ public class ItemPalePumpkin extends ItemBlock
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag flag)
     {
-        if (stack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN))
+        if (ConfigCache.crkLtn_creakingIgnored && stack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN))
         { tooltip.add(TextFormatting.BLUE + I18n.translateToLocalFormatted("description.palebloom.creaking_lantern.desc1")); }
     }
 }

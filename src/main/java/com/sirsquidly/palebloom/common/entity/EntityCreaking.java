@@ -6,6 +6,7 @@ import com.sirsquidly.palebloom.common.entity.ai.EntityAIUnseenMelee;
 import com.sirsquidly.palebloom.common.entity.ai.EntityAIUnseenSwimming;
 import com.sirsquidly.palebloom.common.entity.ai.EntityAIUnseenWander;
 import com.sirsquidly.palebloom.common.entity.ai.EntityAIUnseenWatching;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGLootTables;
 import com.sirsquidly.palebloom.init.JTPGSounds;
@@ -181,7 +182,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
         if (attackTarget instanceof EntityPlayer)
         {
             ItemStack itemstack = ((EntityPlayer) attackTarget).inventory.armorInventory.get(3);
-            if (itemstack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN) && attackTarget != this.getRevengeTarget()) return;
+            if (ConfigCache.crkLtn_creakingIgnored && itemstack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN) && attackTarget != this.getRevengeTarget()) return;
         }
 
         super.setAttackTarget(attackTarget);

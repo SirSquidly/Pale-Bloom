@@ -106,8 +106,11 @@ public class JTPGBlocks
     {
         if (Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart) blockReadyForRegister(CREAKING_HEART, "creaking_heart");
 
-        blockReadyForRegister(EYEBLOSSOM_CLOSED, "eyeblossom_closed");
-        blockReadyForRegister(EYEBLOSSOM_OPEN, "eyeblossom_open");
+        if (Config.block.floraBlocks.enableEyeblossom)
+        {
+            blockReadyForRegister(EYEBLOSSOM_CLOSED, "eyeblossom_closed");
+            blockReadyForRegister(EYEBLOSSOM_OPEN, "eyeblossom_open");
+        }
 
         blockReadyForRegister(PALE_OAK_LEAVES, "pale_oak_leaves");
         blockReadyForRegister(PALE_OAK_LOG, "pale_oak_log");
@@ -126,36 +129,39 @@ public class JTPGBlocks
         blockReadyForRegister(PALE_MOSS, "pale_moss_block");
         blockReadyForRegister(PALE_MOSS_CARPET, "pale_moss_carpet");
 
-        for (Block block : RESIN_CLUMPS)  blockReadyForRegister(block, "resin_clump_" + ((BlockResinClump)block).getOrdinal());
+        if (Config.block.resinBlocks.enableResinClump) for (Block block : RESIN_CLUMPS)  blockReadyForRegister(block, "resin_clump_" + ((BlockResinClump)block).getOrdinal());
 
-        blockReadyForRegister(RESIN_BLOCK, "resin_block");
-        blockReadyForRegister(RESIN_BRICKS, "resin_bricks");
-        blockReadyForRegister(RESIN_BRICKS_SLAB, "resin_brick_slab");
-        blockReadyForRegister(RESIN_BRICKS_SLAB_D, "resin_brick_slab_double");
-        blockReadyForRegister(RESIN_BRICKS_STAIRS, "resin_brick_stairs");
-        blockReadyForRegister(RESIN_BRICKS_WALL, "resin_brick_wall");
-        blockReadyForRegister(RESIN_BRICKS_CHISELED, "resin_brick_chiseled");
+        if (Config.block.resinBlocks.enableResinBlock) blockReadyForRegister(RESIN_BLOCK, "resin_block");
+        if (Config.block.resinBlocks.enableResinBricks)
+        {
+            blockReadyForRegister(RESIN_BRICKS, "resin_bricks");
+            blockReadyForRegister(RESIN_BRICKS_SLAB, "resin_brick_slab");
+            blockReadyForRegister(RESIN_BRICKS_SLAB_D, "resin_brick_slab_double");
+            blockReadyForRegister(RESIN_BRICKS_STAIRS, "resin_brick_stairs");
+            blockReadyForRegister(RESIN_BRICKS_WALL, "resin_brick_wall");
+            blockReadyForRegister(RESIN_BRICKS_CHISELED, "resin_brick_chiseled");
+        }
 
-        blockReadyForRegister(BRAMBLE, "bramble");
+        if (Config.block.floraBlocks.enableBramble) blockReadyForRegister(BRAMBLE, "bramble");
         blockReadyForRegister(BLOOMING_PALE_OAK_LEAVES, "blooming_pale_oak_leaves");
-        blockReadyForRegister(CREAKING_LANTERN, "creaking_lantern");
-        blockReadyForRegister(HYDRAWEED_BODY, "hydraweed_body");
+        if (Config.block.awakenedFloraBlocks.creakingLantern.enableCreakingLantern) blockReadyForRegister(CREAKING_LANTERN, "creaking_lantern");
+        if (Config.block.awakenedFloraBlocks.hydraweed_body.enableHydraweedBody) blockReadyForRegister(HYDRAWEED_BODY, "hydraweed_body");
         if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) blockReadyForRegister(INCENSE_THORNS, "incense_thorns");
-        blockReadyForRegister(PALE_DOUBLE_PLANT, "pale_plant_double");
-        blockReadyForRegister(NIGHTLIGHT, "nightlight");
-        blockReadyForRegister(PALE_PETALS, "pale_petals");
+        if (Config.block.floraBlocks.enableDoublePalePlants) blockReadyForRegister(PALE_DOUBLE_PLANT, "pale_plant_double");
+        if (Config.block.awakenedFloraBlocks.nightlight.enableNightlight) blockReadyForRegister(NIGHTLIGHT, "nightlight");
+        if (Config.block.floraBlocks.enablePalePetals) blockReadyForRegister(PALE_PETALS, "pale_petals");
         if (Config.block.awakenedFloraBlocks.paleOakHollow.enablePaleOakHollow) blockReadyForRegister(PALE_OAK_HOLLOW, "pale_oak_hollow");
-        blockReadyForRegister(PALE_PUMPKIN, "pale_pumpkin");
-        blockReadyForRegister(PALE_CARVED_PUMPKIN, "pale_carved_pumpkin");
-        blockReadyForRegister(PALE_JACK_O_LANTERN, "pale_jack_o_lantern");
-        blockReadyForRegister(PALE_SOUL_JACK_O_LANTERN, "pale_soul_jack_o_lantern");
+        if (Config.block.floraBlocks.palePumpkin.enablePalePumpkin) blockReadyForRegister(PALE_PUMPKIN, "pale_pumpkin");
+        if (Config.block.floraBlocks.palePumpkin.enablePaleCarvedPumpkin) blockReadyForRegister(PALE_CARVED_PUMPKIN, "pale_carved_pumpkin");
+        if (Config.block.floraBlocks.palePumpkin.enablePaleJackoLantern) blockReadyForRegister(PALE_JACK_O_LANTERN, "pale_jack_o_lantern");
+        if (Config.block.floraBlocks.palePumpkin.enablePaleSoulJackoLantern) blockReadyForRegister(PALE_SOUL_JACK_O_LANTERN, "pale_soul_jack_o_lantern");
         blockReadyForRegister(PEEPING_BIRCH_LOG, "peeping_birch_log");
         if (Config.block.awakenedFloraBlocks.pollenhead.enablePollenhead) blockReadyForRegister(POLLENHEAD, "pollenhead");
-        blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
+        if (Config.block.awakenedFloraBlocks.reapingWillowSapling.enableReapingWillowSapling) blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
         if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
-        blockReadyForRegister(SEED_BOMB, "seed_bomb");
+        if (Config.block.enableSeedBomb) blockReadyForRegister(SEED_BOMB, "seed_bomb");
         blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
-        blockReadyForRegister(SUCKER_ROOT_NODULE, "sucker_root_nodule");
+        if (Config.block.awakenedFloraBlocks.enableSuckerRootNodule) blockReadyForRegister(SUCKER_ROOT_NODULE, "sucker_root_nodule");
 
         setupFireInfo();
 
@@ -188,20 +194,20 @@ public class JTPGBlocks
 
         registerDoorItem(r, new ItemDoor(PALE_OAK_DOOR), PALE_OAK_DOOR); itemBlockBlacklist.add(PALE_OAK_DOOR);
         event.getRegistry().register(new ItemSlab(PALE_OAK_SLAB, PALE_OAK_SLAB, PALE_OAK_SLAB_D).setRegistryName(PALE_OAK_SLAB.getRegistryName())); itemBlockBlacklist.add(PALE_OAK_SLAB);
-        event.getRegistry().register(new ItemSlab(RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB_D).setRegistryName(RESIN_BRICKS_SLAB.getRegistryName())); itemBlockBlacklist.add(RESIN_BRICKS_SLAB);
+        if (Config.block.resinBlocks.enableResinBricks) event.getRegistry().register(new ItemSlab(RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB_D).setRegistryName(RESIN_BRICKS_SLAB.getRegistryName())); itemBlockBlacklist.add(RESIN_BRICKS_SLAB);
 
         /* Attaches 'hasSubtypes' to the ItemBlock, for proper rendering. */
-        event.getRegistry().register(new ItemBlockMetaAware(RESIN_BULB)); itemBlockBlacklist.add(RESIN_BULB);
+        if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) event.getRegistry().register(new ItemBlockMetaAware(RESIN_BULB)); itemBlockBlacklist.add(RESIN_BULB);
         event.getRegistry().register(new ItemBlockMetaAware(PALE_SAPLING)); itemBlockBlacklist.add(PALE_SAPLING); itemModelBlacklist.add(PALE_SAPLING);
         event.getRegistry().register(new ItemBlockMetaAware(PALE_DOUBLE_PLANT)); itemBlockBlacklist.add(PALE_DOUBLE_PLANT); itemModelBlacklist.add(PALE_DOUBLE_PLANT);
 
         event.getRegistry().register(new ItemBlockStacking(PALE_PETALS)); itemBlockBlacklist.add(PALE_PETALS);
         event.getRegistry().register(new ItemBlockStacking(SUCKER_ROOTS)); itemBlockBlacklist.add(SUCKER_ROOTS);
 
-        event.getRegistry().register(new ItemIncenseBush(INCENSE_THORNS)); itemBlockBlacklist.add(INCENSE_THORNS);
+        if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) event.getRegistry().register(new ItemIncenseBush(INCENSE_THORNS)); itemBlockBlacklist.add(INCENSE_THORNS);
 
         event.getRegistry().register(new ItemPalePumpkin(PALE_CARVED_PUMPKIN)); itemBlockBlacklist.add(PALE_CARVED_PUMPKIN);
-        event.getRegistry().register(new ItemPalePumpkin(CREAKING_LANTERN)); itemBlockBlacklist.add(CREAKING_LANTERN);
+        if (Config.block.awakenedFloraBlocks.creakingLantern.enableCreakingLantern) event.getRegistry().register(new ItemPalePumpkin(CREAKING_LANTERN)); itemBlockBlacklist.add(CREAKING_LANTERN);
 
 
         /** As stated on itemBlockBlacklist, this registers anything NOT from the blacklist with a generic itemBlock.*/
@@ -264,8 +270,11 @@ public class JTPGBlocks
         for(Block b : blockList)
         { if (!(itemModelBlacklist.contains(b))) ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(b), 0, new ModelResourceLocation(b.getRegistryName(), "inventory")); }
 
-        for (int i = 0; i <= 3; i++)
-        { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JTPGBlocks.RESIN_BULB), i, new ModelResourceLocation(new ResourceLocation(paleBloom.MOD_ID, "resin_bulb_" + i), "inventory")); }
+        if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb)
+        {
+            for (int i = 0; i <= 3; i++)
+            { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JTPGBlocks.RESIN_BULB), i, new ModelResourceLocation(new ResourceLocation(paleBloom.MOD_ID, "resin_bulb_" + i), "inventory")); }
+        }
 
         for (int i = 0; i <= BlockJTPGSapling.EnumType.values().length; i++)
         { ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(JTPGBlocks.PALE_SAPLING), i, new ModelResourceLocation(new ResourceLocation(paleBloom.MOD_ID, BlockJTPGSapling.EnumType.byMetadata(i).getName() + "_sapling"), "inventory")); }
@@ -281,9 +290,13 @@ public class JTPGBlocks
         ModelLoader.setCustomStateMapper(JTPGBlocks.PALE_OAK_FENCE_GATE, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
         ModelLoader.setCustomStateMapper(JTPGBlocks.BLOOMING_PALE_OAK_LEAVES, new StateMap.Builder().ignore(BlockLeaves.CHECK_DECAY).ignore(BlockLeaves.DECAYABLE).build());
 
-        for (Block block : RESIN_CLUMPS) ModelLoader.setCustomStateMapper(block, sharedResinClumpMapper());
-        ModelLoader.setCustomStateMapper(JTPGBlocks.RESIN_BRICKS_SLAB, new StateMap.Builder().ignore(BlockJTPGSlab.VARIANT).build());
-        ModelLoader.setCustomStateMapper(JTPGBlocks.RESIN_BRICKS_SLAB_D, new StateMap.Builder().ignore(BlockJTPGSlab.VARIANT).build());
+        if (Config.block.resinBlocks.enableResinClump) for (Block block : RESIN_CLUMPS) ModelLoader.setCustomStateMapper(block, sharedResinClumpMapper());
+
+        if (Config.block.resinBlocks.enableResinBricks)
+        {
+            ModelLoader.setCustomStateMapper(JTPGBlocks.RESIN_BRICKS_SLAB, new StateMap.Builder().ignore(BlockJTPGSlab.VARIANT).build());
+            ModelLoader.setCustomStateMapper(JTPGBlocks.RESIN_BRICKS_SLAB_D, new StateMap.Builder().ignore(BlockJTPGSlab.VARIANT).build());
+        }
 
         //ModelLoader.setCustomStateMapper(LSBlocks.PALE_OAK_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
     }

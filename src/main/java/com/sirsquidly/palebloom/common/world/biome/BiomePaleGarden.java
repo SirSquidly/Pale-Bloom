@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common.world.biome;
 
 import com.sirsquidly.palebloom.common.world.feature.*;
 import com.sirsquidly.palebloom.config.Config;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -62,7 +63,7 @@ public class BiomePaleGarden extends BiomeForest
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {
-            if (configEyeblossomPatchChance != 0)
+            if (ConfigCache.eyeblm_enabled && configEyeblossomPatchChance != 0)
             {
                 for (int j1 = 0; j1 < this.eyeblossomPerChunk; ++j1)
                 {
@@ -73,7 +74,7 @@ public class BiomePaleGarden extends BiomeForest
                 }
             }
 
-            if (configBrambleChance != 0)
+            if (ConfigCache.brmbl_enabled && configBrambleChance != 0)
             {
                 for (int l1 = 0; l1 < this.bramblePerChunk; ++l1)
                 {
@@ -84,7 +85,7 @@ public class BiomePaleGarden extends BiomeForest
                 }
             }
 
-            if (configDoublePalePlantChance != 0)
+            if (ConfigCache.dblPalPnt_enabled && configDoublePalePlantChance != 0)
             {
                 for (int l1 = 0; l1 < this.doublePalePerChunk; ++l1)
                 {
@@ -119,7 +120,6 @@ public class BiomePaleGarden extends BiomeForest
         }
 
         this.decorator.decorate(worldIn, rand, this, pos);
-        //super. decorate(worldIn, rand, pos);
     }
 
     /** Roofed Forests use a custom tree placer, like this. */

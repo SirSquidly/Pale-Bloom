@@ -183,29 +183,6 @@ public class Config
             }
         }
 
-        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks")
-        @net.minecraftforge.common.config.Config.Comment("All config for blocks related to Flora")
-        public configBlock.configFloraBlocks floraBlocks = new configBlock.configFloraBlocks();
-
-        public static class configFloraBlocks
-        {
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.eyeblossomFullbright")
-            @net.minecraftforge.common.config.Config.Comment("Renders the Open Eyeblossom at fullbright. This is Clientside, altering this requires the lightmap to be reloaded!")
-            public boolean eyeblossomFullbright = true;
-
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin")
-            @net.minecraftforge.common.config.Config.Comment("Config related to Entities")
-            public configFloraBlocks.configPalePumpkin palePumpkin = new configFloraBlocks.configPalePumpkin();
-
-            public static class configPalePumpkin
-            {
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
-                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin.enablePalePumpkin")
-                @net.minecraftforge.common.config.Config.Comment("Enables the Creaking Heart.")
-                public boolean enablePalePumpkin = true;
-            }
-        }
-
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks")
         @net.minecraftforge.common.config.Config.Comment("All config for blocks related to specialized Flora")
         public configBlock.configAwakenedFloraBlocks awakenedFloraBlocks = new configBlock.configAwakenedFloraBlocks();
@@ -244,6 +221,35 @@ public class Config
                 public boolean naturalAmberValveDrop = true;
             }
 
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingLantern")
+            @net.minecraftforge.common.config.Config.Comment("Creaking Lantern config")
+            public configAwakenedFloraBlocks.configCreakingLantern creakingLantern = new configAwakenedFloraBlocks.configCreakingLantern();
+
+            public static class configCreakingLantern
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingLantern.enableCreakingLantern")
+                @net.minecraftforge.common.config.Config.Comment("Enables Creaking Lanterns.")
+                public boolean enableCreakingLantern = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingLantern.creakingsIgnoreWearer")
+                @net.minecraftforge.common.config.Config.Comment("Creakings ignore Creaking Lantern wearers.")
+                public boolean creakingsIgnoreWearer = true;
+            }
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.hydraweed_body")
+            @net.minecraftforge.common.config.Config.Comment("Hydraweed Body config")
+            public configAwakenedFloraBlocks.configHydraweedBody hydraweed_body = new configAwakenedFloraBlocks.configHydraweedBody();
+
+            public static class configHydraweedBody
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.hydraweed_body.enableHydraweedBody")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Hydraweed Body. Currently this also enables the Hydraweed Jaw.")
+                public boolean enableHydraweedBody = false;
+            }
+
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.incenseThorns")
             @net.minecraftforge.common.config.Config.Comment("Incense Thorns config")
             public configAwakenedFloraBlocks.configIncenseThorns incenseThorns = new configAwakenedFloraBlocks.configIncenseThorns();
@@ -256,6 +262,18 @@ public class Config
                 public boolean enableIncenseThorns = true;
             }
 
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.nightlight")
+            @net.minecraftforge.common.config.Config.Comment("Nightlight config")
+            public configAwakenedFloraBlocks.configNightlight nightlight = new configAwakenedFloraBlocks.configNightlight();
+
+            public static class configNightlight
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.nightlight.enableNightlight")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Nightlight.")
+                public boolean enableNightlight = true;
+            }
 
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.paleOakHollow")
             @net.minecraftforge.common.config.Config.Comment("Pale Oak Hollow config")
@@ -302,6 +320,18 @@ public class Config
                 };
             }
 
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.reapingWillowSapling")
+            @net.minecraftforge.common.config.Config.Comment("Reaping Willow Sapling config")
+            public configAwakenedFloraBlocks.configReapingWillowSapling reapingWillowSapling = new configAwakenedFloraBlocks.configReapingWillowSapling();
+
+            public static class configReapingWillowSapling
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.reapingWillowSapling.enableReapingWillowSapling")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Reaping Willow Sapling.")
+                public boolean enableReapingWillowSapling = true;
+            }
+
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.resinBulb")
             @net.minecraftforge.common.config.Config.Comment("Resin Bulb config")
             public configAwakenedFloraBlocks.configResinBulb resinBulb = new configAwakenedFloraBlocks.configResinBulb();
@@ -337,6 +367,11 @@ public class Config
                 @net.minecraftforge.common.config.Config.RangeInt(min = 0, max = 64)
                 public int activeCreakingHeartResinAmount = 8;
             }
+
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.enableSuckerRootNodule")
+            @net.minecraftforge.common.config.Config.Comment("Enables the Sucker Root Nodule.")
+            public boolean enableSuckerRootNodule = true;
         }
 
         @net.minecraftforge.common.config.Config.RequiresMcRestart
@@ -351,6 +386,87 @@ public class Config
                 "minecraft:stone:3",
                 "minecraft:stone:5"
         };
+
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks")
+        @net.minecraftforge.common.config.Config.Comment("All config for blocks related to Flora")
+        public configBlock.configFloraBlocks floraBlocks = new configBlock.configFloraBlocks();
+
+        public static class configFloraBlocks
+        {
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.enableEyeblossom")
+            @net.minecraftforge.common.config.Config.Comment("Enables Eyeblossom3")
+            public boolean enableEyeblossom = true;
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.eyeblossomFullbright")
+            @net.minecraftforge.common.config.Config.Comment("Renders the Open Eyeblossom at fullbright. This is Clientside, altering this requires the lightmap to be reloaded!")
+            public boolean eyeblossomFullbright = true;
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.enablePalePetals")
+            @net.minecraftforge.common.config.Config.Comment("Enables Pale Petals.")
+            public boolean enablePalePetals = true;
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.enableBramble")
+            @net.minecraftforge.common.config.Config.Comment("Enables Bramble.")
+            public boolean enableBramble = true;
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.enableDoublePalePlants")
+            @net.minecraftforge.common.config.Config.Comment("Enables all the Double-tall Pale Plants (Eyeblossom Bush, Stiffpod, Pallid).")
+            public boolean enableDoublePalePlants = true;
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin")
+            @net.minecraftforge.common.config.Config.Comment("All config for every Pale Pumpkin block, except the Creaking Lantern (which is under Awakened Flora)")
+            public configFloraBlocks.configPalePumpkin palePumpkin = new configFloraBlocks.configPalePumpkin();
+
+            public static class configPalePumpkin
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin.enablePalePumpkin")
+                @net.minecraftforge.common.config.Config.Comment("Enables Pale Pumpkin. Unlike vanilla 1.12, this refers to the uncarved form.")
+                public boolean enablePalePumpkin = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin.enablePaleCarvedPumpkin")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Pale Carved Pumpkin.")
+                public boolean enablePaleCarvedPumpkin = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin.enablePaleJackoLantern")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Pale Jack o' Lantern.")
+                public boolean enablePaleJackoLantern = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.floraBlocks.palePumpkin.enablePaleSoulJackoLantern")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Pale Soul Jack o' Lantern. Recipes utilize Soul Torches from Unseen's Nether Backport.")
+                public boolean enablePaleSoulJackoLantern = true;
+            }
+        }
+
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.resinBlocks")
+        @net.minecraftforge.common.config.Config.Comment("Nightlight config")
+        public configBlock.configResinBlocks resinBlocks = new configBlock.configResinBlocks();
+
+        public static class configResinBlocks
+        {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.resinBlocks.enableResinClump")
+            @net.minecraftforge.common.config.Config.Comment("Enables the Resin Clump.")
+            public boolean enableResinClump = true;
+
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.resinBlocks.enableResinBlock")
+            @net.minecraftforge.common.config.Config.Comment("Enables the Resin Block.")
+            public boolean enableResinBlock = true;
+
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.resinBlocks.enableResinBricks")
+            @net.minecraftforge.common.config.Config.Comment("Enables all Resin Bricks-type Blocks.")
+            public boolean enableResinBricks = true;
+        }
+
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.enableSeedBomb")
+        @net.minecraftforge.common.config.Config.Comment("Enables the Seed Bomb. This also enables the associated entity.")
+        public boolean enableSeedBomb = true;
     }
 
     @net.minecraftforge.common.config.Config.RequiresMcRestart
