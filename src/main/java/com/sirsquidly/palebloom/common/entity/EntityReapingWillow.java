@@ -77,8 +77,8 @@ public class EntityReapingWillow extends EntityMob implements IAnimatable, IAnim
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(100.0D);
-        /* Speed need to get raised to 0.12D when chasing. */
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.12D);
+        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(6.0D);
         this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(1.0D);
     }
@@ -87,7 +87,7 @@ public class EntityReapingWillow extends EntityMob implements IAnimatable, IAnim
 
     protected void playStepSound(BlockPos pos, Block blockIn) { this.playSound(JTPGSounds.ENTITY_REAPING_WILLOW_STEP, 0.15F, 1.0F); }
 
-    protected SoundEvent getAmbientSound() { return this.getAttackTarget() != null ? JTPGSounds.ENTITY_REAPING_WILLOW_ANGER: JTPGSounds.ENTITY_CREAKING_AMBIENT; }
+    protected SoundEvent getAmbientSound() { return this.getAttackTarget() != null ? JTPGSounds.ENTITY_REAPING_WILLOW_ANGER: JTPGSounds.ENTITY_REAPING_WILLOW_AMBIENT; }
 
     protected SoundEvent getDeathSound() { return JTPGSounds.ENTITY_REAPING_WILLOW_DEATH; }
 

@@ -4,6 +4,7 @@ import com.sirsquidly.palebloom.common.entity.EntityMannequin;
 import com.sirsquidly.palebloom.common.entity.EntityPaleCreeper;
 import com.sirsquidly.palebloom.common.entity.item.EntityThorn;
 import com.sirsquidly.palebloom.common.item.cultivartools.ItemPaleAxe;
+import com.sirsquidly.palebloom.common.item.cultivartools.ItemPaleShovel;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBiomes;
 import com.sirsquidly.palebloom.init.JTPGItems;
@@ -44,7 +45,7 @@ public class CommonEvents
         if (!ConfigCache.ctvSvl_awakeThornStroke || event.getWorld().isRemote || event.getFace() != EnumFacing.UP ) return;
 
         ItemStack stack = event.getItemStack();
-        if (!stack.isEmpty() && stack.getItem() instanceof ItemPaleAxe)
+        if (!stack.isEmpty() && stack.getItem() instanceof ItemPaleShovel)
         {
             if (!WorldPaleGarden.isNight(event.getWorld())) return;
 

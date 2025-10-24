@@ -325,6 +325,12 @@
 		"subtitle": "subtitles.palebloom.entity.mannequin.sway",
 		"sounds": [ "palebloom:entity/mannequin/sway1", "palebloom:entity/mannequin/sway2", "palebloom:entity/mannequin/sway3", "palebloom:entity/mannequin/sway4" ]
 	},
+	"entity.reaping_willow.ambient":
+	{
+		"category": "hostile",
+		"subtitle": "subtitles.palebloom.entity.reaping_willow.ambient",
+		"sounds": [ "palebloom:entity/creaking/ambient1", "palebloom:entity/creaking/ambient2", "palebloom:entity/creaking/ambient3", "palebloom:entity/creaking/ambient4", "palebloom:entity/creaking/ambient5", "palebloom:entity/creaking/ambient6" ]
+	},
 	"entity.reaping_willow.angry":
 	{
 		"category": "hostile",

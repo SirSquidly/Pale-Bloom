@@ -90,6 +90,7 @@ public class JTPGSounds
     public static SoundEvent ENTITY_MANNEQUIN_PLACE = soundReadyForRegister("entity.mannequin.place");
     public static SoundEvent ENTITY_MANNEQUIN_SWAY = soundReadyForRegister("entity.mannequin.sway");
 
+    public static SoundEvent ENTITY_REAPING_WILLOW_AMBIENT = soundReadyForRegister("entity.reaping_willow.ambient");
     public static SoundEvent ENTITY_REAPING_WILLOW_ANGER = soundReadyForRegister("entity.reaping_willow.angry");
     public static SoundEvent ENTITY_REAPING_WILLOW_HURT = soundReadyForRegister("entity.reaping_willow.hurt");
     public static SoundEvent ENTITY_REAPING_WILLOW_DEATH = soundReadyForRegister("entity.reaping_willow.death");
