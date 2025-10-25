@@ -8,6 +8,7 @@ import com.sirsquidly.palebloom.common.item.itemblock.ItemBlockMetaAware;
 import com.sirsquidly.palebloom.common.item.itemblock.ItemBlockStacking;
 import com.sirsquidly.palebloom.common.item.itemblock.ItemIncenseBush;
 import com.sirsquidly.palebloom.common.item.itemblock.ItemPalePumpkin;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.paleBloom;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
@@ -50,9 +51,10 @@ public class JTPGBlocks
     public static BlockBush EYEBLOSSOM_CLOSED = new BlockEyeblossom(false);
     public static BlockBush EYEBLOSSOM_OPEN = new BlockEyeblossom(true);
 
-    public static Block PALE_OAK_LEAVES = new BlockPaleOakLeaves().setHardness(0.2F).setResistance(0.2F);
-    public static Block PALE_OAK_LOG = new BlockJTPGLog();
     public static Block PALE_SAPLING = new BlockJTPGSapling();
+    public static Block PALE_OAK_LEAVES = new BlockPaleOakLeaves(PALE_SAPLING, 0).setHardness(0.2F).setResistance(0.2F);
+    public static Block PALE_OAK_LOG = new BlockJTPGLog();
+
 
     public static Block PALE_OAK_DOOR = new BlockJTPGDoor().setHardness(2.0F).setResistance(5.0F);
     public static Block PALE_OAK_PLANKS = new BlockJTPGBlock(Material.WOOD, MapColor.QUARTZ, SoundType.WOOD).setHardness(2.0F).setResistance(5.0F);
@@ -79,7 +81,7 @@ public class JTPGBlocks
 
 
     public static BlockBush BRAMBLE = (BlockBush) new BlockBramble().setHardness(0.1F);
-    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleOakLeaves().setHardness(0.2F).setResistance(0.2F);
+    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleOakLeaves(PALE_SAPLING, ConfigCache.blmPalOakLvs_saplingDrop ? 1 : 0).setHardness(0.2F).setResistance(0.2F);
     public static Block CREAKING_LANTERN = new BlockCreakingLantern().setHardness(1.0F).setResistance(1.0F);
     public static Block HYDRAWEED_BODY = new BlockHydraweedBody();
     public static Block INCENSE_THORNS = new BlockIncenseThorn().setHardness(0.4F);
@@ -111,19 +113,21 @@ public class JTPGBlocks
             blockReadyForRegister(EYEBLOSSOM_CLOSED, "eyeblossom_closed");
             blockReadyForRegister(EYEBLOSSOM_OPEN, "eyeblossom_open");
         }
+        if (Config.block.treeBlocks.enablePaleSaplings)blockReadyForRegister(PALE_SAPLING, "pale_sapling");
 
-        blockReadyForRegister(PALE_OAK_LEAVES, "pale_oak_leaves");
-        blockReadyForRegister(PALE_OAK_LOG, "pale_oak_log");
-        blockReadyForRegister(PALE_SAPLING, "pale_sapling");
-
-        blockReadyForRegister(PALE_OAK_DOOR, "pale_oak_door");
-        blockReadyForRegister(PALE_OAK_PLANKS, "pale_oak_planks");
-        blockReadyForRegister(PALE_OAK_SLAB, "pale_oak_slab");
-        blockReadyForRegister(PALE_OAK_SLAB_D, "pale_oak_slab_double");
-        blockReadyForRegister(PALE_OAK_STAIRS, "pale_oak_stairs");
-        blockReadyForRegister(PALE_OAK_FENCE, "pale_oak_fence");
-        blockReadyForRegister(PALE_OAK_FENCE_GATE, "pale_oak_fence_gate");
-        blockReadyForRegister(PALE_OAK_TRAPDOOR, "pale_oak_trapdoor");
+        if (Config.block.treeBlocks.paleOak.enablePaleOakLeaves)blockReadyForRegister(PALE_OAK_LEAVES, "pale_oak_leaves");
+        if (Config.block.treeBlocks.paleOak.enablePaleOakWoods)
+        {
+            blockReadyForRegister(PALE_OAK_LOG, "pale_oak_log");
+            blockReadyForRegister(PALE_OAK_DOOR, "pale_oak_door");
+            blockReadyForRegister(PALE_OAK_PLANKS, "pale_oak_planks");
+            blockReadyForRegister(PALE_OAK_SLAB, "pale_oak_slab");
+            blockReadyForRegister(PALE_OAK_SLAB_D, "pale_oak_slab_double");
+            blockReadyForRegister(PALE_OAK_STAIRS, "pale_oak_stairs");
+            blockReadyForRegister(PALE_OAK_FENCE, "pale_oak_fence");
+            blockReadyForRegister(PALE_OAK_FENCE_GATE, "pale_oak_fence_gate");
+            blockReadyForRegister(PALE_OAK_TRAPDOOR, "pale_oak_trapdoor");
+        }
 
         blockReadyForRegister(PALE_HANGING_MOSS, "pale_hanging_moss");
         blockReadyForRegister(PALE_MOSS, "pale_moss_block");
@@ -143,7 +147,7 @@ public class JTPGBlocks
         }
 
         if (Config.block.floraBlocks.enableBramble) blockReadyForRegister(BRAMBLE, "bramble");
-        blockReadyForRegister(BLOOMING_PALE_OAK_LEAVES, "blooming_pale_oak_leaves");
+        if (Config.block.treeBlocks.peepingBirch.enablePeepingBirchLog) blockReadyForRegister(BLOOMING_PALE_OAK_LEAVES, "blooming_pale_oak_leaves");
         if (Config.block.awakenedFloraBlocks.creakingLantern.enableCreakingLantern) blockReadyForRegister(CREAKING_LANTERN, "creaking_lantern");
         if (Config.block.awakenedFloraBlocks.hydraweed_body.enableHydraweedBody) blockReadyForRegister(HYDRAWEED_BODY, "hydraweed_body");
         if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) blockReadyForRegister(INCENSE_THORNS, "incense_thorns");
@@ -155,12 +159,12 @@ public class JTPGBlocks
         if (Config.block.floraBlocks.palePumpkin.enablePaleCarvedPumpkin) blockReadyForRegister(PALE_CARVED_PUMPKIN, "pale_carved_pumpkin");
         if (Config.block.floraBlocks.palePumpkin.enablePaleJackoLantern) blockReadyForRegister(PALE_JACK_O_LANTERN, "pale_jack_o_lantern");
         if (Config.block.floraBlocks.palePumpkin.enablePaleSoulJackoLantern) blockReadyForRegister(PALE_SOUL_JACK_O_LANTERN, "pale_soul_jack_o_lantern");
-        blockReadyForRegister(PEEPING_BIRCH_LOG, "peeping_birch_log");
+        if (Config.block.treeBlocks.peepingBirch.enablePeepingBirchLog) blockReadyForRegister(PEEPING_BIRCH_LOG, "peeping_birch_log");
         if (Config.block.awakenedFloraBlocks.pollenhead.enablePollenhead) blockReadyForRegister(POLLENHEAD, "pollenhead");
         if (Config.block.awakenedFloraBlocks.reapingWillowSapling.enableReapingWillowSapling) blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
         if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
         if (Config.block.enableSeedBomb) blockReadyForRegister(SEED_BOMB, "seed_bomb");
-        blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
+        if (Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots) blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
         if (Config.block.awakenedFloraBlocks.enableSuckerRootNodule) blockReadyForRegister(SUCKER_ROOT_NODULE, "sucker_root_nodule");
 
         setupFireInfo();
@@ -173,18 +177,22 @@ public class JTPGBlocks
     /** Sets the Fire Info for all the blocks. */
     public static void setupFireInfo()
     {
-        Blocks.FIRE.setFireInfo(BLOOMING_PALE_OAK_LEAVES, 5, 100);
+        if (Config.block.treeBlocks.bloomingPaleOak.enableBloomingPaleOakLeaves) Blocks.FIRE.setFireInfo(BLOOMING_PALE_OAK_LEAVES, 5, 100);
         Blocks.FIRE.setFireInfo(PALE_HANGING_MOSS, 5, 100);
         Blocks.FIRE.setFireInfo(PALE_MOSS, 5, 100);
         Blocks.FIRE.setFireInfo(PALE_MOSS_CARPET, 5, 100);
-        Blocks.FIRE.setFireInfo(PALE_OAK_FENCE, 5, 20);
-        Blocks.FIRE.setFireInfo(PALE_OAK_FENCE_GATE, 5, 20);
-        Blocks.FIRE.setFireInfo(PALE_OAK_LEAVES, 30, 60);
-        Blocks.FIRE.setFireInfo(PALE_OAK_LOG, 5, 5);
-        Blocks.FIRE.setFireInfo(PALE_OAK_PLANKS, 5, 20);
-        Blocks.FIRE.setFireInfo(PALE_OAK_SLAB, 5, 20);
-        Blocks.FIRE.setFireInfo(PALE_OAK_SLAB_D, 5, 20);
-        Blocks.FIRE.setFireInfo(PALE_OAK_STAIRS, 5, 20);
+
+        if (Config.block.treeBlocks.paleOak.enablePaleOakLeaves) Blocks.FIRE.setFireInfo(PALE_OAK_LEAVES, 30, 60);
+        if (Config.block.treeBlocks.paleOak.enablePaleOakWoods)
+        {
+            Blocks.FIRE.setFireInfo(PALE_OAK_FENCE, 5, 20);
+            Blocks.FIRE.setFireInfo(PALE_OAK_FENCE_GATE, 5, 20);
+            Blocks.FIRE.setFireInfo(PALE_OAK_LOG, 5, 5);
+            Blocks.FIRE.setFireInfo(PALE_OAK_PLANKS, 5, 20);
+            Blocks.FIRE.setFireInfo(PALE_OAK_SLAB, 5, 20);
+            Blocks.FIRE.setFireInfo(PALE_OAK_SLAB_D, 5, 20);
+            Blocks.FIRE.setFireInfo(PALE_OAK_STAIRS, 5, 20);
+        }
     }
 
     @SubscribeEvent
@@ -192,21 +200,25 @@ public class JTPGBlocks
     {
         IForgeRegistry<Item> r = event.getRegistry();
 
-        registerDoorItem(r, new ItemDoor(PALE_OAK_DOOR), PALE_OAK_DOOR); itemBlockBlacklist.add(PALE_OAK_DOOR);
-        event.getRegistry().register(new ItemSlab(PALE_OAK_SLAB, PALE_OAK_SLAB, PALE_OAK_SLAB_D).setRegistryName(PALE_OAK_SLAB.getRegistryName())); itemBlockBlacklist.add(PALE_OAK_SLAB);
+        if (Config.block.treeBlocks.paleOak.enablePaleOakWoods)
+        {
+            registerDoorItem(r, new ItemDoor(PALE_OAK_DOOR), PALE_OAK_DOOR); itemBlockBlacklist.add(PALE_OAK_DOOR);
+            event.getRegistry().register(new ItemSlab(PALE_OAK_SLAB, PALE_OAK_SLAB, PALE_OAK_SLAB_D).setRegistryName(PALE_OAK_SLAB.getRegistryName())); itemBlockBlacklist.add(PALE_OAK_SLAB);
+        }
+
         if (Config.block.resinBlocks.enableResinBricks) event.getRegistry().register(new ItemSlab(RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB, RESIN_BRICKS_SLAB_D).setRegistryName(RESIN_BRICKS_SLAB.getRegistryName())); itemBlockBlacklist.add(RESIN_BRICKS_SLAB);
 
         /* Attaches 'hasSubtypes' to the ItemBlock, for proper rendering. */
         if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) event.getRegistry().register(new ItemBlockMetaAware(RESIN_BULB)); itemBlockBlacklist.add(RESIN_BULB);
-        event.getRegistry().register(new ItemBlockMetaAware(PALE_SAPLING)); itemBlockBlacklist.add(PALE_SAPLING); itemModelBlacklist.add(PALE_SAPLING);
-        event.getRegistry().register(new ItemBlockMetaAware(PALE_DOUBLE_PLANT)); itemBlockBlacklist.add(PALE_DOUBLE_PLANT); itemModelBlacklist.add(PALE_DOUBLE_PLANT);
+        if (Config.block.treeBlocks.enablePaleSaplings) event.getRegistry().register(new ItemBlockMetaAware(PALE_SAPLING)); itemBlockBlacklist.add(PALE_SAPLING); itemModelBlacklist.add(PALE_SAPLING);
+        if (Config.block.floraBlocks.enableDoublePalePlants) event.getRegistry().register(new ItemBlockMetaAware(PALE_DOUBLE_PLANT)); itemBlockBlacklist.add(PALE_DOUBLE_PLANT); itemModelBlacklist.add(PALE_DOUBLE_PLANT);
 
-        event.getRegistry().register(new ItemBlockStacking(PALE_PETALS)); itemBlockBlacklist.add(PALE_PETALS);
-        event.getRegistry().register(new ItemBlockStacking(SUCKER_ROOTS)); itemBlockBlacklist.add(SUCKER_ROOTS);
+        if (Config.block.floraBlocks.enablePalePetals) event.getRegistry().register(new ItemBlockStacking(PALE_PETALS)); itemBlockBlacklist.add(PALE_PETALS);
+        if (Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots) event.getRegistry().register(new ItemBlockStacking(SUCKER_ROOTS)); itemBlockBlacklist.add(SUCKER_ROOTS);
 
         if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) event.getRegistry().register(new ItemIncenseBush(INCENSE_THORNS)); itemBlockBlacklist.add(INCENSE_THORNS);
 
-        event.getRegistry().register(new ItemPalePumpkin(PALE_CARVED_PUMPKIN)); itemBlockBlacklist.add(PALE_CARVED_PUMPKIN);
+        if (Config.block.floraBlocks.palePumpkin.enablePaleCarvedPumpkin) event.getRegistry().register(new ItemPalePumpkin(PALE_CARVED_PUMPKIN)); itemBlockBlacklist.add(PALE_CARVED_PUMPKIN);
         if (Config.block.awakenedFloraBlocks.creakingLantern.enableCreakingLantern) event.getRegistry().register(new ItemPalePumpkin(CREAKING_LANTERN)); itemBlockBlacklist.add(CREAKING_LANTERN);
 
 

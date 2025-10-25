@@ -1,6 +1,5 @@
 package com.sirsquidly.palebloom.common.blocks.base;
 
-import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorBloomingPaleOakTree;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorPaleOakTree;
 import com.sirsquidly.palebloom.common.world.feature.GeneratorPeepingBirch;
@@ -67,7 +66,7 @@ public class BlockJTPGSapling extends BlockBush implements IGrowable
     public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos)) return;
-        WorldGenerator worldgenerator = new GeneratorPaleOakTree((float) (ConfigCache.paleOakCreakingHeartChance * 0.01F), (float) (ConfigCache.paleOakNaturalCreakingHeartChance * 0.01F));
+        WorldGenerator worldgenerator = new GeneratorPaleOakTree((float) (ConfigCache.palOakSpl_creakingHeartChance * 0.01F), (float) (ConfigCache.palOakSpl_naturalCreakingHeartChance * 0.01F));
 
         int i = 0;
         int j = 0;
@@ -97,7 +96,7 @@ public class BlockJTPGSapling extends BlockBush implements IGrowable
                     {
                         if (this.isTwoByTwoOfType(worldIn, pos, i, j, EnumType.BLOOMING_PALE_OAK))
                         {
-                            worldgenerator = new GeneratorBloomingPaleOakTree((float) (ConfigCache.paleBloomCreakingHeartChance * 0.01F), (float) (ConfigCache.paleBloomNaturalCreakingHeartChance * 0.01F));
+                            worldgenerator = new GeneratorBloomingPaleOakTree((float) (ConfigCache.blmPalOakSpl_creakingHeartChance * 0.01F), (float) (ConfigCache.blmPalOakSpl_naturalCreakingHeartChance * 0.01F));
                             flag = true;
                             break;
                         }

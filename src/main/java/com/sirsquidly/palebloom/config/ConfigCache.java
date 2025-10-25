@@ -6,10 +6,10 @@ package com.sirsquidly.palebloom.config;
 public class ConfigCache
 {
     /** Blocks */
-    public static final double paleBloomCreakingHeartChance = Config.block.treeBlocks.saplings.bloomingPaleOakSapling.creakingHeartChance;
-    public static final double paleBloomNaturalCreakingHeartChance = Config.block.treeBlocks.saplings.bloomingPaleOakSapling.naturalCreakingHeartChance;
-    public static final double paleOakCreakingHeartChance = Config.block.treeBlocks.saplings.paleOakSapling.creakingHeartChance;
-    public static final double paleOakNaturalCreakingHeartChance = Config.block.treeBlocks.saplings.paleOakSapling.naturalCreakingHeartChance;
+    public static final double blmPalOakSpl_creakingHeartChance = Config.block.treeBlocks.bloomingPaleOak.bloomingPaleOakSapling.creakingHeartChance;
+    public static final double blmPalOakSpl_naturalCreakingHeartChance = Config.block.treeBlocks.bloomingPaleOak.bloomingPaleOakSapling.naturalCreakingHeartChance;
+    public static final double palOakSpl_creakingHeartChance = Config.block.treeBlocks.paleOak.paleOakSapling.creakingHeartChance;
+    public static final double palOakSpl_naturalCreakingHeartChance = Config.block.treeBlocks.paleOak.paleOakSapling.naturalCreakingHeartChance;
 
     public static final boolean crkHrt_enabled = Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart;
     public static final boolean crkHrt_genResinNatural = Config.block.awakenedFloraBlocks.creakingHeart.naturalResinClumps;
@@ -26,6 +26,11 @@ public class ConfigCache
     public static final boolean brmbl_enabled = Config.block.floraBlocks.enableBramble;
     public static final boolean dblPalPnt_enabled = Config.block.floraBlocks.enableDoublePalePlants;
 
+    public static final boolean palOakLvs_enabled = Config.block.treeBlocks.paleOak.enablePaleOakLeaves;
+    public static final boolean palOakWod_enabled = Config.block.treeBlocks.paleOak.enablePaleOakWoods;
+    public static final boolean blmPalOakLvs_enabled = Config.block.treeBlocks.bloomingPaleOak.enableBloomingPaleOakLeaves;
+    public static final boolean blmPalOakLvs_saplingDrop = Config.block.treeBlocks.bloomingPaleOak.bloomingLeavesDropSapling;
+    public static final boolean sucRot_enabled = Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots;
 
     /** Entities */
     public static final boolean crk_enabled = Config.entity.creaking.enableCreaking;

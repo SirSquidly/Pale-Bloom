@@ -18,9 +18,14 @@ import java.util.Random;
 
 public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
 {
-    public static final IBlockState LOG = JTPGBlocks.PALE_OAK_LOG.getDefaultState();
+    public static final IBlockState PALE_LOG = JTPGBlocks.PALE_OAK_LOG.getDefaultState();
+    public static final IBlockState FALLBACK_LOG = Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.DARK_OAK);
+    public static final IBlockState BLOOM_PALE_LEAF = JTPGBlocks.BLOOMING_PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState FALLBACK_LEAF = JTPGBlocks.PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState FALLBACK_LEAF2 = Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PALE_LOG : FALLBACK_LOG;
     public static final IBlockState CREAKING_HEART = JTPGBlocks.CREAKING_HEART.getDefaultState().withProperty(BlockCreakingHeart.AXIS, EnumFacing.Axis.Y);
-    public static final IBlockState LEAF = JTPGBlocks.BLOOMING_PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState LEAF = ConfigCache.blmPalOakLvs_enabled ? BLOOM_PALE_LEAF : ConfigCache.palOakLvs_enabled ? FALLBACK_LEAF : FALLBACK_LEAF2;
     public static final IBlockState ROOT = JTPGBlocks.SUCKER_ROOTS.getDefaultState();
     public static final IBlockState ROOT_NODULE = JTPGBlocks.SUCKER_ROOT_NODULE.getDefaultState();
 
@@ -180,14 +185,18 @@ public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
         placeRandomHangingLeaves(worldIn, rand, posLol.down(3), 4, 2);
 
         placeStump(worldIn, rand, pos);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.NORTH);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.WEST);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.east(), EnumFacing.NORTH);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.east(), EnumFacing.EAST);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south(), EnumFacing.SOUTH);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south(), EnumFacing.WEST);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south().east(), EnumFacing.SOUTH);
-        if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south().east(), EnumFacing.EAST);
+
+        if (ConfigCache.sucRot_enabled)
+        {
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.NORTH);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.WEST);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.east(), EnumFacing.NORTH);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.east(), EnumFacing.EAST);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south(), EnumFacing.SOUTH);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south(), EnumFacing.WEST);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south().east(), EnumFacing.SOUTH);
+            if (rand.nextBoolean()) placeRoots(worldIn, rand, pos.south().east(), EnumFacing.EAST);
+        }
 
         if (!placedNodule && rand.nextInt(10) == 0)
         { placeRootNoduleAt(worldIn, pos.down()); }

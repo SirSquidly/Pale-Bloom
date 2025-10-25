@@ -136,50 +136,98 @@ public class Config
 
         public static class configTreeBlocks
         {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.enablePaleSaplings")
+            @net.minecraftforge.common.config.Config.Comment("Enables all Pale Saplings (Pale, Blooming, Peeping).")
+            public boolean enablePaleSaplings = true;
 
-            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings")
-            @net.minecraftforge.common.config.Config.Comment("Config related to Entities")
-            public configTreeBlocks.configSaplings saplings = new configTreeBlocks.configSaplings();
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak")
+            @net.minecraftforge.common.config.Config.Comment("Config for all Pale Oak Blocks")
+            public configTreeBlocks.configPaleOak paleOak = new configTreeBlocks.configPaleOak();
 
-            public static class configSaplings
+            public static class configPaleOak
             {
-                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.paleOakSapling")
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.enablePaleOakLeaves")
+                @net.minecraftforge.common.config.Config.Comment("Enables Pale Oak Leaves. If disabled, Pale Oak Trees will generate with Dark Oak Leaves.")
+                public boolean enablePaleOakLeaves = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.enablePaleOakWoods")
+                @net.minecraftforge.common.config.Config.Comment("Enables all Pale Oak wood blocks (Log, Planks, Stairs, ect). If disabled, Pale Oak Trees will generate with Dark Oak Logs.")
+                public boolean enablePaleOakWoods = true;
+
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.paleOakSapling")
                 @net.minecraftforge.common.config.Config.Comment("Config related to Entities")
-                public configSaplings.configPaleOakSapling paleOakSapling = new configSaplings.configPaleOakSapling();
+                public configPaleOak.configPaleOakSapling paleOakSapling = new configPaleOak.configPaleOakSapling();
 
                 public static class configPaleOakSapling
                 {
                     @net.minecraftforge.common.config.Config.RequiresMcRestart
-                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.paleOakSapling.creakingHeartChance")
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.paleOakSapling.creakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a player-grown Pale Oak to have a Creaking Heart. Note Creaking Hearts need to be surrounded on all sides, so this may fail even at 100%.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double creakingHeartChance = 0.0D;
 
                     @net.minecraftforge.common.config.Config.RequiresMcRestart
-                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.creakingHeart.naturalCreakingHeartChance")
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.creakingHeart.naturalCreakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a generated Creaking Heart to be Natural.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double naturalCreakingHeartChance = 0.0D;
                 }
+            }
 
-                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.bloomingPaleOakSapling")
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak")
+            @net.minecraftforge.common.config.Config.Comment("Config for all Blooming Pale Oak Blocks")
+            public configTreeBlocks.configBloomingPaleOak bloomingPaleOak = new configTreeBlocks.configBloomingPaleOak();
+
+            public static class configBloomingPaleOak
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.enableBloomingPaleOakLeaves")
+                @net.minecraftforge.common.config.Config.Comment("Enables Blooming Pale Oak Leaves.")
+                public boolean enableBloomingPaleOakLeaves = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.enableSuckerRoots")
+                @net.minecraftforge.common.config.Config.Comment("Enables Sucker Roots.")
+                public boolean enableSuckerRoots = true;
+
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingLeavesDropSapling")
+                @net.minecraftforge.common.config.Config.Comment("If Blooming Pale Oak Leaves should drop Blooming Saplings. If disabled, instead they drop the normal Pale Oak Sapling.")
+                public boolean bloomingLeavesDropSapling = false;
+
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingSapling")
                 @net.minecraftforge.common.config.Config.Comment("Config related to Entities")
-                public configSaplings.configBloomingPaleOakSapling bloomingPaleOakSapling = new configSaplings.configBloomingPaleOakSapling();
+                public configBloomingPaleOak.configBloomingPaleOakSapling bloomingPaleOakSapling = new configBloomingPaleOak.configBloomingPaleOakSapling();
 
                 public static class configBloomingPaleOakSapling
                 {
                     @net.minecraftforge.common.config.Config.RequiresMcRestart
-                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.bloomingPaleOakSapling.creakingHeartChance")
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingSapling.creakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a player-grown Pale Oak to have a Creaking Heart. Note Creaking Hearts need to be surrounded on all sides, so this may fail even at 100%.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double creakingHeartChance = 20.0D;
 
                     @net.minecraftforge.common.config.Config.RequiresMcRestart
-                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.saplings.bloomingPaleOakSapling.naturalCreakingHeartChance")
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingSapling.naturalCreakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a generated Creaking Heart to be Natural.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double naturalCreakingHeartChance = 100.0D;
                 }
+            }
+
+            @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.peepingBirch")
+            @net.minecraftforge.common.config.Config.Comment("Config for all Peeping Birch Blocks")
+            public configTreeBlocks.configPeepingBirch peepingBirch = new configTreeBlocks.configPeepingBirch();
+
+            public static class configPeepingBirch
+            {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.peepingBirch.enablePeepingBirchLog")
+                @net.minecraftforge.common.config.Config.Comment("Enables the Peeping Birch Log.")
+                public boolean enablePeepingBirchLog = true;
             }
         }
 

@@ -1,7 +1,7 @@
 package com.sirsquidly.palebloom.common.blocks;
 
-import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.paleBloom;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.MapColor;
@@ -29,10 +29,15 @@ import java.util.Random;
 
 public class BlockPaleOakLeaves extends BlockLeaves
 {
-    public BlockPaleOakLeaves()
+    Block getSaplingDropped;
+    int getDroppedMetadata;
+
+    public BlockPaleOakLeaves(Block getSaplingDroppedIn, int metaIn)
     {
         super();
         setDefaultState(this.getDefaultState().withProperty(BlockLeaves.DECAYABLE, false).withProperty(BlockLeaves.CHECK_DECAY, false));
+        getSaplingDropped = getSaplingDroppedIn;
+        getDroppedMetadata = metaIn;
     }
 
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
@@ -43,7 +48,10 @@ public class BlockPaleOakLeaves extends BlockLeaves
     { return null; }
 
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    { return Item.getItemFromBlock(JTPGBlocks.PALE_SAPLING); }
+    { return getSaplingDropped != null ? Item.getItemFromBlock(getSaplingDropped) : null; }
+
+    public int damageDropped(IBlockState state)
+    { return getDroppedMetadata; }
 
     @Deprecated
     public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)

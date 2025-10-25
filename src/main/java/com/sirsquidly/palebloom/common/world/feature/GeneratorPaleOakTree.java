@@ -18,9 +18,14 @@ import java.util.Random;
 
 public class GeneratorPaleOakTree extends WorldGenAbstractTree
 {
-    public static final IBlockState LOG = JTPGBlocks.PALE_OAK_LOG.getDefaultState();
+    public static final IBlockState PALE_LOG = JTPGBlocks.PALE_OAK_LOG.getDefaultState();
+    public static final IBlockState FALLBACK_LOG = Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.DARK_OAK);
+    public static final IBlockState PALE_LEAF = JTPGBlocks.PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState FALLBACK_LEAF = Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+
+    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PALE_LOG : FALLBACK_LOG;
     public static final IBlockState CREAKING_HEART = JTPGBlocks.CREAKING_HEART.getDefaultState().withProperty(BlockCreakingHeart.NATURAL, true).withProperty(BlockCreakingHeart.AXIS, EnumFacing.Axis.Y);
-    public static final IBlockState LEAF = JTPGBlocks.PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState LEAF = ConfigCache.palOakLvs_enabled ? PALE_LEAF : FALLBACK_LEAF;
 
     public static final IBlockState HANGING_MOSS = JTPGBlocks.PALE_HANGING_MOSS.getDefaultState();
 
