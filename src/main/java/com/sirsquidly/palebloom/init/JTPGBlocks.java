@@ -52,7 +52,7 @@ public class JTPGBlocks
     public static BlockBush EYEBLOSSOM_OPEN = new BlockEyeblossom(true);
 
     public static Block PALE_SAPLING = new BlockJTPGSapling();
-    public static Block PALE_OAK_LEAVES = new BlockPaleOakLeaves(PALE_SAPLING, 0).setHardness(0.2F).setResistance(0.2F);
+    public static Block PALE_OAK_LEAVES = new BlockPaleLeaves(PALE_SAPLING, 0, 0).setHardness(0.2F).setResistance(0.2F);
     public static Block PALE_OAK_LOG = new BlockJTPGLog();
 
 
@@ -81,7 +81,7 @@ public class JTPGBlocks
 
 
     public static BlockBush BRAMBLE = (BlockBush) new BlockBramble().setHardness(0.1F);
-    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleOakLeaves(PALE_SAPLING, ConfigCache.blmPalOakLvs_saplingDrop ? 1 : 0).setHardness(0.2F).setResistance(0.2F);
+    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleLeaves(PALE_SAPLING, ConfigCache.blmPalOakLvs_saplingDrop ? 1 : 0, 1).setHardness(0.2F).setResistance(0.2F);
     public static Block CREAKING_LANTERN = new BlockCreakingLantern().setHardness(1.0F).setResistance(1.0F);
     public static Block HYDRAWEED_BODY = new BlockHydraweedBody();
     public static Block INCENSE_THORNS = new BlockIncenseThorn().setHardness(0.4F);
@@ -94,6 +94,7 @@ public class JTPGBlocks
     public static BlockBush PALE_PETALS = new BlockPalePetals();
     public static Block PALE_OAK_HOLLOW = new BlockPaleOakHollow();
     public static Block PEEPING_BIRCH_LOG = new BlockJTPGLog();
+    public static Block PEEPING_BIRCH_LEAVES = new BlockPaleLeaves(PALE_SAPLING, 2, 2).setLeafSpawnChance(128).setHardness(0.2F).setResistance(0.2F);
     public static Block POLLENHEAD = new BlockPollenhead();
     public static Block NIGHTLIGHT = new BlockNightlight().setHardness(0.4F);
 
@@ -160,6 +161,7 @@ public class JTPGBlocks
         if (Config.block.floraBlocks.palePumpkin.enablePaleJackoLantern) blockReadyForRegister(PALE_JACK_O_LANTERN, "pale_jack_o_lantern");
         if (Config.block.floraBlocks.palePumpkin.enablePaleSoulJackoLantern) blockReadyForRegister(PALE_SOUL_JACK_O_LANTERN, "pale_soul_jack_o_lantern");
         if (Config.block.treeBlocks.peepingBirch.enablePeepingBirchLog) blockReadyForRegister(PEEPING_BIRCH_LOG, "peeping_birch_log");
+        blockReadyForRegister(PEEPING_BIRCH_LEAVES, "peeping_birch_leaves");
         if (Config.block.awakenedFloraBlocks.pollenhead.enablePollenhead) blockReadyForRegister(POLLENHEAD, "pollenhead");
         if (Config.block.awakenedFloraBlocks.reapingWillowSapling.enableReapingWillowSapling) blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
         if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
@@ -301,6 +303,7 @@ public class JTPGBlocks
         ModelLoader.setCustomStateMapper(JTPGBlocks.PALE_OAK_SLAB_D, new StateMap.Builder().ignore(BlockJTPGSlab.VARIANT).build());
         ModelLoader.setCustomStateMapper(JTPGBlocks.PALE_OAK_FENCE_GATE, new StateMap.Builder().ignore(BlockFenceGate.POWERED).build());
         ModelLoader.setCustomStateMapper(JTPGBlocks.BLOOMING_PALE_OAK_LEAVES, new StateMap.Builder().ignore(BlockLeaves.CHECK_DECAY).ignore(BlockLeaves.DECAYABLE).build());
+        ModelLoader.setCustomStateMapper(JTPGBlocks.PEEPING_BIRCH_LEAVES, new StateMap.Builder().ignore(BlockLeaves.CHECK_DECAY).ignore(BlockLeaves.DECAYABLE).build());
 
         if (Config.block.resinBlocks.enableResinClump) for (Block block : RESIN_CLUMPS) ModelLoader.setCustomStateMapper(block, sharedResinClumpMapper());
 

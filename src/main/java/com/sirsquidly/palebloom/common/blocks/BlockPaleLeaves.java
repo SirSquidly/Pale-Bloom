@@ -27,17 +27,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockPaleOakLeaves extends BlockLeaves
+public class BlockPaleLeaves extends BlockLeaves
 {
     Block getSaplingDropped;
     int getDroppedMetadata;
+    int getLeafType;
+    int leafSpawnChance = 64;
 
-    public BlockPaleOakLeaves(Block getSaplingDroppedIn, int metaIn)
+    public BlockPaleLeaves(Block getSaplingDroppedIn, int metaIn, int leafTypeIn)
     {
         super();
         setDefaultState(this.getDefaultState().withProperty(BlockLeaves.DECAYABLE, false).withProperty(BlockLeaves.CHECK_DECAY, false));
         getSaplingDropped = getSaplingDroppedIn;
         getDroppedMetadata = metaIn;
+        getLeafType = leafTypeIn;
     }
 
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
@@ -94,10 +97,17 @@ public class BlockPaleOakLeaves extends BlockLeaves
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
-        if (rand.nextInt(64) == 0 && !worldIn.getBlockState(pos.down()).getMaterial().blocksMovement())
+        if (rand.nextInt(leafSpawnChance) == 0 && !worldIn.getBlockState(pos.down()).getMaterial().blocksMovement())
         {
-            paleBloom.proxy.spawnParticle(1, worldIn, pos.getX() + 0.5 + (worldIn.rand.nextDouble() - 0.5), pos.getY(), pos.getZ() + 0.5 + (worldIn.rand.nextDouble() - 0.5), 0, 0, 0);
+            paleBloom.proxy.spawnParticle(1, worldIn, pos.getX() + 0.5 + (worldIn.rand.nextDouble() - 0.5), pos.getY(), pos.getZ() + 0.5 + (worldIn.rand.nextDouble() - 0.5), 0, 0, 0, getLeafType);
         }
+    }
+
+    /** Literally only used so Peeping Birch drops fewer particles. */
+    public Block setLeafSpawnChance(int chanceIn)
+    {
+        leafSpawnChance = chanceIn;
+        return this;
     }
 
     public IBlockState getStateFromMeta(int meta)

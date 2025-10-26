@@ -23,11 +23,14 @@ public class ParticlePaleLeaf extends ParticleBase
     final float swirlScrew;
     final float swirlRadius;
 
-    private static final ResourceLocation LEAF_TEXTURE = new ResourceLocation(paleBloom.MOD_ID, "textures/particles/pale_oak_leaf.png");
+    private static final ResourceLocation PALE_LEAF_TEXTURE = new ResourceLocation(paleBloom.MOD_ID, "textures/particles/pale_oak_leaf.png");
+    private static final ResourceLocation BLOOMING_LEAF_TEXTURE = new ResourceLocation(paleBloom.MOD_ID, "textures/particles/blooming_pale_oak_leaf.png");
+    private static final ResourceLocation PEEPING_LEAF_TEXTURE = new ResourceLocation(paleBloom.MOD_ID, "textures/particles/peeping_birch_leaf.png");
+    private static final ResourceLocation[] LEAF_TEXTURES = new ResourceLocation[]{PALE_LEAF_TEXTURE, BLOOMING_LEAF_TEXTURE, PEEPING_LEAF_TEXTURE};
 
-    public ParticlePaleLeaf(TextureManager textureManager, World world, double x, double y, double z, double movementX, double movementY, double movementZ)
+    public ParticlePaleLeaf(TextureManager textureManager, World world, double x, double y, double z, double movementX, double movementY, double movementZ, int leafType)
     {
-        super(textureManager, world, x, y, z, movementX, movementY, movementZ, LEAF_TEXTURE, 0);
+        super(textureManager, world, x, y, z, movementX, movementY, movementZ, LEAF_TEXTURES[leafType], 0);
         this.motionX = movementX;
         this.motionY = movementY;
         this.motionZ = movementZ;
@@ -102,6 +105,9 @@ public class ParticlePaleLeaf extends ParticleBase
     {
         @Override
         public Particle createParticle(int particleId, World world, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters)
-        { return new ParticlePaleLeaf(Minecraft.getMinecraft().getTextureManager(), world, posX, posY, posZ, speedX, speedY, speedZ); }
+        {
+            if (parameters.length == 1) return new ParticlePaleLeaf(Minecraft.getMinecraft().getTextureManager(), world, posX, posY, posZ, speedX, speedY, speedZ, parameters[0]);
+            return null;
+        }
     }
 }

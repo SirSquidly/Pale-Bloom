@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
-import com.google.common.collect.Lists;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
@@ -10,14 +10,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 public class GeneratorPeepingBirch extends WorldGenAbstractTree
 {
-    public static final IBlockState LOG = JTPGBlocks.PEEPING_BIRCH_LOG.getDefaultState();
-    public static final IBlockState LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.BIRCH).withProperty(BlockOldLeaf.CHECK_DECAY, false);
+    public static final IBlockState PEEPING_LOG = JTPGBlocks.PEEPING_BIRCH_LOG.getDefaultState();
+    public static final IBlockState FALLBACK_LOG = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.BIRCH);
+    public static final IBlockState PEEPING_LEAF = JTPGBlocks.PEEPING_BIRCH_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+    public static final IBlockState FALLBACK_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.BIRCH).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
+
+    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PEEPING_LOG : FALLBACK_LOG;
+    public static final IBlockState LEAF = ConfigCache.palOakLvs_enabled ? PEEPING_LEAF : FALLBACK_LEAF;
 
     public GeneratorPeepingBirch()
     { super(false); }
@@ -74,17 +77,16 @@ public class GeneratorPeepingBirch extends WorldGenAbstractTree
             {
                 this.placeLogAt(worldIn, upN, BlockLog.EnumAxis.Y);
 
-                if (j2 > 3 && j2 < i - 3)
+                if (j2 > 3 && j2 < i - 3 && rand.nextInt(3) == 0)
                 {
-                    if (rand.nextInt(4) == 0) continue;
+                    EnumFacing randomFacing = EnumFacing.Plane.HORIZONTAL.random(rand);
+                    BlockPos offsetPos = upN.offset(randomFacing);
+                    IBlockState offsetState = worldIn.getBlockState(offsetPos);
+                    IBlockState offsetDownState = worldIn.getBlockState(offsetPos.down());
 
-                    List<EnumFacing> list = Lists.newArrayList(EnumFacing.Plane.HORIZONTAL);
-                    Collections.shuffle(list, rand);
-
-                    /* Includes an extra check below, to prevent branch ends from generating stacked. */
-                    if ((state2.getBlock().isAir(state2, worldIn, upN.offset(list.get(0))) || state2.getBlock().isLeaves(state2, worldIn, upN.offset(list.get(0)))) && state2.getBlock().isAir(state2, worldIn, upN.offset(list.get(0)).down()))
+                    if ((offsetState.getBlock().isAir(offsetState, worldIn, offsetPos) || offsetState.getBlock().isLeaves(offsetState, worldIn, offsetPos)) && offsetDownState.getBlock().isAir(offsetDownState, worldIn, offsetPos.down()))
                     {
-                        this.placeLogAt(worldIn, upN.offset(list.get(0)), BlockLog.EnumAxis.fromFacingAxis(list.get(0).getAxis()));
+                        this.placeLogAt(worldIn, offsetPos, BlockLog.EnumAxis.fromFacingAxis(randomFacing.getAxis()));
                     }
                 }
             }
