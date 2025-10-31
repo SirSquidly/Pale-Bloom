@@ -40,7 +40,7 @@ public class BlockReapingWillowSapling extends BlockJTPGDoublePlant
     }
 
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
-    { return state.getValue(STAGE) > 3 ? super.canBlockStay(worldIn, pos, state) : this.canSustainBush(worldIn.getBlockState(pos.down())); }
+    { return state.getValue(STAGE) > 3 ? super.canBlockStay(worldIn, pos, state) : this.superCanBlockStay(worldIn, pos, state); }
 
     /** Does the placeAt when placed. */
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)

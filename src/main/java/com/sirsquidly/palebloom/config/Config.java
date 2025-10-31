@@ -21,7 +21,7 @@ public class Config
             "0.x.0 - Config options have been added.",
             "x.0.0 - Previous Config Options have been completely overhauled and/or removed. Creating a fresh file is recommended."
     })
-    public static String configVersion = "0.0.0";
+    public static String configVersion = "1.0.0";
 
     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden")
     @net.minecraftforge.common.config.Config.Comment("Pale Garden Config")

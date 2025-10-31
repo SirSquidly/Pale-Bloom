@@ -31,6 +31,10 @@ public class BlockJTPGDoublePlant extends BlockBush
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
     { return isTop(worldIn, pos) || super.canBlockStay(worldIn, pos, state) && worldIn.getBlockState(pos.up()).getBlock() == this; }
 
+    /** It's the 'canBlockStay' from Block Bush, for use with weirder parts of code. */
+    public boolean superCanBlockStay(World worldIn, BlockPos pos, IBlockState state)
+    { return super.canBlockStay(worldIn, pos, state); }
+
     @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     { return super.canBlockStay(worldIn, pos, this.getDefaultState()) && worldIn.isAirBlock(pos.up()); }
