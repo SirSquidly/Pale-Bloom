@@ -33,7 +33,7 @@ public class PolleneheadHybridizeCategory implements IRecipeCategory<BasicRecipe
     public void setRecipe(IRecipeLayout recipeLayout, BasicRecipeWrapper wrapper, IIngredients ingredients)
     {
         IGuiItemStackGroup stacks = recipeLayout.getItemStacks();
-        stacks.init(0, true, 9, 17);
+        stacks.init(0, true, 14, 17);
         stacks.init(1, false, 74, 17);
 
         stacks.set(ingredients);
