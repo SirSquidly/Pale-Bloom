@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
+import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -82,6 +83,9 @@ public class BlockIncenseThorn extends BlockBush implements ITileEntityProvider,
 
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
     {
+        player.addStat(StatList.getBlockStats(this));
+        player.addExhaustion(0.005F);
+
         if (te instanceof TileIncenseThorn)
         {
             TileIncenseThorn tile = (TileIncenseThorn)te;
@@ -92,7 +96,6 @@ public class BlockIncenseThorn extends BlockBush implements ITileEntityProvider,
             itemstack.setTagCompound(nbt);
             spawnAsEntity(worldIn, pos, itemstack);
         }
-        super.harvestBlock(worldIn, player, pos, state, te, stack);
     }
 
 

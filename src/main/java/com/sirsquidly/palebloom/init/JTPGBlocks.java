@@ -63,7 +63,7 @@ public class JTPGBlocks
     public static Block PALE_OAK_STAIRS = new BlockJTPGStairs(JTPGBlocks.PALE_OAK_PLANKS.getDefaultState(), SoundType.WOOD).setHardness(2.0F).setResistance(5.0F);
     public static Block PALE_OAK_FENCE = new BlockJTPGFence(Material.WOOD, MapColor.QUARTZ, SoundType.WOOD).setHardness(2.0F).setResistance(5.0F);
     public static Block PALE_OAK_FENCE_GATE = new BlockJTPGFenceGate(BlockPlanks.EnumType.DARK_OAK, SoundType.WOOD).setHardness(2.0F).setResistance(5.0F);
-    public static Block PALE_OAK_TRAPDOOR = new BlockJTPGTrapDoor().setHardness(2.0F).setResistance(5.0F);
+    public static Block PALE_OAK_TRAPDOOR = new BlockJTPGTrapDoor(SoundType.WOOD).setHardness(2.0F).setResistance(5.0F);
 
     public static Block PALE_HANGING_MOSS = new BlockPaleHangingMoss();
     public static Block PALE_MOSS = new BlockPaleMossBlock().setHardness(0.1F);

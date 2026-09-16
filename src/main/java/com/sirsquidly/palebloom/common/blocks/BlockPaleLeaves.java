@@ -19,6 +19,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -47,20 +48,19 @@ public class BlockPaleLeaves extends BlockLeaves
     { return this.getDefaultState().withProperty(BlockLeaves.DECAYABLE, false).withProperty(BlockLeaves.CHECK_DECAY, false); }
 
     @Override
-    public BlockPlanks.EnumType getWoodType(int meta)
-    { return null; }
+    public BlockPlanks.EnumType getWoodType(int meta) { return null; }
+
+    /** Since we do shenanigans with the dropped item metadata, override the pick block to NOT use `damageDropped`! */
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
+    { return new ItemStack(Item.getItemFromBlock(this), 1, 0); }
 
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     { return getSaplingDropped != null ? Item.getItemFromBlock(getSaplingDropped) : null; }
 
-    public int damageDropped(IBlockState state)
-    { return getDroppedMetadata; }
+    public int damageDropped(IBlockState state)  { return getDroppedMetadata; }
 
     @Deprecated
-    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
-        return MapColor.IRON;
-    }
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) { return MapColor.IRON; }
 
     @Override
     public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune)

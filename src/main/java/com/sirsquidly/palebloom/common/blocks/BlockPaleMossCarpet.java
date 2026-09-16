@@ -115,10 +115,7 @@ public class BlockPaleMossCarpet extends Block implements IGrowable
     { if (canGrow(worldIn, pos, state, false) && worldIn.rand.nextFloat() < doubleChance) grow(worldIn, worldIn.rand, pos, state);}
 
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
-    {
-        super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
-        this.checkAndDropBlock(worldIn, pos, state);
-    }
+    { this.checkAndDropBlock(worldIn, pos, state); }
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     { this.checkAndDropBlock(worldIn, pos, state); }
@@ -131,7 +128,10 @@ public class BlockPaleMossCarpet extends Block implements IGrowable
     protected void checkAndDropBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         if (!state.getValue(BOTTOM) && (worldIn.getBlockState(pos.down()).getBlock() != this || !hasAnySides(worldIn, pos)) || state.getValue(BOTTOM) && worldIn.isAirBlock(pos.down()))
-        { worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3); }
+        {
+            this.dropBlockAsItem(worldIn, pos, state, 0);
+            worldIn.setBlockToAir(pos);
+        }
     }
 
     /** Top parts do not drop, as they exist just to render. */

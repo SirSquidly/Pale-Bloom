@@ -13,6 +13,7 @@ import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -128,10 +129,10 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
             this.isSwingInProgress = false;
         }
 
-        int twitch = this.getAnimTick();
+        int twitch = this.getDeathAnimTick();
         if (twitch > 0)
         {
-            this.setAnimTick(--twitch);
+            this.setDeathAnimTick(--twitch);
             this.navigator.clearPath();
 
             this.setGlowingEyes((twitch > 40 || twitch <= 36) && (twitch > 28 || twitch <= 25) && (twitch > 20 || twitch <= 18) && (twitch > 14 || twitch <= 12) && (twitch > 8 || twitch <= 6));
@@ -139,6 +140,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
             if (twitch <= 1)
             { preformDeathEffects(); }
         }
+        else if (this.ticksExisted % 40 == 0 && !world.isRemote) isHeartBoundAndGood();
 
         if (this.getHurtTime() > 0) setHurtTime((byte) (this.getHurtTime() - 1));
 
@@ -193,7 +195,37 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
     public void preformTwitchingDeath(int ticksIn)
     {
         if (ticksIn != 1) this.playSound(JTPGSounds.ENTITY_CREAKING_TWITCH, 1.0F, this.rand.nextFloat() * 0.4F + 0.8F);
-        this.setAnimTick(ticksIn);
+        this.setDeathAnimTick(ticksIn);
+    }
+
+    /** This is used to verify if this Creaking is bound to a Heart, and if the Heart exists just fine. */
+    public boolean isHeartBoundAndGood()
+    {
+        if (!spawnedByHeart()) return false;
+        boolean badHeart = false;
+
+        /** Yes, an unloaded Heart Pos is never checked. */
+        if (!world.isBlockLoaded(this.getHeartPos())) return true;
+
+        IBlockState state = world.getBlockState(this.getHeartPos());
+        if(!state.getBlock().hasTileEntity(state)) badHeart = true;
+        else
+        {
+            TileEntity tileentity = world.getTileEntity(this.getHeartPos());
+            if (!(tileentity instanceof TileCreakingHeart)) badHeart = true;
+            else
+            {
+                TileCreakingHeart heart = (TileCreakingHeart)tileentity;
+                if (heart.getCreakingUUID() != this.getUniqueID()) badHeart = true;
+            }
+        }
+
+        if (badHeart && this.getDeathAnimTick() == 0)
+        {
+            this.preformTwitchingDeath();
+            return false;
+        }
+        return true;
     }
 
     /** Spawns Particles and such for the special Creaking Death.
@@ -220,8 +252,8 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
         this.setDead();
     }
 
-    public int getAnimTick() { return this.dataManager.get(ANIM_TICK); }
-    public void setAnimTick(int byteIn) { this.dataManager.set(ANIM_TICK, (byte) byteIn); }
+    public int getDeathAnimTick() { return this.dataManager.get(ANIM_TICK); }
+    public void setDeathAnimTick(int byteIn) { this.dataManager.set(ANIM_TICK, (byte) byteIn); }
 
     public ResourceLocation getEyeGlowTexture() { return EYEGLOW_TEXTURE; }
     public boolean getGlowingEyes() { return this.dataManager.get(EYES_GLOW); }
@@ -250,7 +282,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
         compound.setInteger("HeartPosY", blockpos.getY());
         compound.setInteger("HeartPosZ", blockpos.getZ());
 
-        compound.setInteger("TwitchTick", getAnimTick());
+        compound.setInteger("TwitchTick", getDeathAnimTick());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound)
@@ -264,7 +296,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
         int z = compound.getInteger("HeartPosZ");
         this.dataManager.set(HOME_HEART_POS, new BlockPos(x, y, z));
 
-        this.setAnimTick(compound.getInteger("TwitchTick"));
+        this.setDeathAnimTick(compound.getInteger("TwitchTick"));
     }
 
     /** Ahead is GeckoLib implimentations! */
@@ -296,7 +328,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
 
     private <E extends IAnimatable> PlayState predicateHurt(AnimationEvent<E> event)
     {
-        if (this.getAnimTick() > 0)
+        if (this.getDeathAnimTick() > 0)
         {
             event.getController().setAnimation(TWITCH_ANIMATION);
             return PlayState.CONTINUE;

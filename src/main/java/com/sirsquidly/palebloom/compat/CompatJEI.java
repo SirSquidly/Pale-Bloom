@@ -52,6 +52,10 @@ public class CompatJEI implements IModPlugin
         /* Hide the dang Double Slabs from JEI! */
 		ingredientBlacklist.addIngredientToBlacklist(new ItemStack(JTPGBlocks.PALE_OAK_SLAB_D));
         ingredientBlacklist.addIngredientToBlacklist(new ItemStack(JTPGBlocks.RESIN_BRICKS_SLAB_D));
+
+        /* Hide the technical Resin Clump blocks from the JEI menu */
+        for (int i = 0; i < JTPGBlocks.RESIN_CLUMPS.length; i++)
+        { ingredientBlacklist.addIngredientToBlacklist(new ItemStack(JTPGBlocks.RESIN_CLUMPS[i])); }
     }
 
     /** Attaches JEI Descriptions to the items which it is helpful for. */
