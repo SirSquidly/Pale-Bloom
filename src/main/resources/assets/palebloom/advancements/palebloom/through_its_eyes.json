@@ -1,0 +1,18 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:eyeblossom_open" },
+    "title": { "translate": "advancements.palebloom.through_its_eyes.title" },
+    "description": { "translate": "advancements.palebloom.through_its_eyes.description" }
+  },
+  "parent": "palebloom:palebloom/in_the_nightlight",
+  "criteria":
+  {
+    "place_resin_bulb":
+    {
+      "trigger": "minecraft:effects_changed",
+      "conditions":
+      { "effects": { "palebloom:ambereyes": {} }}
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:pale_creeper_husk" },
+    "title": { "translate": "advancements.palebloom.camo_creeper.title" },
+    "description": { "translate": "advancements.palebloom.camo_creeper.description" }
+  },
+  "parent": "palebloom:palebloom/root",
+  "criteria":
+  {
+    "place_resin_bulb":
+    {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions":
+      { "entity": { "type": "palebloom:pale_creeper" }}
+    }
+  }
+}

@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common;
 
 import com.sirsquidly.palebloom.FogEvents;
 import com.sirsquidly.palebloom.capabilities.CapabilityPaleGardenFog;
+import com.sirsquidly.palebloom.common.advancements.JTPGAdvancements;
 import com.sirsquidly.palebloom.init.*;
 import com.sirsquidly.palebloom.network.JTPGPacketHandler;
 import com.sirsquidly.palebloom.network.JTPGPacketSpawnParticles;
@@ -33,6 +34,7 @@ public class CommonProxy
         JTPGLootTables.registerLootTables();
         JTPGEntities.registerTileEntities();
         JTPGSounds.registerSounds();
+        JTPGAdvancements.init();
         JTPGPacketHandler.registerMessages();
         CapabilityManager.INSTANCE.register(CapabilityPaleGardenFog.ICapabilityPaleGardenFog.class, new CapabilityPaleGardenFog.Storage(), CapabilityPaleGardenFog.PaleGardenFogMethods::new);
 

@@ -1,0 +1,27 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:cultivar_pickaxe" },
+    "title": { "translate": "advancements.palebloom.the_first_returns.title" },
+    "description": { "translate": "advancements.palebloom.the_first_returns.description" },
+    "frame": "goal"
+  },
+  "parent": "palebloom:palebloom/new_bloom",
+  "criteria":
+  {
+    "get_any_gardengrafted":
+    {
+      "trigger": "minecraft:inventory_changed",
+      "conditions":
+      {
+        "items": [
+          { "item": "palebloom:cultivar_axe" },
+          { "item": "palebloom:cultivar_hoe" },
+          { "item": "palebloom:cultivar_pickaxe" },
+          { "item": "palebloom:cultivar_shovel" },
+          { "item": "palebloom:cultivar_sword" }
+        ]
+      }
+    }
+  }
+}

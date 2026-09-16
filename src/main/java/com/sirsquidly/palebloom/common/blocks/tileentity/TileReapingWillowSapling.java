@@ -1,17 +1,24 @@
 package com.sirsquidly.palebloom.common.blocks.tileentity;
 
+import com.sirsquidly.palebloom.common.advancements.JTPGAdvancements;
 import com.sirsquidly.palebloom.common.blocks.BlockReapingWillowSapling;
 import com.sirsquidly.palebloom.common.entity.EntityReapingWillow;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -115,6 +122,12 @@ public class TileReapingWillowSapling extends TileEntity implements ITickable
 
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 2 | 4);
         world.setBlockState(pos.up(), Blocks.AIR.getDefaultState(), 2 | 4);
+
+        int advancementRangeCheck = 32;
+        for(EntityPlayerMP player : world.getEntitiesWithinAABB(EntityPlayerMP.class, new AxisAlignedBB(pos.add(-advancementRangeCheck, -advancementRangeCheck, -advancementRangeCheck), pos.add(advancementRangeCheck + 1, advancementRangeCheck + 1, advancementRangeCheck + 1))))
+        {
+            JTPGAdvancements.GROW_REAPING_WILLOW.trigger(player);
+        }
 
         this.markDirty();
     }

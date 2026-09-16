@@ -1,0 +1,20 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:pale_oak_sap" },
+    "title": { "translate": "advancements.palebloom.ichorous_tears.title" },
+    "description": { "translate": "advancements.palebloom.ichorous_tears.description" }
+  },
+  "parent": "palebloom:palebloom/resin_blood",
+  "criteria":
+  {
+    "get_pale_oak_sap":
+    {
+      "trigger": "minecraft:inventory_changed",
+      "conditions":
+      {
+        "items": [ { "item": "palebloom:pale_oak_sap" } ]
+      }
+    }
+  }
+}

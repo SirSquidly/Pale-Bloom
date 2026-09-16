@@ -1,0 +1,18 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:resin_bulb" },
+    "title": { "translate": "advancements.palebloom.resin_blood.title" },
+    "description": { "translate": "advancements.palebloom.resin_blood.description" }
+  },
+  "parent": "palebloom:palebloom/root",
+  "criteria":
+  {
+    "place_resin_bulb":
+    {
+      "trigger": "minecraft:placed_block",
+      "conditions":
+      { "block": "palebloom:resin_bulb" }
+    }
+  }
+}

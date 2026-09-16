@@ -1,0 +1,18 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:nightlight" },
+    "title": { "translate": "advancements.palebloom.in_the_nightlight.title" },
+    "description": { "translate": "advancements.palebloom.in_the_nightlight.description" }
+  },
+  "parent": "palebloom:palebloom/resin_blood",
+  "criteria":
+  {
+    "place_resin_bulb":
+    {
+      "trigger": "minecraft:placed_block",
+      "conditions":
+      { "block": "palebloom:nightlight" }
+    }
+  }
+}

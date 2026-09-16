@@ -1,0 +1,18 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:pollenhead" },
+    "title": { "translate": "advancements.palebloom.palewashing.title" },
+    "description": { "translate": "advancements.palebloom.palewashing.description" }
+  },
+  "parent": "palebloom:palebloom/resin_blood",
+  "criteria":
+  {
+    "place_resin_bulb":
+    {
+      "trigger": "minecraft:placed_block",
+      "conditions":
+      { "block": "palebloom:pollenhead" }
+    }
+  }
+}

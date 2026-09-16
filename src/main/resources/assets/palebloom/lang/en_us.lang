@@ -1,3 +1,28 @@
+advancements.palebloom.root.title=Pale Bloom
+advancements.palebloom.root.description=Obtain an Amber Valve from a Creaking Heart
+advancements.palebloom.camo_creeper.title=Camo Creeper
+advancements.palebloom.camo_creeper.description=Kill a Pale Creeper
+advancements.palebloom.ichorous_tears.title=Ichorous Tears
+advancements.palebloom.ichorous_tears.description=Draw Pale Oak Sap from a Pale Oak Hollow
+advancements.palebloom.in_the_nightlight.title=In the Nightlight
+advancements.palebloom.in_the_nightlight.description=Place a Nightlight
+advancements.palebloom.it_speaks_for_the_trees.title=It Speaks for the Trees
+advancements.palebloom.it_speaks_for_the_trees.description=Grow a Reaping Willow from a Sapling
+advancements.palebloom.makes_my_skin_crawl.title=Makes my Skin Crawl
+advancements.palebloom.makes_my_skin_crawl.description=Obtain a Pale Moss Cloak
+advancements.palebloom.new_bloom.title=New Bloom
+advancements.palebloom.new_bloom.description=Obtain a Blooming Pale Oak Sapling
+advancements.palebloom.palewashing.title=Palewashing
+advancements.palebloom.palewashing.description=Place a Pollenhead
+advancements.palebloom.resin_blood.title=Resin Blood
+advancements.palebloom.resin_blood.description=Reap the resin of the pale flora using a Resin Bulb
+advancements.palebloom.the_first_returns.title=The First Returns
+advancements.palebloom.the_first_returns.description=Craft a Gardengrafted Tool using Weird Roots from Blooming Pale Oak
+advancements.palebloom.through_its_eyes.title=Through Its Eyes
+advancements.palebloom.through_its_eyes.description=Sense through the Eyeblossoms with Amber Eyes
+advancements.palebloom.unburnt_bush.title=Unburnt Bush
+advancements.palebloom.unburnt_bush.description=Place an Incense Thorns
+
 death.attack.palebloom.hydraweed_jaw=%1$s succumbed to the darkness
 
 description.palebloom.creaking_lantern.desc1=Ignored by Creakings while worn

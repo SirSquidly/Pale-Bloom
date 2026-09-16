@@ -1,0 +1,15 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:reaping_willow_sapling" },
+    "title": { "translate": "advancements.palebloom.it_speaks_for_the_trees.title" },
+    "description": { "translate": "advancements.palebloom.it_speaks_for_the_trees.description" },
+    "frame": "goal"
+  },
+  "parent": "palebloom:palebloom/new_bloom",
+  "criteria":
+  {
+    "grow_reaping_willow":
+    { "trigger": "palebloom:grow_reaping_willow", "conditions": {} }
+  }
+}

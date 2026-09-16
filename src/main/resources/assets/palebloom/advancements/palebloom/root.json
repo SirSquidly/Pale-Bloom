@@ -1,0 +1,23 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:amber_valve" },
+    "title": { "translate": "advancements.palebloom.root.title" },
+    "description": { "translate": "advancements.palebloom.root.description" },
+    "background": "palebloom:textures/blocks/pale_moss.png",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "amber_valve":
+    {
+      "trigger": "minecraft:inventory_changed",
+      "conditions":
+      {
+        "items": [ { "item": "palebloom:amber_valve" } ]
+      }
+    }
+  },
+  "requirements":
+  [[ "amber_valve" ]]
+}

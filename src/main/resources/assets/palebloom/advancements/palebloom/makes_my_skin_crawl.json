@@ -1,0 +1,21 @@
+{
+  "display":
+  {
+    "icon": { "item": "palebloom:pale_moss_cloak" },
+    "title": { "translate": "advancements.palebloom.makes_my_skin_crawl.title" },
+    "description": { "translate": "advancements.palebloom.makes_my_skin_crawl.description" },
+    "frame": "goal"
+  },
+  "parent": "palebloom:palebloom/camo_creeper",
+  "criteria":
+  {
+    "get_pale_moss_cloak":
+    {
+      "trigger": "minecraft:inventory_changed",
+      "conditions":
+      {
+        "items": [ { "item": "palebloom:pale_moss_cloak" } ]
+      }
+    }
+  }
+}
