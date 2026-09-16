@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common.world.feature;
 
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
 import com.sirsquidly.palebloom.common.blocks.BlockSuckerRoots;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
@@ -186,7 +187,7 @@ public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
 
         placeStump(worldIn, rand, pos);
 
-        if (ConfigCache.sucRot_enabled)
+        if (Config.block.treeBlocks.bloomingPaleOak.suckerRoots.enableSuckerRoots)
         {
             if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.NORTH);
             if (rand.nextBoolean()) placeRoots(worldIn, rand, pos, EnumFacing.WEST);

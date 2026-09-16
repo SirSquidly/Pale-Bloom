@@ -30,7 +30,6 @@ public class ConfigCache
     public static final boolean palOakWod_enabled = Config.block.treeBlocks.paleOak.enablePaleOakWoods;
     public static final boolean blmPalOakLvs_enabled = Config.block.treeBlocks.bloomingPaleOak.enableBloomingPaleOakLeaves;
     public static final boolean blmPalOakLvs_saplingDrop = Config.block.treeBlocks.bloomingPaleOak.bloomingLeavesDropSapling;
-    public static final boolean sucRot_enabled = Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots;
 
     /** Entities */
     public static final boolean crk_enabled = Config.entity.creaking.enableCreaking;

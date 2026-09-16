@@ -83,9 +83,8 @@ public class BlockNightlight extends BlockBush implements IShearable, IGrowable,
     /** Occurs randomly, meaning this Eyeblossom is NOT responding. */
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        super.updateTick(worldIn, pos, state, rand);
         preformSwapping(worldIn, pos, false);
-        if (worldIn.isRemote) return;
+        if (worldIn.isRemote || state.getBlock() != this) return;
 
         if (state.getValue(AWAKE))
         {
@@ -108,6 +107,8 @@ public class BlockNightlight extends BlockBush implements IShearable, IGrowable,
                 paleBloom.proxy.spawnParticle(0, worldIn, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, hx, hy, hz, 1);
             }
         }
+
+        super.updateTick(worldIn, pos, state, rand);
     }
 
     public void preformSwapping(World worldIn, BlockPos pos, boolean isResponding)

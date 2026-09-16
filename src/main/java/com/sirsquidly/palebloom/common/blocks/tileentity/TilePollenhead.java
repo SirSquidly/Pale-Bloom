@@ -89,7 +89,7 @@ public class TilePollenhead extends TileEntity implements ITickable
     {
         for(EntityLivingBase entity : world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos.add(-poisonDistance, -poisonDistance, -poisonDistance), pos.add(poisonDistance + 1, poisonDistance + 1, poisonDistance + 1))))
         {
-            if (WorldPaleGarden.isPaleEntity(entity)) return;
+            if (WorldPaleGarden.isPaleEntity(entity)) continue;
 
             int sphereCheck = (poisonDistance + 1) * (poisonDistance + 1);
             if (entity.getDistanceSqToCenter(pos) < sphereCheck)

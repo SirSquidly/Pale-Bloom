@@ -166,7 +166,7 @@ public class JTPGBlocks
         if (Config.block.awakenedFloraBlocks.reapingWillowSapling.enableReapingWillowSapling) blockReadyForRegister(REAPING_WILLOW_SAPLING, "reaping_willow_sapling");
         if (Config.block.awakenedFloraBlocks.resinBulb.enableResinBulb) blockReadyForRegister(RESIN_BULB, "resin_bulb");
         if (Config.block.enableSeedBomb) blockReadyForRegister(SEED_BOMB, "seed_bomb");
-        if (Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots) blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
+        if (Config.block.treeBlocks.bloomingPaleOak.suckerRoots.enableSuckerRoots) blockReadyForRegister(SUCKER_ROOTS, "sucker_roots");
         if (Config.block.awakenedFloraBlocks.enableSuckerRootNodule) blockReadyForRegister(SUCKER_ROOT_NODULE, "sucker_root_nodule");
 
         setupFireInfo();
@@ -216,7 +216,7 @@ public class JTPGBlocks
         if (Config.block.floraBlocks.enableDoublePalePlants) event.getRegistry().register(new ItemBlockMetaAware(PALE_DOUBLE_PLANT)); itemBlockBlacklist.add(PALE_DOUBLE_PLANT); itemModelBlacklist.add(PALE_DOUBLE_PLANT);
 
         if (Config.block.floraBlocks.enablePalePetals) event.getRegistry().register(new ItemBlockStacking(PALE_PETALS)); itemBlockBlacklist.add(PALE_PETALS);
-        if (Config.block.treeBlocks.bloomingPaleOak.enableSuckerRoots) event.getRegistry().register(new ItemBlockStacking(SUCKER_ROOTS)); itemBlockBlacklist.add(SUCKER_ROOTS);
+        if (Config.block.treeBlocks.bloomingPaleOak.suckerRoots.enableSuckerRoots) event.getRegistry().register(new ItemBlockStacking(SUCKER_ROOTS)); itemBlockBlacklist.add(SUCKER_ROOTS);
 
         if (Config.block.awakenedFloraBlocks.incenseThorns.enableIncenseThorns) event.getRegistry().register(new ItemIncenseBush(INCENSE_THORNS)); itemBlockBlacklist.add(INCENSE_THORNS);
 

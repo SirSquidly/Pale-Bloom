@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.common.blocks;
 
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
+import com.sirsquidly.palebloom.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -68,9 +69,9 @@ public class BlockSuckerRoots extends Block
             entityIn.motionY *= 0.85D;
             entityIn.motionZ *= slowDown;
 
-            if (layers > 1 && entityIn.ticksExisted % 20 == 0)
+            if (Config.block.treeBlocks.bloomingPaleOak.suckerRoots.suckerRootDamage > 0 && layers > 1 && entityIn.ticksExisted % 20 == 0)
             {
-                entityIn.attackEntityFrom(DamageSource.CACTUS, 1.0F);
+                entityIn.attackEntityFrom(DamageSource.CACTUS, (float) Config.block.treeBlocks.bloomingPaleOak.suckerRoots.suckerRootDamage);
             }
         }
     }

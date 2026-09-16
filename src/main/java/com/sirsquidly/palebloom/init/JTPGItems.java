@@ -55,7 +55,7 @@ public class JTPGItems
     public static final Item MANNEQUIN = new ItemMannequin();
     public static final Item NIGHTLIGHT_BULB = new ItemJTPGFood(4, 0.6F, false).setPotionEffect(new PotionEffect(JTPGPotions.AMBEREYES, configNightlightBulbEffectLength), configNightlightBulbEffectLength > 0 ? 1.0F : 0F);
     public static final Item PALE_OAK_BOAT = new ItemJTPGBoat();
-    public static final Item PALE_OAK_SAP = new Item().setCreativeTab(CreativeTabs.MATERIALS);
+    public static final Item PALE_OAK_SAP = new Item().setContainerItem(Items.GLASS_BOTTLE).setCreativeTab(CreativeTabs.MATERIALS);
     public static final Item PALE_CREEPER_HUSK = new Item().setCreativeTab(CreativeTabs.MATERIALS);
     public static final Item PALE_MOSS_CLOAK = new ItemPaleMossCloak(PALE_MOSS_MAT, 0, EntityEquipmentSlot.CHEST);
     public static final Item PALE_PAINTING = new ItemCustomPainting();

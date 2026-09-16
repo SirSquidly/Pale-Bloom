@@ -21,7 +21,7 @@ public class Config
             "0.x.0 - Config options have been added.",
             "x.0.0 - Previous Config Options have been completely overhauled and/or removed. Creating a fresh file is recommended."
     })
-    public static String configVersion = "1.0.0";
+    public static String configVersion = "2.0.0";
 
     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden")
     @net.minecraftforge.common.config.Config.Comment("Pale Garden Config")
@@ -33,6 +33,11 @@ public class Config
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.enablePaleGarden")
         @net.minecraftforge.common.config.Config.Comment("Enables the Pale Garden biome.")
         public boolean enablePaleGarden = true;
+
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
+        @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.paleGardenWeight")
+        @net.minecraftforge.common.config.Config.Comment("The biome weight of the Pale Garden. Above 0 allows it to spawn independently of the Dark Forest/Roofed Forest.")
+        public int paleGardenWeight = 0;
 
         @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.subbiomeOfDarkOak")
@@ -188,10 +193,23 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables Blooming Pale Oak Leaves.")
                 public boolean enableBloomingPaleOakLeaves = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
-                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.enableSuckerRoots")
-                @net.minecraftforge.common.config.Config.Comment("Enables Sucker Roots.")
-                public boolean enableSuckerRoots = true;
+                @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.sucker_roots")
+                @net.minecraftforge.common.config.Config.Comment("Config related to Sucker Roots")
+                public configBloomingPaleOak.configSuckerRoots suckerRoots = new configBloomingPaleOak.configSuckerRoots();
+
+                public static class configSuckerRoots
+                {
+                    @net.minecraftforge.common.config.Config.RequiresMcRestart
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.sucker_roots.enableSuckerRoots")
+                    @net.minecraftforge.common.config.Config.Comment("Enables Sucker Roots.")
+                    public boolean enableSuckerRoots = true;
+
+                    @net.minecraftforge.common.config.Config.RequiresMcRestart
+                    @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.sucker_roots.suckerRootDamage")
+                    @net.minecraftforge.common.config.Config.Comment("The damage dealt by Sucker Roots. Setting to 0 disables the damage. ")
+                    @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
+                    public double suckerRootDamage = 1.0D;
+                }
 
                 @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingLeavesDropSapling")
@@ -361,7 +379,6 @@ public class Config
                         "minecraft:double_plant:5=palebloom:pale_plant_double:2",
                         "minecraft:sapling:2=palebloom:pale_sapling:2",
                         "minecraft:sapling:5=palebloom:pale_sapling:0",
-                        "palebloom:pale_sapling:0=palebloom:pale_sapling:1",
                         "minecraft:yellow_flower=palebloom:pale_petals",
                         "minecraft:red_flower:*=palebloom:pale_petals",
                         "minecraft:pumpkin:*=palebloom:pale_pumpkin"
