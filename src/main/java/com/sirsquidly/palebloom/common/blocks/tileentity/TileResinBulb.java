@@ -1,5 +1,6 @@
 package com.sirsquidly.palebloom.common.blocks.tileentity;
 
+import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
 import com.sirsquidly.palebloom.common.blocks.BlockResinBulb;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.config.ConfigParser;
@@ -7,7 +8,6 @@ import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -40,23 +40,32 @@ public class TileResinBulb extends TileEntity implements ITickable
     public int bulbLevel = 0;
     public int cachedBulbLevel = 0;
 
+    public BlockPos cachedHeartPos;
+    public int heartSearchCooldown = 0;
+
+    /** This is used to prevent every Resin Bulb from acting synced in function. */
+    private int randomTickOffset = -1;
+    private int heartTimer;
+
     @Override
     public void update()
     {
         if(world == null) return;
 
-        if(world.getTotalWorldTime() % 60 != 0) return;
+        if (--randomTickOffset > 0) return;
+        randomTickOffset = 60;
 
         if (!WorldPaleGarden.isNight(world))
         {
             if (this.getStoredResin() < maxResin) tryResinHarvest(world, pos, world.rand);
             else
-            {
-                WorldPaleGarden.spawnParticles(world, pos, pos.up(1 + world.rand.nextInt(3)), 1, 2);
-            }
+            { WorldPaleGarden.spawnParticles(world, pos, pos.up(1 + world.rand.nextInt(3)), 1, 2); }
         }
-        else
-        { if(world.getTotalWorldTime() % 300 == 0) tryActiveHeartHarvest(world, pos); }
+        else if (++heartTimer >= 5)
+        {
+            heartTimer = 0;
+            if (this.getStoredResin() < this.maxResin) tryActiveHeartHarvest(world, pos);
+        }
 
         bulbLevel = Math.min(3, Math.max(0, this.getStoredResin() / 18));
 
@@ -73,9 +82,9 @@ public class TileResinBulb extends TileEntity implements ITickable
 
     public void tryResinHarvest(World world, BlockPos pos, Random random)
     {
-        int offsetX = world.rand.nextInt(bulbCheckDistanceXZ * 2) - bulbCheckDistanceXZ;
-        int offsetZ = world.rand.nextInt(bulbCheckDistanceY * 2) - bulbCheckDistanceY;
-        int offsetY = world.rand.nextInt(bulbCheckDistanceXZ * 2) - bulbCheckDistanceXZ;
+        int offsetX = random.nextInt(bulbCheckDistanceXZ * 2) - bulbCheckDistanceXZ;
+        int offsetY = random.nextInt(bulbCheckDistanceY * 2) - bulbCheckDistanceY;
+        int offsetZ = random.nextInt(bulbCheckDistanceXZ * 2) - bulbCheckDistanceXZ;
 
         BlockPos checkPos = pos.add(offsetX, offsetY, offsetZ);
 
@@ -95,27 +104,87 @@ public class TileResinBulb extends TileEntity implements ITickable
     public void tryActiveHeartHarvest(World world, BlockPos pos)
     {
         if (ConfigCache.rsnBlb_creakingHeartResinReap == 0) return;
-        int radius = 10;
 
-        for (BlockPos checkPos : BlockPos.getAllInBoxMutable( pos.add(-radius, -radius, -radius), pos.add(radius, radius, radius)))
+        TileCreakingHeart heart = getCachedHeart(world, pos);
+
+        /* If the cached heart fails the check, we need to scan for a new one*/
+        if (heart == null)
         {
-            if (!world.isBlockLoaded(checkPos)) continue;
+            if (--heartSearchCooldown > 0) return;
+            heart = findNearbyHeart(world, pos);
 
-            TileEntity te = world.getTileEntity(checkPos);
-            if (te instanceof TileCreakingHeart)
+            if (heart == null)
             {
-                /* A Creaking is REQUIRED, since it confirms the Heart is fully active */
-                if (((TileCreakingHeart) te).getCreaking() == null) continue;
-
-                this.setStoredResin(Math.min(maxResin, this.getStoredResin() + ConfigCache.rsnBlb_creakingHeartResinReap));
-                this.markDirty();
-
-                world.playSound(null, pos, JTPGSounds.BLOCK_RESIN_PLACE, SoundCategory.BLOCKS, 0.25F, (world.rand.nextFloat() * 0.4F) + 0.8F);
-
-                WorldPaleGarden.spawnParticles(world, checkPos, pos, 8, 2);
+                heartSearchCooldown = 3;
                 return;
             }
+            cachedHeartPos = heart.getPos();
         }
+
+        /* We need the Heart ACTIVE with a CREAKING to draw Resin. */
+        if (heart.getCreaking() == null) return;
+        this.setStoredResin(Math.min(maxResin, this.getStoredResin() + ConfigCache.rsnBlb_creakingHeartResinReap));
+        this.markDirty();
+
+        world.playSound(null, pos, JTPGSounds.BLOCK_RESIN_PLACE, SoundCategory.BLOCKS, 0.25F, (world.rand.nextFloat() * 0.4F) + 0.8F);
+
+        WorldPaleGarden.spawnParticles(world, heart.getPos(), pos, 8, 2);
+    }
+
+    @Nullable
+    private TileCreakingHeart findNearbyHeart(World world, BlockPos pos)
+    {
+        int radius = 3;
+
+        for (BlockPos.MutableBlockPos checkPos : BlockPos.getAllInBoxMutable(pos.add(-radius, -radius, -radius), pos.add(radius, radius, radius)))
+        {
+            if (pos.distanceSq(checkPos) > (radius * radius)) continue;
+
+            if (!world.isBlockLoaded(checkPos)) continue;
+
+            /* Check if the Block is NOT an Uprooted Creaking Heart. */
+            IBlockState state = world.getBlockState(checkPos);
+            if (state.getBlock() == JTPGBlocks.CREAKING_HEART)
+            {
+                BlockCreakingHeart.EnumHeartState heartState = ((BlockCreakingHeart)state.getBlock()).getCurrentHeartState(world, checkPos, state);
+                if (heartState == BlockCreakingHeart.EnumHeartState.UPROOTED) continue;
+            }
+
+            TileEntity te = world.getTileEntity(checkPos);
+            if (!(te instanceof TileCreakingHeart)) continue;
+            return (TileCreakingHeart) te;
+        }
+        return null;
+    }
+
+
+    /** Used to verify the cached Creaking Heart. */
+    @Nullable
+    private TileCreakingHeart getCachedHeart(World world, BlockPos pos)
+    {
+        if (cachedHeartPos == null) return null;
+
+        TileEntity te = world.getTileEntity(cachedHeartPos);
+
+        if (!(te instanceof TileCreakingHeart))
+        {
+            cachedHeartPos = null;
+            return null;
+        }
+
+        /* Check if the Block is NOT an Uprooted Creaking Heart. */
+        IBlockState state = world.getBlockState(cachedHeartPos);
+        if (state.getBlock() == JTPGBlocks.CREAKING_HEART)
+        {
+            BlockCreakingHeart.EnumHeartState heartState =  ((BlockCreakingHeart) state.getBlock()).getCurrentHeartState(world, cachedHeartPos, state);
+            if (heartState == BlockCreakingHeart.EnumHeartState.UPROOTED)
+            {
+                cachedHeartPos = null;
+                return null;
+            }
+        }
+
+        return (TileCreakingHeart) te;
     }
 
     public int getStoredResin()
@@ -124,20 +193,29 @@ public class TileResinBulb extends TileEntity implements ITickable
     public void setStoredResin(int resinIn)
     { this.storedResin = resinIn; }
 
-    /** If the given block is one that makes the Pale Hanging Moss play ambient sounds. */
-    public boolean blockPaleHarvestable(Block block)
-    { return block == JTPGBlocks.PALE_MOSS || block == JTPGBlocks.PALE_MOSS_CARPET || block == JTPGBlocks.PALE_HANGING_MOSS || block == JTPGBlocks.PALE_OAK_LEAVES; }
-
     /** Keeps the tile entity around even if the block gets its state changed. */
     @Override
     public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState)
     { return oldState.getBlock() != newState.getBlock(); }
 
     @Override
+    public void onLoad()
+    {
+        super.onLoad();
+        if (!world.isRemote && randomTickOffset < 0) randomTickOffset = world.rand.nextInt(60);
+    }
+
+    @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound)
     {
         super.writeToNBT(compound);
         compound.setInteger("StoredResin", this.getStoredResin());
+        if (cachedHeartPos != null)
+        {
+            compound.setInteger("CachedHeartX", cachedHeartPos.getX());
+            compound.setInteger("CachedHeartY", cachedHeartPos.getY());
+            compound.setInteger("CachedHeartZ", cachedHeartPos.getZ());
+        }
         return compound;
     }
 
@@ -146,6 +224,11 @@ public class TileResinBulb extends TileEntity implements ITickable
     {
         super.readFromNBT(compound);
         this.setStoredResin(compound.getInteger("StoredResin"));
+        if (compound.hasKey("CachedHeartX") && compound.hasKey("CachedHeartY") && compound.hasKey("CachedHeartZ"))
+        {
+            cachedHeartPos = new BlockPos(compound.getInteger("CachedHeartX"), compound.getInteger("CachedHeartY"), compound.getInteger("CachedHeartZ"));
+        }
+        else cachedHeartPos = null;
     }
 
     private final IItemHandler handler = new ResinHandler();
