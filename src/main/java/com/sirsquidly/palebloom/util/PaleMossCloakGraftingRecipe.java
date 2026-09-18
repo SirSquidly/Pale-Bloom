@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.util;
 
 import com.google.gson.JsonObject;
+import com.sirsquidly.palebloom.common.item.ItemPaleMossCloak;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
@@ -67,8 +68,15 @@ public class PaleMossCloakGraftingRecipe extends IForgeRegistryEntry.Impl<IRecip
         ItemStack result = baseCloak.copy();
         NBTTagCompound nbt = result.hasTagCompound() ? result.getTagCompound() : new NBTTagCompound();
 
-        if (!nbt.hasKey("slot1")) nbt.setString("slot1", scionEffect);
-        else if (!nbt.hasKey("slot2")) nbt.setString("slot2", scionEffect);
+        ItemPaleMossCloak cloak = (ItemPaleMossCloak) JTPGItems.PALE_MOSS_CLOAK;
+        int slots = cloak.getAbilitySlots(result);
+
+        for (int i = 1; i <= slots; i++)
+        {
+            String key = "slot" + i;
+            if (!nbt.hasKey(key))
+            { nbt.setString(key, scionEffect); break; }
+        }
 
         result.setTagCompound(nbt);
         return result;
@@ -81,21 +89,31 @@ public class PaleMossCloakGraftingRecipe extends IForgeRegistryEntry.Impl<IRecip
     {
         if (!internal.matches(inv, worldIn)) return false;
 
-        ItemStack cloak = ItemStack.EMPTY;
+        ItemStack cloakStack = ItemStack.EMPTY;
         for (int i = 0; i < inv.getSizeInventory(); i++)
         {
             ItemStack stack = inv.getStackInSlot(i);
             if (!stack.isEmpty() && stack.getItem() == JTPGItems.PALE_MOSS_CLOAK)
             {
-                cloak = stack;
+                cloakStack = stack;
                 break;
             }
         }
 
-        if (cloak.isEmpty()) return false;
+        if (cloakStack.isEmpty()) return false;
 
-        NBTTagCompound nbt = cloak.getTagCompound();
-        return nbt == null || (!nbt.hasKey("slot1") || !nbt.hasKey("slot2"));
+        ItemPaleMossCloak cloak = (ItemPaleMossCloak) JTPGItems.PALE_MOSS_CLOAK;
+        int slots = cloak.getAbilitySlots(cloakStack);
+
+        NBTTagCompound nbt = cloakStack.getTagCompound();
+        if (nbt == null) return slots > 0;
+
+        for (int i = 1; i <= slots; i++)
+        {
+            if (!nbt.hasKey("slot" + i)) return true;
+        }
+
+        return false;
     }
 
     public NonNullList<Ingredient> getIngredients() { return internal.getIngredients(); }

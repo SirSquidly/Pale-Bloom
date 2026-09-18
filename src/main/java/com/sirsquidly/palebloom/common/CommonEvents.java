@@ -126,20 +126,25 @@ public class CommonEvents
 
         WorldPaleGarden.alertReapingWillow(event.getEntity().world, event.getEntity().getPosition(), (EntityLivingBase)entity, 16);
 
-        if (((ItemPaleMossCloak)stack.getItem()).hasSlottedAbility(stack, "bramble"))
+        ItemPaleMossCloak cloak = ((ItemPaleMossCloak)stack.getItem());
+
+        if (cloak.hasSlottedAbility(stack, "bramble"))
         {
-            entity.attackEntityFrom(DamageSource.causeThornsDamage(event.getEntityLiving()), 3.0F);
+            entity.attackEntityFrom(DamageSource.causeThornsDamage(event.getEntityLiving()), 3.0F * cloak.getAbilityCount(stack, "bramble"));
         }
 
-        if (((ItemPaleMossCloak)stack.getItem()).hasSlottedAbility(stack, "creaking_heart"))
+        if (cloak.hasSlottedAbility(stack, "creaking_heart"))
         {
-            float damageToPrevent = event.getAmount() * 0.5F;
-            WorldPaleGarden.BulbPullResults result = WorldPaleGarden.requestBulbResin(event.getEntity().world, event.getEntityLiving().getPosition(), (int) damageToPrevent);
+            int heartCount = cloak.getAbilityCount(stack, "creaking_heart");
+            float damageToPrevent = event.getAmount() * (1.0F - (float)Math.pow(0.5D, heartCount));
+            int resinRequested = (int)Math.ceil(damageToPrevent * 3.0F);
+            WorldPaleGarden.BulbPullResults result = WorldPaleGarden.requestBulbResin(event.getEntity().world, event.getEntityLiving().getPosition(), resinRequested);
 
             for (BlockPos bulbPos : result.bulbsContributing)
-            { WorldPaleGarden.spawnCreakingTrailParticles(event.getEntityLiving(), bulbPos, result.resinPulled * 2, 2); }
+            { WorldPaleGarden.spawnCreakingTrailParticles(event.getEntityLiving(), bulbPos, result.resinPulled, 2); }
 
-            event.setAmount(event.getAmount() - result.resinPulled);
+            float actualDamagePrevented = result.resinPulled / 3.0F;
+            event.setAmount(event.getAmount() - actualDamagePrevented);
         }
     }
 }

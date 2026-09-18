@@ -32,10 +32,11 @@ import java.util.*;
 public class ItemPaleMossCloak extends ItemArmor
 {
     private static final UUID chestplateUUID = UUID.fromString("9F3D476D-C118-4544-8365-64846904B48E");
-
     private final String PALE_MOSS_CLOAK_TEXTURE = paleBloom.MOD_ID + ":textures/models/pale_moss_cloak/pale_moss_cloak.png";
 
-    public int damageReduceAmount;
+    private static final String ABILITY_SLOTS_TAG = "AbilitySlots";
+    /** The default number of slots a Cloak has. */
+    private static final int default_slots_count = 2;
 
     public ItemPaleMossCloak(ArmorMaterial materialIn, int renderIndexIn, EntityEquipmentSlot equipmentSlotIn)
     {
@@ -65,7 +66,7 @@ public class ItemPaleMossCloak extends ItemArmor
             if (player.ticksExisted % 40 == 0)
             {
                 player.attackEntityFrom(DamageSource.CACTUS, 1.0F);
-                stack.setItemDamage(stack.getItemDamage() - 2);
+                stack.setItemDamage(stack.getItemDamage() - (2 * getAbilityCount(stack, "sucker_roots")));
             }
         }
         if (scionAbilities.containsValue("live_root"))
@@ -82,6 +83,14 @@ public class ItemPaleMossCloak extends ItemArmor
         }
     }
 
+    /** Returns the number of ability slots this cloak has. */
+    public int getAbilitySlots(ItemStack stack)
+    {
+        if (stack.hasTagCompound() && stack.getTagCompound().hasKey(ABILITY_SLOTS_TAG)) return stack.getTagCompound().getInteger(ABILITY_SLOTS_TAG);
+        return default_slots_count;
+    }
+
+
     /** Simply returns a cache of every ability on this item. */
     public Map<String, String> getCachedScionList(ItemStack stack)
     {
@@ -89,9 +98,10 @@ public class ItemPaleMossCloak extends ItemArmor
         if (stack == null || !stack.hasTagCompound()) return scions;
         NBTTagCompound nbt = stack.getTagCompound();
 
-        for (String key : nbt.getKeySet())
+        for (int i = 1; i <= getAbilitySlots(stack); i++)
         {
-            if (key.startsWith("slot"))
+            String key = "slot" + i;
+            if (nbt.hasKey(key))
             {
                 String ability = nbt.getString(key);
                 if (!ability.isEmpty()) scions.put(key, ability);
@@ -116,11 +126,18 @@ public class ItemPaleMossCloak extends ItemArmor
         return targetSlot;
     }
 
-    public boolean hasSlottedAbility(ItemStack stack, String ability)
+    /** Returns how many copies of an ability are stored on the cloak. */
+    public int getAbilityCount(ItemStack stack, String ability)
     {
-        Map<String, String> itemAbilities = getCachedScionList(stack);
-        return itemAbilities.containsValue(ability);
+        int count = 0;
+        for (String storedAbility : getCachedScionList(stack).values())
+        { if (ability.equals(storedAbility)) count++; }
+
+        return count;
     }
+
+    public boolean hasSlottedAbility(ItemStack stack, String ability)
+    { return getAbilityCount(stack, ability) > 0; }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -140,18 +157,13 @@ public class ItemPaleMossCloak extends ItemArmor
 
         NBTTagCompound nbttagcompound = stack.getTagCompound();
 
-        if (nbttagcompound != null && nbttagcompound.hasKey("slot1"))
+        for (int i = 1; i <= getAbilitySlots(stack); i++)
         {
-            tooltip.add(TextFormatting.BLUE + net.minecraft.util.text.translation.I18n.translateToLocal("description.palebloom.pale_moss_cloak." + nbttagcompound.getString("slot1")));
+            String key = "slot" + i;
+            if (nbttagcompound != null && nbttagcompound.hasKey(key))
+            { tooltip.add(TextFormatting.BLUE + net.minecraft.util.text.translation.I18n.translateToLocal( "description.palebloom.pale_moss_cloak." + nbttagcompound.getString(key)));  }
+            else
+            { tooltip.add(TextFormatting.GRAY + net.minecraft.util.text.translation.I18n.translateToLocal( "description.palebloom.pale_moss_cloak.slot_empty")); }
         }
-        else
-        { tooltip.add(TextFormatting.GRAY + net.minecraft.util.text.translation.I18n.translateToLocal("description.palebloom.pale_moss_cloak.slot_empty")); }
-
-        if (nbttagcompound != null && nbttagcompound.hasKey("slot2"))
-        {
-            tooltip.add(TextFormatting.BLUE + net.minecraft.util.text.translation.I18n.translateToLocal("description.palebloom.pale_moss_cloak." + nbttagcompound.getString("slot2")));
-        }
-        else
-        { tooltip.add(TextFormatting.GRAY + net.minecraft.util.text.translation.I18n.translateToLocal("description.palebloom.pale_moss_cloak.slot_empty")); }
     }
 }
