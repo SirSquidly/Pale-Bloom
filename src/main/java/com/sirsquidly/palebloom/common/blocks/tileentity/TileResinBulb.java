@@ -2,8 +2,8 @@ package com.sirsquidly.palebloom.common.blocks.tileentity;
 
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
 import com.sirsquidly.palebloom.common.blocks.BlockResinBulb;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
-import com.sirsquidly.palebloom.config.ConfigParser;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGItems;
 import com.sirsquidly.palebloom.init.JTPGSounds;
@@ -88,9 +88,9 @@ public class TileResinBulb extends TileEntity implements ITickable
 
         BlockPos checkPos = pos.add(offsetX, offsetY, offsetZ);
 
-        int index = ConfigParser.blockResinBulbCollectFROM.indexOf(world.getBlockState(checkPos));
+        int index = ConfigCache.blockResinBulbCollectFROM.indexOf(world.getBlockState(checkPos));
         if (index < 0) return;
-        int resinCollected = ConfigParser.blockResinBulbCollectQUANITTY.get(index);
+        int resinCollected = ConfigCache.blockResinBulbCollectQUANITTY.get(index);
 
         this.setStoredResin(Math.min(maxResin, this.getStoredResin() + resinCollected));
         this.markDirty();
@@ -103,7 +103,7 @@ public class TileResinBulb extends TileEntity implements ITickable
     /** Collects a great amount of Resin if there is an active Creaking Heart nearby. */
     public void tryActiveHeartHarvest(World world, BlockPos pos)
     {
-        if (ConfigCache.rsnBlb_creakingHeartResinReap == 0) return;
+        if (Config.block.awakenedFloraBlocks.resinBulb.activeCreakingHeartResinAmount == 0) return;
 
         TileCreakingHeart heart = getCachedHeart(world, pos);
 
@@ -123,7 +123,7 @@ public class TileResinBulb extends TileEntity implements ITickable
 
         /* We need the Heart ACTIVE with a CREAKING to draw Resin. */
         if (heart.getCreaking() == null) return;
-        this.setStoredResin(Math.min(maxResin, this.getStoredResin() + ConfigCache.rsnBlb_creakingHeartResinReap));
+        this.setStoredResin(Math.min(maxResin, this.getStoredResin() + Config.block.awakenedFloraBlocks.resinBulb.activeCreakingHeartResinAmount));
         this.markDirty();
 
         world.playSound(null, pos, JTPGSounds.BLOCK_RESIN_PLACE, SoundCategory.BLOCKS, 0.25F, (world.rand.nextFloat() * 0.4F) + 0.8F);

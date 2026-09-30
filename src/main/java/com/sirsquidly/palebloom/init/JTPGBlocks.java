@@ -81,7 +81,7 @@ public class JTPGBlocks
 
 
     public static BlockBush BRAMBLE = (BlockBush) new BlockBramble().setHardness(0.1F);
-    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleLeaves(PALE_SAPLING, ConfigCache.blmPalOakLvs_saplingDrop ? 1 : 0, 1).setHardness(0.2F).setResistance(0.2F);
+    public static Block BLOOMING_PALE_OAK_LEAVES = new BlockPaleLeaves(PALE_SAPLING, Config.block.treeBlocks.bloomingPaleOak.bloomingLeavesDropSapling ? 1 : 0, 1).setHardness(0.2F).setResistance(0.2F);
     public static Block CREAKING_LANTERN = new BlockCreakingLantern().setHardness(1.0F).setResistance(1.0F);
     public static Block HYDRAWEED_BODY = new BlockHydraweedBody();
     public static Block INCENSE_THORNS = new BlockIncenseThorn().setHardness(0.4F);

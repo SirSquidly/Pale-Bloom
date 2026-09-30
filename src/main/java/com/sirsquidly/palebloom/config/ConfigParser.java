@@ -22,34 +22,20 @@ import java.util.List;
  */
 public class ConfigParser
 {
-	/** Nightmare spawn biomes list. */
-	public static List<Biome> nightmareSpawnBiomes = Lists.newArrayList();
-	/** Shadow spawn biomes list. */
-	public static List<Biome> shadowSpawnBiomes = Lists.newArrayList();
 	/** A Spawn List that is used for temporary functions, such as flipping the current list. */
 	public static List<Biome> tempSpawnList = Lists.newArrayList();
-
-	/** Block states that Pale Moss can replace. */
-	public static List<IBlockState> PaleMossReplacableList = Lists.newArrayList();
-
-
-	/** Block states that Pale Moss can replace. */
-	public static List<IBlockState> blockPollenheadHybridFROM = Lists.newArrayList();
-	/** Block states that Pale Moss can replace. */
-	public static List<IBlockState> blockPollenheadHybridTO = Lists.newArrayList();
-
-	/** Block states that Pale Moss can replace. */
-	public static List<IBlockState> blockResinBulbCollectFROM = Lists.newArrayList();
-	/** Block states that Pale Moss can replace. */
-	public static List<Integer> blockResinBulbCollectQUANITTY = Lists.newArrayList();
-
-
 
 	/** Goes through the many Arrays in the config, to translate them into lists to be used elsewhere. */
 	public static void breakupConfigArrays()
 	{
+		ConfigCache.PaleMossReplacableList.clear();
+		ConfigCache.blockPollenheadHybridFROM.clear();
+		ConfigCache.blockPollenheadHybridTO.clear();
+		ConfigCache.blockResinBulbCollectFROM.clear();
+		ConfigCache.blockResinBulbCollectQUANITTY.clear();
+
 		for(String S : Config.block.paleMossReplacable)
-		{ PaleMossReplacableList.addAll(getBlockStatesFromString(S)); }
+		{ ConfigCache.PaleMossReplacableList.addAll(getBlockStatesFromString(S)); }
 
 		for(String S : Config.block.awakenedFloraBlocks.pollenhead.pollenheadHybridizeList)
 		{
@@ -67,13 +53,13 @@ public class ConfigParser
 			if (states1.isEmpty() || states2.isEmpty())
 			{ paleBloom.LOGGER.error((states1.isEmpty() ? split[0]: split[1]) + " is not a proper block!"); }
 
-			else if (blockPollenheadHybridFROM.contains(new ResourceLocation(split[0])))
+			else if (ConfigCache.blockPollenheadHybridFROM.contains(new ResourceLocation(split[0])))
 			{ paleBloom.LOGGER.error(split[0] + " already has a conversion/hybrid! Only the first listed will be used!"); }
 
 			else
 			{
-				blockPollenheadHybridFROM.addAll(getBlockStatesFromString(split[0]));
-				blockPollenheadHybridTO.addAll(Collections.nCopies(states1.size(), states2.get(0)));
+				ConfigCache.blockPollenheadHybridFROM.addAll(getBlockStatesFromString(split[0]));
+				ConfigCache.blockPollenheadHybridTO.addAll(Collections.nCopies(states1.size(), states2.get(0)));
 			}
 		}
 
@@ -90,14 +76,14 @@ public class ConfigParser
 			List<IBlockState> states = getBlockStatesFromString(split[0]);
 			if (states.isEmpty())
 			{ paleBloom.LOGGER.error(split[0] + " is not a proper block!"); }
-			else if (blockResinBulbCollectFROM.contains(new ResourceLocation(split[0].split(":")[0], split[0].split(":")[1])))
+			else if (ConfigCache.blockResinBulbCollectFROM.contains(new ResourceLocation(split[0].split(":")[0], split[0].split(":")[1])))
 			{ paleBloom.LOGGER.error(split[0] + " already has a conversion/hybrid! Only the first listed will be used!"); }
 			else
 			{
 				try
 				{
-					blockResinBulbCollectFROM.addAll(states);
-					blockResinBulbCollectQUANITTY.addAll(Collections.nCopies(states.size(), Integer.valueOf(split[1])));
+					ConfigCache.blockResinBulbCollectFROM.addAll(states);
+					ConfigCache.blockResinBulbCollectQUANITTY.addAll(Collections.nCopies(states.size(), Integer.valueOf(split[1])));
 				}
 				catch (NumberFormatException e)
 				{

@@ -2,7 +2,7 @@ package com.sirsquidly.palebloom.common.blocks.tileentity;
 
 import com.sirsquidly.palebloom.common.blocks.BlockDoublePalePlant;
 import com.sirsquidly.palebloom.common.blocks.IGardenState;
-import com.sirsquidly.palebloom.config.ConfigParser;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.common.blocks.BlockPalePetals;
 import com.sirsquidly.palebloom.common.blocks.BlockPollenhead;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
@@ -132,7 +132,7 @@ public class TilePollenhead extends TileEntity implements ITickable
                 continue;
             }
 
-            int index = ConfigParser.blockPollenheadHybridFROM.indexOf(blockState);
+            int index = ConfigCache.blockPollenheadHybridFROM.indexOf(blockState);
 
             /* If not in the list, immediately re-roll, with a 1/4 chance to add another attempt. */
             if (index < 0)
@@ -145,7 +145,7 @@ public class TilePollenhead extends TileEntity implements ITickable
             if (blockState.getBlock() instanceof BlockDoublePlant)
             { if (world.getBlockState(mutablePos.up()).getBlock() == blockState.getBlock()) world.setBlockToAir(mutablePos.up()); }
 
-            IBlockState hybridState = ConfigParser.blockPollenheadHybridTO.get(index);
+            IBlockState hybridState = ConfigCache.blockPollenheadHybridTO.get(index);
 
             if (hybridState.getBlock() instanceof BlockDoublePalePlant)
             { ((BlockDoublePalePlant)hybridState.getBlock()).placeDoubleAt(world, mutablePos, hybridState.getBlock().getMetaFromState(hybridState), false, 2); }

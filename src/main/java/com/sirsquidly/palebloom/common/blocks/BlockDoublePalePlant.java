@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common.blocks;
 
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
 import com.sirsquidly.palebloom.common.blocks.base.BlockJTPGDoublePlant;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.paleBloom;
@@ -107,7 +108,7 @@ public class BlockDoublePalePlant extends BlockJTPGDoublePlant implements IEyebl
     /** Fullbright only when it's an Awake Eyeblossom Bush. */
     @SideOnly(Side.CLIENT)
     public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-    { return state.getValue(TYPE) == EnumType.EYEBLOSSOM_BUSH && state.getValue(AWAKE) && ConfigCache.eyeblm_fullbright ? 15728880 : super.getPackedLightmapCoords(state, source, pos); }
+    { return state.getValue(TYPE) == EnumType.EYEBLOSSOM_BUSH && state.getValue(AWAKE) && Config.block.floraBlocks.eyeblossomFullbright ? 15728880 : super.getPackedLightmapCoords(state, source, pos); }
 
     @Override
     public IBlockState getStateFromMeta(int meta)

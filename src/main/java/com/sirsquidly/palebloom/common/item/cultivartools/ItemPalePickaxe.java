@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.common.item.cultivartools;
 
 import com.sirsquidly.palebloom.common.blocks.BlockResinClump;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
@@ -53,7 +54,7 @@ public class ItemPalePickaxe extends ItemPickaxe
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.ctvPik_awakeBulbHealing && stack.getItemDamage() > 0)
+        if (Config.item.gardengraftedTools.cultivarPickaxe.awakenedBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -63,7 +64,7 @@ public class ItemPalePickaxe extends ItemPickaxe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (this.isNight) return base * ConfigCache.ctvPik_awakeMiningSpeed;
+        if (this.isNight) return base * Config.item.gardengraftedTools.cultivarPickaxe.awakenedMiningSpeed;
         return base;
     }
 
@@ -71,21 +72,21 @@ public class ItemPalePickaxe extends ItemPickaxe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.ctvPik_awakeHarvestLevel;
+        if (isNight) return base + Config.item.gardengraftedTools.cultivarPickaxe.awakenedHarvestLevel;
         return base;
     }
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if (attacker.world.isRemote) return false;
-        if (!ConfigCache.ctvPik_awakeResinBlood || !this.isNight) return super.hitEntity(stack, target, attacker);
+        if (!Config.item.gardengraftedTools.cultivarPickaxe.awakenedResinBlood || !this.isNight) return super.hitEntity(stack, target, attacker);
 
         if (target.getHealth() <= 0)
         {
             if (attacker instanceof EntityPlayer)
             {
                 if (((EntityPlayer)attacker).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.hitEntity(stack, target, attacker);
-                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvPik_awakeResinBloodCooldown);
+                ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), Config.item.gardengraftedTools.cultivarPickaxe.awakenedResinBloodCooldown);
             }
 
             tryPlaceResin(target.world, target.getPosition(), target.getRNG());
@@ -150,10 +151,10 @@ public class ItemPalePickaxe extends ItemPickaxe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvPik_awakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvPik_awakeMiningSpeed));
-            if (ConfigCache.ctvPik_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.ctvPik_awakeResinBlood) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_pickaxe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", Config.item.gardengraftedTools.cultivarPickaxe.awakenedHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", Config.item.gardengraftedTools.cultivarPickaxe.awakenedMiningSpeed));
+            if (Config.item.gardengraftedTools.cultivarPickaxe.awakenedBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (Config.item.gardengraftedTools.cultivarPickaxe.awakenedResinBlood) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_pickaxe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

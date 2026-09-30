@@ -50,7 +50,6 @@ public class Config
 
         public static class configTreeGen
         {
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen.darkOakChance")
             @net.minecraftforge.common.config.Config.Comment("The chance for a Dark Oak tree to generate within a Pale Garden. 1 / this number. 0 disables this.")
             public int darkOakChance = 20;
@@ -61,19 +60,16 @@ public class Config
 
             public static class configPaleOakTree
             {
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen.paleOakTree.dyingTreeChance")
                 @net.minecraftforge.common.config.Config.Comment("The percent chance for a generated Pale Oak to be dying. This causes Vines to generate on all sides of the main trunk.")
                 @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                 public double dyingTreeChance = 2.0D;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen.paleOakTree.creakingHeartChance")
                 @net.minecraftforge.common.config.Config.Comment("The percent chance for a generated Pale Oak to have a Creaking Heart. Note Creaking Hearts need to be surrounded on all sides, so this may fail even at 100%.")
                 @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                 public double creakingHeartChance = 20.0D;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.treeGen.paleOakTree.naturalCreakingHeartChance")
                 @net.minecraftforge.common.config.Config.Comment("The percent chance for a generated Creaking Heart to be Natural.")
                 @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
@@ -87,22 +83,18 @@ public class Config
 
         public static class configUnderstoryGen
         {
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.eyeblossomChance")
             @net.minecraftforge.common.config.Config.Comment("The chance for an Eyeblossom Patch to generate per chunk. 1 / this number. 0 disables this.")
             public int eyeblossomChance = 8;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.brambleChance")
             @net.minecraftforge.common.config.Config.Comment("The chance for a Bramble Patch to generate per chunk. 1 / this number. 0 disables this.")
             public int brambleChance = 8;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.doublePalePlantChance")
             @net.minecraftforge.common.config.Config.Comment("The chance for a single Double Pale Plant generate per chunk. 1 / this number. 0 disables this.")
             public int doublePalePlantChance = 8;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.paleGarden.understoryGen.shrubChance")
             @net.minecraftforge.common.config.Config.Comment("The chance for a Pale Shrub to generate per chunk. 1 / this number. 0 disables this.")
             public int shrubChance = 4;
@@ -168,13 +160,11 @@ public class Config
 
                 public static class configPaleOakSapling
                 {
-                    @net.minecraftforge.common.config.Config.RequiresMcRestart
                     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.paleOakSapling.creakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a player-grown Pale Oak to have a Creaking Heart. Note Creaking Hearts need to be surrounded on all sides, so this may fail even at 100%.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double creakingHeartChance = 0.0D;
 
-                    @net.minecraftforge.common.config.Config.RequiresMcRestart
                     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.paleOak.creakingHeart.naturalCreakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a generated Creaking Heart to be Natural.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
@@ -204,7 +194,6 @@ public class Config
                     @net.minecraftforge.common.config.Config.Comment("Enables Sucker Roots.")
                     public boolean enableSuckerRoots = true;
 
-                    @net.minecraftforge.common.config.Config.RequiresMcRestart
                     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.sucker_roots.suckerRootDamage")
                     @net.minecraftforge.common.config.Config.Comment("The damage dealt by Sucker Roots. Setting to 0 disables the damage. ")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
@@ -222,13 +211,11 @@ public class Config
 
                 public static class configBloomingPaleOakSapling
                 {
-                    @net.minecraftforge.common.config.Config.RequiresMcRestart
                     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingSapling.creakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a player-grown Pale Oak to have a Creaking Heart. Note Creaking Hearts need to be surrounded on all sides, so this may fail even at 100%.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
                     public double creakingHeartChance = 20.0D;
 
-                    @net.minecraftforge.common.config.Config.RequiresMcRestart
                     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.treeBlocks.bloomingPaleOak.bloomingSapling.naturalCreakingHeartChance")
                     @net.minecraftforge.common.config.Config.Comment("The chance for a generated Creaking Heart to be Natural.")
                     @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
@@ -266,22 +253,18 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables the Creaking Heart.")
                 public boolean enableCreakingHeart = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingHeart.alertReapingWillows")
                 @net.minecraftforge.common.config.Config.Comment("If mining a Creaking Heart will anger Reaping Willows.")
                 public boolean alertReapingWillows = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingHeart.unnaturalResinClumps")
                 @net.minecraftforge.common.config.Config.Comment("Non-Natural Creaking Hearts (Player crafted) can generate Resin Clumps.")
                 public boolean unnaturalResinClumps = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingHeart.naturalResinClumps")
                 @net.minecraftforge.common.config.Config.Comment("Natural Creaking Hearts (Naturally generated or Grown) can generate Resin Clumps.")
                 public boolean naturalResinClumps = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingHeart.naturalAmberValveDrop")
                 @net.minecraftforge.common.config.Config.Comment("Natural Creaking Hearts will drop an Amber Valve when mined.")
                 public boolean naturalAmberValveDrop = true;
@@ -298,7 +281,6 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables Creaking Lanterns.")
                 public boolean enableCreakingLantern = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.creakingLantern.creakingsIgnoreWearer")
                 @net.minecraftforge.common.config.Config.Comment("Creakings ignore Creaking Lantern wearers.")
                 public boolean creakingsIgnoreWearer = true;
@@ -352,7 +334,6 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables Pale Oak Hollows.")
                 public boolean enablePaleOakHollow = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.paleOakHollow.resinToSapQuantity")
                 @net.minecraftforge.common.config.Config.Comment("How much resin the Hollow takes to become full of Sap.")
                 public int resinToSapQuantity = 32;
@@ -370,7 +351,6 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables Pollenheads.")
                 public boolean enablePollenhead = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.pollenhead.pollenheadHybridizeList")
                 @net.minecraftforge.common.config.Config.Comment("Blocks that can be replaced by Pale Moss when growing.")
                 public String[] pollenheadHybridizeList = {
@@ -408,7 +388,6 @@ public class Config
                 @net.minecraftforge.common.config.Config.Comment("Enables the Resin Bulb. Disabling this will break MANY parts of the mod currently.")
                 public boolean enableResinBulb = true;
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.resinBulb.resinBulbCollectList")
                 @net.minecraftforge.common.config.Config.Comment("Blocks the Resin Bulb can obtain Resin from, and how much.")
                 public String[] resinBulbCollectList = {
@@ -426,7 +405,6 @@ public class Config
                         "palebloom:creaking_heart:*=3"
                 };
 
-                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.awakenedFloraBlocks.resinBulb.activeCreakingHeartResinAmount")
                 @net.minecraftforge.common.config.Config.Comment("How much Resin a Resin Bulb will pull from an active Creaking Heart at night. Setting to 0 disables this.")
                 @net.minecraftforge.common.config.Config.RangeInt(min = 0, max = 64)
@@ -439,7 +417,6 @@ public class Config
             public boolean enableSuckerRootNodule = true;
         }
 
-        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.paleMossReplacable")
         @net.minecraftforge.common.config.Config.Comment("Blocks that can be replaced by Pale Moss when growing.")
         public String[] paleMossReplacable = {
@@ -547,17 +524,16 @@ public class Config
 
         public static class configCreaking
         {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.creaking.enableCreaking")
             @net.minecraftforge.common.config.Config.Comment("Enables the Creaking.")
             public boolean enableCreaking = true;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.creaking.chaseSpeedMult")
             @net.minecraftforge.common.config.Config.Comment("Multiplies the Creaking's speed when it has an attack target.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
             public double chaseSpeedMult = 5.0D;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.creaking.attackDamage")
             @net.minecraftforge.common.config.Config.Comment("How much damage a Creaking deals. Note that Vanilla is 3.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
@@ -570,17 +546,16 @@ public class Config
 
         public static class configMannequin
         {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.mannequin.enableMannequin")
             @net.minecraftforge.common.config.Config.Comment("Enables the Mannequin. This also enables the associated item.")
             public boolean enableMannequin = true;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.mannequin.chaseSpeedMult")
             @net.minecraftforge.common.config.Config.Comment("Multiplies the Mannequin's speed when it has an attack target.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
             public double chaseSpeedMult = 5.0D;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.mannequin.attackDamage")
             @net.minecraftforge.common.config.Config.Comment("How much damage a Mannequin deals.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 9999)
@@ -598,7 +573,6 @@ public class Config
             @net.minecraftforge.common.config.Config.Comment("Enables the Pale Creeper")
             public boolean enablePaleCreeper = true;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.pale_creeper.paleCreeperReplacementChance")
             @net.minecraftforge.common.config.Config.Comment("The percent chance a Pale Creeper replaces a normal Creeper spawn, within the Pale Garden.")
             @net.minecraftforge.common.config.Config.RangeDouble(min = 0, max = 100)
@@ -616,7 +590,6 @@ public class Config
             @net.minecraftforge.common.config.Config.Comment("Enables the Reaping Willow.")
             public boolean enableReapingWillow = true;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.entity.reapingWillow.reapingWillowIsntApathetic")
             @net.minecraftforge.common.config.Config.Comment({
                     "If the Reaping Willow will defend any harmed Pale Garden entities.",
@@ -626,37 +599,43 @@ public class Config
         }
     }
 
-    @net.minecraftforge.common.config.Config.RequiresMcRestart
     @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item")
     @net.minecraftforge.common.config.Config.Comment("Config related to Items")
     public static configItem item = new configItem();
 
     public static class configItem
     {
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enableAmberValve")
         @net.minecraftforge.common.config.Config.Comment("Enables the Amber Valve. Note this is used for a lot of recipes. ")
         public boolean enableAmberValve = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enableEeriePainting")
         @net.minecraftforge.common.config.Config.Comment("Enables the Eerie Painting. This also enables the associated entity.")
         public boolean enableEeriePainting = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enableLiveRoot")
         @net.minecraftforge.common.config.Config.Comment("Enables the Live Root.")
         public boolean enableLiveRoot = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enablePaleCreeperHusk")
         @net.minecraftforge.common.config.Config.Comment("Enables the Pale Creeper Husk.")
         public boolean enablePaleCreeperHusk = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enablePaleOakBoat")
         @net.minecraftforge.common.config.Config.Comment("Enables the Pale Oak Boat. This also enables the associated entity.")
         public boolean enablePaleOakBoat = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enablePaleOakSap")
         @net.minecraftforge.common.config.Config.Comment("Enables Pale Oak Sap.")
         public boolean enablePaleOakSap = true;
 
+        @net.minecraftforge.common.config.Config.RequiresMcRestart
         @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.enableResinBrick")
         @net.minecraftforge.common.config.Config.Comment("Enables the Resin Brick.")
         public boolean enableResinBrick = true;
@@ -667,6 +646,7 @@ public class Config
 
         public static class configFoods
         {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.foods.enableNightligtBulb")
             @net.minecraftforge.common.config.Config.Comment("Enables Nightlight Bulbs. Note, this causes Nightlights to drop nothing when harvested. ")
             public boolean enableNightligtBulb = true;
@@ -675,6 +655,7 @@ public class Config
             @net.minecraftforge.common.config.Config.Comment("How long (in game ticks [20 = 1 second]) the Amber Eyes effect is given, by eating a Nightlight Bulb.")
             public int nightlightBulbEffectLength = 310;
 
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.foods.enablePalePumpkinPie")
             @net.minecraftforge.common.config.Config.Comment("Enables the Pale Pumpkin Pie.")
             public boolean enablePalePumpkinPie = true;
@@ -695,6 +676,7 @@ public class Config
 
             public static class configCultivarAxe
             {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.cultivarTools.cultivarAxe.enableCultivarAxe")
                 @net.minecraftforge.common.config.Config.Comment("Enables the Gardengrafted Axe.")
                 public boolean enableCultivarAxe = true;
@@ -725,6 +707,7 @@ public class Config
 
             public static class configCultivarHoe
             {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.cultivarTools.cultivarHoe.enableCultivarHoe")
                 @net.minecraftforge.common.config.Config.Comment("Enables the Gardengrafted Hoe.")
                 public boolean enableCultivarHoe = true;
@@ -755,6 +738,7 @@ public class Config
 
             public static class configCultivarPickaxe
             {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.cultivarTools.cultivarPickaxe.enableCultivarPickaxe")
                 @net.minecraftforge.common.config.Config.Comment("Enables the Gardengrafted Pickaxe.")
                 public boolean enableCultivarPickaxe = true;
@@ -785,6 +769,7 @@ public class Config
 
             public static class configCultivarShovel
             {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.cultivarTools.cultivarShovel.enableCultivarShovel")
                 @net.minecraftforge.common.config.Config.Comment("Enables the Gardengrafted Shovel.")
                 public boolean enableCultivarShovel = true;
@@ -815,6 +800,7 @@ public class Config
 
             public static class configCultivarSword
             {
+                @net.minecraftforge.common.config.Config.RequiresMcRestart
                 @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.cultivarTools.cultivarSword.enableCultivarSword")
                 @net.minecraftforge.common.config.Config.Comment("Enables the Gardengrafted Sword. ")
                 public boolean enableCultivarSword = true;
@@ -843,6 +829,7 @@ public class Config
 
         public static class configPaleMossCloak
         {
+            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.item.paleMossCloak.enablePaleMossCloak")
             @net.minecraftforge.common.config.Config.Comment("Enables the Pale Moss Cloak.")
             public boolean enablePaleMossCloak = true;
@@ -851,7 +838,6 @@ public class Config
             @net.minecraftforge.common.config.Config.Comment("Reaping Willows will defend Pale Moss Cloak wearers.")
             public boolean reapingWillowsDefendCloakWearers = true;
 
-            @net.minecraftforge.common.config.Config.RequiresMcRestart
             @net.minecraftforge.common.config.Config.LangKey("config.palebloom.block.creakingHeart.reapingWillowsIgnoreCrimes")
             @net.minecraftforge.common.config.Config.Comment("If Reaping Willows will ignore Garden Calls (harm to Pale Entities) against Pale Moss Cloak wearers.")
             public boolean reapingWillowsIgnoreCrimes = true;
@@ -867,7 +853,10 @@ public class Config
         public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event)
         {
             if(event.getModID().equals(paleBloom.MOD_ID))
-            { ConfigManager.sync(paleBloom.MOD_ID, net.minecraftforge.common.config.Config.Type.INSTANCE); }
+            {
+                ConfigManager.sync(paleBloom.MOD_ID, net.minecraftforge.common.config.Config.Type.INSTANCE);
+                ConfigParser.breakupConfigArrays();
+            }
         }
     }
 }

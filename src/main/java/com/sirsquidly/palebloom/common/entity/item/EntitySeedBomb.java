@@ -28,6 +28,7 @@ import java.util.List;
 public class EntitySeedBomb extends EntityTNTPrimed
 {
     private static final DataParameter<Integer> FUSE = EntityDataManager.<Integer>createKey(EntitySeedBomb.class, DataSerializers.VARINT);
+    private static final DataParameter<Integer> EXPLOSION_POWER = EntityDataManager.<Integer>createKey(EntitySeedBomb.class, DataSerializers.VARINT);
     @Nullable
     private EntityLivingBase tntPlacedBy;
 
@@ -35,6 +36,7 @@ public class EntitySeedBomb extends EntityTNTPrimed
     {
         super.entityInit();
         this.dataManager.register(FUSE, 80);
+        this.dataManager.register(EXPLOSION_POWER, 10);
     }
 
     public EntitySeedBomb(World worldIn)
@@ -95,30 +97,34 @@ public class EntitySeedBomb extends EntityTNTPrimed
     {
         if (this.world.isRemote) return;
 
-        WorldGenerator mossGen = new WorldGenMoss(10, 1.0F);
+        int radius = getExplosionPower();
+        double particleRadius = radius * 0.3D;
+        double auraSpread = radius * 0.1D;
+        double effectRadius = radius * 0.4D;
+
+        WorldGenerator mossGen = new WorldGenMoss(radius, 1.0F);
 
         mossGen.generate(this.world, rand, this.getPosition().down());
 
         world.playSound(null, this.getPosition(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 1.0F, 0.001F);
 
-        ((WorldServer)this.world).spawnParticle(EnumParticleTypes.BLOCK_DUST, this.posX, this.posY + (double)this.height / 1.5D, this.posZ, 80, this.width / 2.0F, this.height / 2.0F, this.width / 2.0F, 0.05D, Block.getStateId(JTPGBlocks.PALE_OAK_LEAVES.getDefaultState()));
-        ((WorldServer)this.world).spawnParticle(EnumParticleTypes.TOWN_AURA, this.posX, this.posY + 1, this.posZ, 200, 1, 1, 1, 0.1D);
+        ((WorldServer)this.world).spawnParticle(EnumParticleTypes.BLOCK_DUST, this.posX, this.posY + (double)this.height / 1.5D, this.posZ, radius * 8, this.width / 2.0F, this.height / 2.0F, this.width / 2.0F, 0.05D, Block.getStateId(JTPGBlocks.PALE_OAK_LEAVES.getDefaultState()));
+        ((WorldServer)this.world).spawnParticle(EnumParticleTypes.TOWN_AURA, this.posX, this.posY + 1, this.posZ, radius * 20, auraSpread, auraSpread, auraSpread, 0.1D);
 
-        AxisAlignedBB axisalignedbb = this.getEntityBoundingBox().grow(4.0D, 2.0D, 4.0D);
+        AxisAlignedBB axisalignedbb = this.getEntityBoundingBox().grow(effectRadius, effectRadius * 0.5, effectRadius);
         List<EntityLivingBase> list = this.world.getEntitiesWithinAABB(EntityLivingBase.class, axisalignedbb);
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < radius * 10; i++)
         {
             double cX = this.posX + (world.rand.nextDouble() * 0.5 - 0.25);
             double cY = this.posY + 1 + (world.rand.nextDouble() * this.height - (this.height/2));
             double cZ = this.posZ + (world.rand.nextDouble() * 0.5 - 0.25);
 
-            double dX = this.posX + (this.rand.nextDouble() * 6 - 3);
-            double dY = this.posY + (this.rand.nextDouble() * 6 - 3);
-            double dZ = this.posZ + (this.rand.nextDouble() * 6 - 3);
+            double dX = this.posX + (this.rand.nextDouble() * (particleRadius * 2) - particleRadius);
+            double dY = this.posY + (this.rand.nextDouble() * (particleRadius * 2) - particleRadius);
+            double dZ = this.posZ + (this.rand.nextDouble() * (particleRadius * 2) - particleRadius);
 
             paleBloom.proxy.spawnParticle(0, world, cX, cY, cZ, dX, dY, dZ, 0, 3);
-            //palebloom.proxy.spawnParticle(0, world, hx, hy, hz, cX, cY, cZ, 0, 0, 0, 1);
         }
 
         if (list.isEmpty()) return;
@@ -130,9 +136,9 @@ public class EntitySeedBomb extends EntityTNTPrimed
 
             double d0 = this.getDistanceSq(entity);
 
-            if (d0 < 16.0D)
+            if (d0 < effectRadius * effectRadius)
             {
-                double d1 = 1.0D - Math.sqrt(d0) / 4.0D;
+                double d1 = 1.0D - Math.sqrt(d0) / effectRadius;
 
                 int i = (int)(d1 * (double)(16 * 20) + 0.5D);
 
@@ -142,9 +148,9 @@ public class EntitySeedBomb extends EntityTNTPrimed
         }
     }
 
-    public int getFuse()
-    { return this.dataManager.get(FUSE); }
+    public int getFuse() { return this.dataManager.get(FUSE); }
+    public void setFuse(int fuseIn) { this.dataManager.set(FUSE, fuseIn); }
 
-    public void setFuse(int fuseIn)
-    { this.dataManager.set(FUSE, fuseIn); }
+    public int getExplosionPower() { return this.dataManager.get(EXPLOSION_POWER); }
+    public void setExplosionPower(int fuseIn) { this.dataManager.set(EXPLOSION_POWER, fuseIn); }
 }

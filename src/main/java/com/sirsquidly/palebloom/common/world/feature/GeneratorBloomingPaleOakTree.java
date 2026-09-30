@@ -24,9 +24,9 @@ public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
     public static final IBlockState BLOOM_PALE_LEAF = JTPGBlocks.BLOOMING_PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
     public static final IBlockState FALLBACK_LEAF = JTPGBlocks.PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
     public static final IBlockState FALLBACK_LEAF2 = Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
-    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PALE_LOG : FALLBACK_LOG;
+    public static final IBlockState LOG = Config.block.treeBlocks.paleOak.enablePaleOakWoods ? PALE_LOG : FALLBACK_LOG;
     public static final IBlockState CREAKING_HEART = JTPGBlocks.CREAKING_HEART.getDefaultState().withProperty(BlockCreakingHeart.AXIS, EnumFacing.Axis.Y);
-    public static final IBlockState LEAF = ConfigCache.blmPalOakLvs_enabled ? BLOOM_PALE_LEAF : ConfigCache.palOakLvs_enabled ? FALLBACK_LEAF : FALLBACK_LEAF2;
+    public static final IBlockState LEAF = Config.block.treeBlocks.bloomingPaleOak.enableBloomingPaleOakLeaves ? BLOOM_PALE_LEAF : Config.block.treeBlocks.paleOak.enablePaleOakLeaves ? FALLBACK_LEAF : FALLBACK_LEAF2;
     public static final IBlockState ROOT = JTPGBlocks.SUCKER_ROOTS.getDefaultState();
     public static final IBlockState ROOT_NODULE = JTPGBlocks.SUCKER_ROOT_NODULE.getDefaultState();
 
@@ -48,7 +48,7 @@ public class GeneratorBloomingPaleOakTree extends WorldGenAbstractTree
     public GeneratorBloomingPaleOakTree(float placeCreakingHeartChanceIn, float creakingHeartNaturalChanceIn)
     {
         super(false);
-        placeCreakingHeartChance = ConfigCache.crkHrt_enabled ? placeCreakingHeartChanceIn : 0.0F;
+        placeCreakingHeartChance = Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart ? placeCreakingHeartChanceIn : 0.0F;
         creakingHeartNaturalChance = creakingHeartNaturalChanceIn;
     }
 

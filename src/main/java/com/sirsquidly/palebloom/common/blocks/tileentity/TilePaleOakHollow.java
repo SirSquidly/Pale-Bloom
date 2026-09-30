@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.common.blocks.tileentity;
 
 import com.sirsquidly.palebloom.common.blocks.BlockPaleOakHollow;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGSounds;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
@@ -20,7 +21,7 @@ public class TilePaleOakHollow extends TileEntity implements ITickable
 {
     public int storedResin;
     public int resinPullQuantity = 8;
-    public int resinMaxForFull = ConfigCache.palOakHlw_resinSapAmount;
+    public int resinMaxForFull = Config.block.awakenedFloraBlocks.paleOakHollow.resinToSapQuantity;
 
     public boolean isAwake = false;
     public int sapLevel = 0;

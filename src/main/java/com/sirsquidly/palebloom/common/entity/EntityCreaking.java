@@ -184,7 +184,7 @@ public class EntityCreaking extends AbstractCreaking implements IAnimatable, IAn
         if (attackTarget instanceof EntityPlayer)
         {
             ItemStack itemstack = ((EntityPlayer) attackTarget).inventory.armorInventory.get(3);
-            if (ConfigCache.crkLtn_creakingIgnored && itemstack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN) && attackTarget != this.getRevengeTarget()) return;
+            if (Config.block.awakenedFloraBlocks.creakingLantern.creakingsIgnoreWearer && itemstack.getItem() == Item.getItemFromBlock(JTPGBlocks.CREAKING_LANTERN) && attackTarget != this.getRevengeTarget()) return;
         }
 
         super.setAttackTarget(attackTarget);

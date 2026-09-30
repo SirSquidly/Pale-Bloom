@@ -42,7 +42,7 @@ public class CommonEvents
     @SubscribeEvent
     public static void onLeftClickWithPaleShovel(PlayerInteractEvent.LeftClickBlock event)
     {
-        if (!ConfigCache.ctvSvl_awakeThornStroke || event.getWorld().isRemote || event.getFace() != EnumFacing.UP ) return;
+        if (!Config.item.gardengraftedTools.cultivarShovel.awakenedThornStroke || event.getWorld().isRemote || event.getFace() != EnumFacing.UP ) return;
 
         ItemStack stack = event.getItemStack();
         if (!stack.isEmpty() && stack.getItem() instanceof ItemPaleShovel)
@@ -51,7 +51,7 @@ public class CommonEvents
 
             EntityPlayer player = event.getEntityPlayer();
             if (player.getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return;
-            player.getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvSvl_awakeThornStrokeCooldown);
+            player.getCooldownTracker().setCooldown(stack.getItem(), Config.item.gardengraftedTools.cultivarShovel.awakenedThornStrokeCooldown);
 
             stack.damageItem(1, player);
 

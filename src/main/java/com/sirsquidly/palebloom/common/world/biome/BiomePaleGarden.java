@@ -63,7 +63,7 @@ public class BiomePaleGarden extends BiomeForest
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.FLOWERS))
         {
-            if (ConfigCache.eyeblm_enabled && configEyeblossomPatchChance != 0)
+            if (Config.block.floraBlocks.enableEyeblossom && configEyeblossomPatchChance != 0)
             {
                 for (int j1 = 0; j1 < this.eyeblossomPerChunk; ++j1)
                 {
@@ -74,7 +74,7 @@ public class BiomePaleGarden extends BiomeForest
                 }
             }
 
-            if (ConfigCache.brmbl_enabled && configBrambleChance != 0)
+            if (Config.block.floraBlocks.enableBramble && configBrambleChance != 0)
             {
                 for (int l1 = 0; l1 < this.bramblePerChunk; ++l1)
                 {
@@ -85,7 +85,7 @@ public class BiomePaleGarden extends BiomeForest
                 }
             }
 
-            if (ConfigCache.dblPalPnt_enabled && configDoublePalePlantChance != 0)
+            if (Config.block.floraBlocks.enableDoublePalePlants && configDoublePalePlantChance != 0)
             {
                 for (int l1 = 0; l1 < this.doublePalePerChunk; ++l1)
                 {

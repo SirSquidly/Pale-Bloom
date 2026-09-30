@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
-import com.sirsquidly.palebloom.config.ConfigParser;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;
@@ -74,7 +74,7 @@ public class WorldGenMoss extends WorldGenerator
     public void preformBlockPlacements(World worldIn, BlockPos pos, Random rand)
     {
         /* First replace any ground with Pale Moss Blocks. */
-        if (worldIn.isAirBlock(pos.up()) && ConfigParser.PaleMossReplacableList.contains(worldIn.getBlockState(pos)))
+        if (worldIn.isAirBlock(pos.up()) && ConfigCache.PaleMossReplacableList.contains(worldIn.getBlockState(pos)))
         {
             worldIn.setBlockState(pos, mossBlock, 2);
         }

@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common.blocks;
 
 import com.sirsquidly.palebloom.common.blocks.tileentity.TileCreakingHeart;
 import com.sirsquidly.palebloom.common.entity.EntityCreaking;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.init.JTPGItems;
@@ -148,11 +149,11 @@ public class BlockCreakingHeart extends BlockRotatedPillar implements ITileEntit
     public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack)
     {
         super.harvestBlock(worldIn, player, pos, state, te, stack);
-        if (ConfigCache.crkHrt_alertReapingWillows) WorldPaleGarden.alertReapingWillow(worldIn, pos, player, 16);
+        if (Config.block.awakenedFloraBlocks.creakingHeart.alertReapingWillows) WorldPaleGarden.alertReapingWillow(worldIn, pos, player, 16);
 
         if (state.getValue(NATURAL))
         {
-            if (ConfigCache.crkHrt_dropAmberValveNatural) spawnAsEntity(worldIn, pos, new ItemStack(JTPGItems.AMBER_VALVE));
+            if (Config.block.awakenedFloraBlocks.creakingHeart.naturalAmberValveDrop) spawnAsEntity(worldIn, pos, new ItemStack(JTPGItems.AMBER_VALVE));
 
             /* Drop 20-24 EXP. */
             int i = MathHelper.getInt(worldIn.rand, 20, 24);

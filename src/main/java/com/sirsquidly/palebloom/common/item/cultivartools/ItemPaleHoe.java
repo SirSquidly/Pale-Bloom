@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.common.item.cultivartools;
 
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -49,7 +50,7 @@ public class ItemPaleHoe extends ItemHoe
         if (WorldPaleGarden.isNight(worldIn)) isNight = true;
         else isNight = false;
 
-        if (ConfigCache.ctvHoe_awakeBulbHealing && stack.getItemDamage() > 0)
+        if (Config.item.gardengraftedTools.cultivarHoe.awakenedBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -59,7 +60,7 @@ public class ItemPaleHoe extends ItemHoe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (isNight) return base * ConfigCache.ctvHoe_awakeMiningSpeed;
+        if (isNight) return base * Config.item.gardengraftedTools.cultivarHoe.awakenedMiningSpeed;
         return base;
     }
 
@@ -67,19 +68,19 @@ public class ItemPaleHoe extends ItemHoe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.ctvHoe_awakeHarvestLevel;
+        if (isNight) return base + Config.item.gardengraftedTools.cultivarHoe.awakenedHarvestLevel;
         return base;
     }
 
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
         if (attacker.world.isRemote) return false;
-        if (!ConfigCache.ctvHoe_awakeGardenCall || !this.isNight) return super.hitEntity(stack, target, attacker);
+        if (!Config.item.gardengraftedTools.cultivarHoe.awakenedGardenCall || !this.isNight) return super.hitEntity(stack, target, attacker);
 
         if (attacker instanceof EntityPlayer)
         {
             if (((EntityPlayer)attacker).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.hitEntity(stack, target, attacker);
-            ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvHoe_awakeGardenCallCooldown);
+            ((EntityPlayer)attacker).getCooldownTracker().setCooldown(stack.getItem(), Config.item.gardengraftedTools.cultivarHoe.awakenedGardenCallCooldown);
         }
 
         int aidDistance = 64;
@@ -109,10 +110,10 @@ public class ItemPaleHoe extends ItemHoe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvHoe_awakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvHoe_awakeMiningSpeed));
-            if (ConfigCache.ctvHoe_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.ctvHoe_awakeGardenCall) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_hoe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", Config.item.gardengraftedTools.cultivarHoe.awakenedHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", Config.item.gardengraftedTools.cultivarHoe.awakenedMiningSpeed));
+            if (Config.item.gardengraftedTools.cultivarHoe.awakenedBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (Config.item.gardengraftedTools.cultivarHoe.awakenedGardenCall) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_hoe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

@@ -1,5 +1,6 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
@@ -19,8 +20,8 @@ public class GeneratorPeepingBirch extends WorldGenAbstractTree
     public static final IBlockState PEEPING_LEAF = JTPGBlocks.PEEPING_BIRCH_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
     public static final IBlockState FALLBACK_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.BIRCH).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
 
-    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PEEPING_LOG : FALLBACK_LOG;
-    public static final IBlockState LEAF = ConfigCache.palOakLvs_enabled ? PEEPING_LEAF : FALLBACK_LEAF;
+    public static final IBlockState LOG = Config.block.treeBlocks.paleOak.enablePaleOakWoods ? PEEPING_LOG : FALLBACK_LOG;
+    public static final IBlockState LEAF = Config.block.treeBlocks.paleOak.enablePaleOakLeaves ? PEEPING_LEAF : FALLBACK_LEAF;
 
     public GeneratorPeepingBirch()
     { super(false); }

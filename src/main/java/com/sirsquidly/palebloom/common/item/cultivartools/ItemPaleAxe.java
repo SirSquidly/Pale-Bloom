@@ -2,6 +2,7 @@ package com.sirsquidly.palebloom.common.item.cultivartools;
 
 import com.sirsquidly.palebloom.common.entity.item.EntityThorn;
 import com.sirsquidly.palebloom.common.world.WorldPaleGarden;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
@@ -55,7 +56,7 @@ public class ItemPaleAxe extends ItemAxe
             return;
         }
 
-        if (ConfigCache.ctvAxe_awakeBulbHealing && stack.getItemDamage() > 0)
+        if (Config.item.gardengraftedTools.cultivarAxe.awakenedBulbHealing && stack.getItemDamage() > 0)
         {
             if (WorldPaleGarden.requestBulbResin(worldIn, entityIn.getPosition().up(), 1, true).resinPulled == 1) this.setDamage(stack, this.getDamage(stack) - 1);
         }
@@ -65,7 +66,7 @@ public class ItemPaleAxe extends ItemAxe
     {
         float base = super.getDestroySpeed(stack, state);
 
-        if (this.isNight) return base * ConfigCache.ctvAxe_awakeMiningSpeed;
+        if (this.isNight) return base * Config.item.gardengraftedTools.cultivarAxe.awakenedMiningSpeed;
         return base;
     }
 
@@ -73,18 +74,18 @@ public class ItemPaleAxe extends ItemAxe
     {
         int base = super.getHarvestLevel(stack, toolClass,  player, blockState);
 
-        if (isNight) return base + ConfigCache.ctvAxe_awakeHarvestLevel;
+        if (isNight) return base + Config.item.gardengraftedTools.cultivarAxe.awakenedHarvestLevel;
         return base;
     }
 
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving)
     {
-        if (state.getBlock() instanceof BlockLog && !entityLiving.isSneaking() && ConfigCache.ctvAxe_awakeThornBurst)
+        if (state.getBlock() instanceof BlockLog && !entityLiving.isSneaking() && Config.item.gardengraftedTools.cultivarAxe.awakenedThornBurst)
         {
             if (entityLiving instanceof EntityPlayer)
             {
                 if (((EntityPlayer)entityLiving).getCooldownTracker().getCooldown(stack.getItem(), 0) > 0) return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
-                ((EntityPlayer)entityLiving).getCooldownTracker().setCooldown(stack.getItem(), ConfigCache.ctvAxe_awakeThornBurstCooldown);
+                ((EntityPlayer)entityLiving).getCooldownTracker().setCooldown(stack.getItem(), Config.item.gardengraftedTools.cultivarAxe.awakenedThornBurstCooldown);
             }
 
             worldIn.setBlockToAir(pos);
@@ -122,10 +123,10 @@ public class ItemPaleAxe extends ItemAxe
         if (isNight)
         {
             tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_title"));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", ConfigCache.ctvAxe_awakeHarvestLevel));
-            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", ConfigCache.ctvAxe_awakeMiningSpeed));
-            if (ConfigCache.ctvAxe_awakeBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
-            if (ConfigCache.ctvAxe_awakeThornBurst) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_axe.night"));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_harvest", Config.item.gardengraftedTools.cultivarAxe.awakenedHarvestLevel));
+            tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_mine_speed", Config.item.gardengraftedTools.cultivarAxe.awakenedMiningSpeed));
+            if (Config.item.gardengraftedTools.cultivarAxe.awakenedBulbHealing) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.night_repair"));
+            if (Config.item.gardengraftedTools.cultivarAxe.awakenedThornBurst) tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_axe.night"));
         }
         else
         { tooltip.add(TextFormatting.GRAY + I18n.format("description.palebloom.cultivar_item.day")); }

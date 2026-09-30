@@ -1,6 +1,7 @@
 package com.sirsquidly.palebloom.common.world.feature;
 
 import com.sirsquidly.palebloom.common.blocks.BlockCreakingHeart;
+import com.sirsquidly.palebloom.config.Config;
 import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import net.minecraft.block.*;
@@ -23,9 +24,9 @@ public class GeneratorPaleOakTree extends WorldGenAbstractTree
     public static final IBlockState PALE_LEAF = JTPGBlocks.PALE_OAK_LEAVES.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
     public static final IBlockState FALLBACK_LEAF = Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.DARK_OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE).withProperty(BlockLeaves.DECAYABLE, Boolean.TRUE);
 
-    public static final IBlockState LOG = ConfigCache.palOakWod_enabled ? PALE_LOG : FALLBACK_LOG;
+    public static final IBlockState LOG = Config.block.treeBlocks.paleOak.enablePaleOakWoods ? PALE_LOG : FALLBACK_LOG;
     public static final IBlockState CREAKING_HEART = JTPGBlocks.CREAKING_HEART.getDefaultState().withProperty(BlockCreakingHeart.NATURAL, true).withProperty(BlockCreakingHeart.AXIS, EnumFacing.Axis.Y);
-    public static final IBlockState LEAF = ConfigCache.palOakLvs_enabled ? PALE_LEAF : FALLBACK_LEAF;
+    public static final IBlockState LEAF = Config.block.treeBlocks.paleOak.enablePaleOakLeaves ? PALE_LEAF : FALLBACK_LEAF;
 
     public static final IBlockState HANGING_MOSS = JTPGBlocks.PALE_HANGING_MOSS.getDefaultState();
 
@@ -47,7 +48,7 @@ public class GeneratorPaleOakTree extends WorldGenAbstractTree
     public GeneratorPaleOakTree(float placeCreakingHeartChanceIn, float creakingHeartNaturalChanceIn, float dyingChanceIn)
     {
         super(false);
-        placeCreakingHeartChance = ConfigCache.crkHrt_enabled ? placeCreakingHeartChanceIn : 0.0F;
+        placeCreakingHeartChance = Config.block.awakenedFloraBlocks.creakingHeart.enableCreakingHeart ? placeCreakingHeartChanceIn : 0.0F;
         creakingHeartNaturalChance = creakingHeartNaturalChanceIn;
         dyingTreeChance = dyingChanceIn;
     }

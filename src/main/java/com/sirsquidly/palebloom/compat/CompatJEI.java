@@ -1,6 +1,6 @@
 package com.sirsquidly.palebloom.compat;
 
-import com.sirsquidly.palebloom.config.ConfigParser;
+import com.sirsquidly.palebloom.config.ConfigCache;
 import com.sirsquidly.palebloom.init.JTPGBlocks;
 import com.sirsquidly.palebloom.util.IncenseThornsNBTRecipe;
 import com.sirsquidly.palebloom.util.PaleMossCloakGraftingRecipe;
@@ -71,8 +71,8 @@ public class CompatJEI implements IModPlugin
     public static List<BasicRecipeWrapper> getPollenheadHybrids()
     {
         List<BasicRecipeWrapper> recipes = new ArrayList<>();
-        List<IBlockState> from = ConfigParser.blockPollenheadHybridFROM;
-        List<IBlockState> to = ConfigParser.blockPollenheadHybridTO;
+        List<IBlockState> from = ConfigCache.blockPollenheadHybridFROM;
+        List<IBlockState> to = ConfigCache.blockPollenheadHybridTO;
 
         for (int i = 0; i < from.size(); i++)
         {
