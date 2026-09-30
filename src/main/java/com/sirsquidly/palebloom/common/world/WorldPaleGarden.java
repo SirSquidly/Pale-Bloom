@@ -180,9 +180,6 @@ public class WorldPaleGarden
         {
             if (!world.isBlockLoaded(checkPos)) continue;
 
-            IBlockState state = world.getBlockState(pos);
-            if(!state.getBlock().hasTileEntity(state)) continue;
-
             TileEntity te = world.getTileEntity(checkPos);
             if (te instanceof TileResinBulb)
             {
