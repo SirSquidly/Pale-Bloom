@@ -1,7 +1,8 @@
 {
   "conditions":
   [
-    { "type": "minecraft:item_exists", "item": "palebloom:pale_creeper_husk" }
+    { "type": "minecraft:item_exists", "item": "palebloom:pale_creeper_husk" },
+    { "type": "minecraft:item_exists", "item": "palebloom:pale_moss_cloak" }
   ],
   "type": "forge:ore_shaped",
   "pattern": [
