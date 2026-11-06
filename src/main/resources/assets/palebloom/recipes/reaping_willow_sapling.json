@@ -1,7 +1,8 @@
 {
   "conditions":
   [
-    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" }
+    { "type": "minecraft:item_exists", "item": "palebloom:amber_valve" },
+    { "type": "minecraft:item_exists", "item": "palebloom:reaping_willow_sapling" }
   ],
   "type": "forge:ore_shaped",
   "pattern": [
